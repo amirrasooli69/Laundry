@@ -120,6 +120,8 @@
             this.panelPaye = new System.Windows.Forms.Panel();
             this.radNaghdi = new System.Windows.Forms.RadioButton();
             this.radKart = new System.Windows.Forms.RadioButton();
+            this.txtBeforeBeiane = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgShow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgCategory)).BeginInit();
@@ -1093,6 +1095,8 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.txtBeforeBeiane);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtPrice);
             this.panel1.Controls.Add(this.numSome);
             this.panel1.Controls.Add(this.txtValueAdded);
@@ -1231,6 +1235,27 @@
             this.radKart.Text = "کارت";
             this.radKart.UseVisualStyleBackColor = true;
             // 
+            // txtBeforeBeiane
+            // 
+            this.txtBeforeBeiane.Enabled = false;
+            this.txtBeforeBeiane.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBeforeBeiane.Location = new System.Drawing.Point(259, 420);
+            this.txtBeforeBeiane.MaxLength = 20;
+            this.txtBeforeBeiane.Multiline = true;
+            this.txtBeforeBeiane.Name = "txtBeforeBeiane";
+            this.txtBeforeBeiane.Size = new System.Drawing.Size(101, 23);
+            this.txtBeforeBeiane.TabIndex = 95;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(366, 422);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 16);
+            this.label1.TabIndex = 96;
+            this.label1.Text = "بیعانه قبل";
+            // 
             // FormServices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1354,5 +1379,7 @@
         public System.Windows.Forms.Button btnViewService;
         private System.Windows.Forms.TextBox numSome;
         private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.TextBox txtBeforeBeiane;
+        public System.Windows.Forms.Label label1;
     }
 }

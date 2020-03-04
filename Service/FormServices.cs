@@ -263,6 +263,12 @@ namespace Laundry
                     beiane = int.Parse(txtBeiane.Text.Replace(",", ""));
                 else
                     beiane = 0;
+                //-----beiane az ghabl
+                double beforeBeiane;
+                if (txtBeiane.Text != "")
+                    beforeBeiane = int.Parse(txtBeforeBeiane.Text.Replace(",", ""));
+                else
+                    beforeBeiane = 0;
                 if (txtPay.Text == "")
                     txtPay.Text = "0";
                 //----------takhfif
@@ -286,7 +292,8 @@ namespace Laundry
                     txtDarsadTakhfif.Text = "100";
                 if (darsad < 0)
                     txtDarsadTakhfif.Text = "0";
-
+                if (txtSumServices.Text == "")
+                    txtSumServices.Text = "0";
                 double totalSome = double.Parse(txtSumServices.Text.Replace(",", ""));
                 double sum = double.Parse(txtPay.Text.Replace(",", ""));
                 double takhfif = 0;
@@ -310,7 +317,7 @@ namespace Laundry
                 double valueAdded = double.Parse(txtValueAdded.Text.Replace(",", ""));
                 //----------
 
-                txtPay.Text = (((totalSome - beiane) - takhfif) + mande + valueAdded).ToString();
+                txtPay.Text = (((totalSome - beiane -beforeBeiane) - takhfif) + mande + valueAdded).ToString();
 
             }
             catch (Exception)
@@ -1949,11 +1956,13 @@ namespace Laundry
                 lblCodeRahgiri.Text = "";
                 lblError.Text = "";
                 txtBeiane.Text = "";
+                txtBeforeBeiane.Text = "";
                 txtPay.Text = "";
                 txtDarsadTakhfif.Text = "0";
                 txtSumTakhfif.Text = "0";
                 txtMande.Text = "0";
                 lblTotalPrice.Text = "";
+
 
                 //-----
                 if (chxNewCustomer.Checked == false)
@@ -2008,7 +2017,8 @@ namespace Laundry
                     }
                     string[] ret = (Calculate.Remaining_Total(txtEshterak.Text)).Split(',');
                     txtMande.Text = ret[0];
-                    txtBeiane.Text = ret[1];
+                    txtBeiane.Text = "0";
+                    txtBeforeBeiane.Text =Seragham(ret[1]);
                     lblTotalPrice.Text = Seragham(ret[2]);
 
                 }
