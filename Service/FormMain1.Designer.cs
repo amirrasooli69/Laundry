@@ -64,6 +64,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.strlblVersion = new System.Windows.Forms.Label();
             this.timSms = new System.Windows.Forms.Timer(this.components);
+            this.toolWorks = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -108,7 +109,8 @@
             this.toolToolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolDeleteUserToolStripMenuItem,
             this.toolDeleteServiceToolStripMenuItem,
-            this.toolBirthDay});
+            this.toolBirthDay,
+            this.toolWorks});
             this.toolToolsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("toolToolsToolStripMenuItem.Image")));
             this.toolToolsToolStripMenuItem.Name = "toolToolsToolStripMenuItem";
             this.toolToolsToolStripMenuItem.Size = new System.Drawing.Size(78, 23);
@@ -169,21 +171,21 @@
             // toolDate
             // 
             this.toolDate.Name = "toolDate";
-            this.toolDate.Size = new System.Drawing.Size(145, 24);
+            this.toolDate.Size = new System.Drawing.Size(152, 24);
             this.toolDate.Text = "بازه زمانی";
             this.toolDate.Click += new System.EventHandler(this.toolDate_Click);
             // 
             // toolReportUser
             // 
             this.toolReportUser.Name = "toolReportUser";
-            this.toolReportUser.Size = new System.Drawing.Size(145, 24);
+            this.toolReportUser.Size = new System.Drawing.Size(152, 24);
             this.toolReportUser.Text = "مشتری";
             this.toolReportUser.Click += new System.EventHandler(this.toolReportUser_Click);
             // 
             // toolReportProdoct
             // 
             this.toolReportProdoct.Name = "toolReportProdoct";
-            this.toolReportProdoct.Size = new System.Drawing.Size(145, 24);
+            this.toolReportProdoct.Size = new System.Drawing.Size(152, 24);
             this.toolReportProdoct.Text = "محصول";
             this.toolReportProdoct.Click += new System.EventHandler(this.toolReportProdoct_Click);
             // 
@@ -411,6 +413,12 @@
             this.timSms.Interval = 60000;
             this.timSms.Tick += new System.EventHandler(this.timSms_Tick);
             // 
+            // toolWorks
+            // 
+            this.toolWorks.Name = "toolWorks";
+            this.toolWorks.Size = new System.Drawing.Size(171, 24);
+            this.toolWorks.Text = "لیست کارها";
+            // 
             // FormMain1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -479,6 +487,7 @@
         private System.Windows.Forms.Label lblCountSmsNoti;
         private System.Windows.Forms.PictureBox picSmsNoti;
         private System.Windows.Forms.Timer timSms;
+        private System.Windows.Forms.ToolStripMenuItem toolWorks;
     }
 }
 
