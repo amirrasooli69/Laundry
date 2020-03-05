@@ -62,6 +62,7 @@ namespace Laundry
             dgSearch.Columns.Clear();
             var user = context.ReportService.Where(c => c.CodeRahgiri == label1.Text).ToList();
             dgSearch.DataSource = user;
+
             DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
             dgSearch.Columns.Add(chk);
             //dgSearch.Columns[0].DefaultCellStyle = chk;
