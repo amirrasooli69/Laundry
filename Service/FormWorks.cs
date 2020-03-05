@@ -17,6 +17,41 @@ namespace Laundry
             InitializeComponent();
         }
         int run;
+        public void Change_Ready_State(DataGridViewCellEventArgs e)
+        {
+            try
+            {
+
+                if (e.ColumnIndex == 12)
+                {
+                    int selectId = int.Parse(dgSearch.CurrentRow.Cells[10].Value.ToString());
+                    using (var context = new kitchenEntities())
+                    {
+                        var select = context.ReportService.Where(c => c.Id == selectId).FirstOrDefault();
+                        if (select.Ready == "1")
+                        {
+                            select.Ready = "0";
+                            context.SaveChanges();
+                            dgSearch.CurrentCell.Value = true;
+                            return;
+                        }
+                        if (select.Ready == "0")
+                        {
+                            select.Ready = "1";
+                            context.SaveChanges();
+                            dgSearch.CurrentCell.Value = false;
+                            return;
+                        }
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("عوض کردن وضعیت آماده ویرایش" + "\n" + ex.Message);
+            }
+        }
         public void Works_Refresh()
         {
             if (dgSearch.DataSource != null)
@@ -69,40 +104,6 @@ namespace Laundry
                 }
             }
         }
-
-        private void FormWorks_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                tooltxtSearch.Text = "";
-                kitchenEntities context = new kitchenEntities();
-                var works = context.ReportService.Where(c => c.Ready == "0").ToList();
-                dgSearch.DataSource = works;
-            }
-            catch (Exception)
-            { }
-            Works_Refresh();
-            run = 1;
-        }
-
-        private void toolbtnRefresh_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                tooltxtSearch.Text = "";
-                kitchenEntities context = new kitchenEntities();
-                var works = context.ReportService.Where(c => c.Ready == "0").ToList(); // 0 yani anjam shode
-                dgSearch.DataSource = works;
-            }
-            catch (Exception)
-            { }
-            Works_Refresh();
-        }
-
-        private void tooltxtSearch_Enter(object sender, EventArgs e)
-        {
-            tooltxtSearch.Text = "";
-        }
         public void select(string coderahgiri)
         {
             try
@@ -113,72 +114,126 @@ namespace Laundry
                 Works_Refresh();
                 for (int i = 0; i < search.Count; i++)
                 {
-                    if (search[i].Ready == "0")
+                    switch (search[i].Ready)
                     {
-                        dgSearch.Rows[i].Cells[12].Value = true;
+                        case "0":
+                            {
+                                dgSearch.Rows[i].Cells[12].Value = true;
+                                break;
+                            }
+                        case "1":
+                            {
+                                dgSearch.Rows[i].Cells[12].Value = false;
+                                break;
+                            }
+                        case null:
+                            {
+                                dgSearch.Rows[i].Cells[12].Value = true;
+                                break;
+                            }
                     }
-                    if (search[i].Ready == "1")
-                    {
-                        dgSearch.Rows[i].Cells[12].Value = false;
-                    }
-                    if(search[i].Ready==null)
-                    {
-                        dgSearch.Rows[i].Cells[12].Value = true;
-                    }
-
-                    //if (dgSearch.Rows[i].Cells[0].Value == null)
-                    //    dgSearch.Rows[i].Cells[0].Value = true;
-                    //else if (dgSearch.Rows[i].Cells[0].Value.ToString() == "1000")
-                    //    dgSearch.Rows[i].Cells[0].Value = false;
-                    //else if (dgSearch.Rows[i].Cells[0].Value.ToString() == "0000")
-                    //    dgSearch.Rows[i].Cells[0].Value = true;
-
-
-
                 }
             }
             catch (Exception)
             { }
         }
+        public void Incomplete() // entekhabe anjam nashodeha
+        {
+            try
+            {
+                kitchenEntities context = new kitchenEntities();
+                var works = context.ReportService.Where(c => c.Ready == "1").ToList();
+                dgSearch.DataSource = works;
+            }
+            catch (Exception)
+            { }
+        }
+        private void FormWorks_Load(object sender, EventArgs e)
+        {
+            Incomplete();
+            Works_Refresh();
+            run = 1;
+        }
+
+        private void toolbtnRefresh_Click(object sender, EventArgs e)
+        {
+
+            Incomplete();
+        }
+
+
 
         private void tooltxtSearch_TextChanged(object sender, EventArgs e)
         {
             select(tooltxtSearch.Text);
+            run = 1;
 
         }
 
         private void toolbtnIncomplete_Click(object sender, EventArgs e)
         {
-            try
-            {
-                tooltxtSearch.Text = "";
-                kitchenEntities context = new kitchenEntities();
-                var works = context.ReportService.Where(c => c.Ready == "1").ToList(); // 1 yani anjam nashode
-                dgSearch.DataSource = works;
-            }
-            catch (Exception)
-            { }
-            Works_Refresh();
+            Incomplete();
+            //Works_Refresh();
         }
 
         private void toolbtnComplete_Click(object sender, EventArgs e)
         {
             try
             {
-                tooltxtSearch.Text = "";
+                //tooltxtSearch.Text = "";
                 kitchenEntities context = new kitchenEntities();
                 var works = context.ReportService.Where(c => c.Ready == "0").ToList();
                 dgSearch.DataSource = works;
+                
+                for (int i=0;i<works.Count;i++)
+                {
+                    switch (works[i].Ready)
+                    {
+                        case null:
+                            {
+                                dgSearch.Rows[i].Cells[12].Value = true;
+                                break;
+                            }
+                        case "0":
+                            {
+                                dgSearch.Rows[i].Cells[12].Value = true;
+                                break;
+                            }
+                        case "1":
+                            {
+                                dgSearch.Rows[i].Cells[12].Value = false;
+                                break;
+                            }
+                    }
+                }
+                tooltxtSearch.Focus();
+                
             }
             catch (Exception)
             { }
-            Works_Refresh();
+            //Works_Refresh();
         }
 
         private void toolbtnSearch_Click(object sender, EventArgs e)
         {
             select(tooltxtSearch.Text);
 
+        }
+
+        private void dgSearch_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Change_Ready_State(e);
+        }
+
+        private void tooltxtSearch_Click(object sender, EventArgs e)
+        {
+            tooltxtSearch.Text = "";
+        }
+
+        private void testToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+                dgSearch.Rows[0].Cells[12].Value = false;
         }
     }
 

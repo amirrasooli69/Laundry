@@ -35,7 +35,6 @@
             this.toolbtnIncomplete = new System.Windows.Forms.ToolStripMenuItem();
             this.tooltxtSearch = new System.Windows.Forms.ToolStripTextBox();
             this.dgSearch = new System.Windows.Forms.DataGridView();
-            this.toolbtnSearch = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgSearch)).BeginInit();
             this.SuspendLayout();
@@ -46,8 +45,7 @@
             this.toolbtnRefresh,
             this.toolbtnComplete,
             this.toolbtnIncomplete,
-            this.tooltxtSearch,
-            this.toolbtnSearch});
+            this.tooltxtSearch});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -80,7 +78,8 @@
             // 
             this.tooltxtSearch.Name = "tooltxtSearch";
             this.tooltxtSearch.Size = new System.Drawing.Size(100, 23);
-            this.tooltxtSearch.Enter += new System.EventHandler(this.tooltxtSearch_Enter);
+            this.tooltxtSearch.Text = "جستجو";
+            this.tooltxtSearch.Click += new System.EventHandler(this.tooltxtSearch_Click);
             this.tooltxtSearch.TextChanged += new System.EventHandler(this.tooltxtSearch_TextChanged);
             // 
             // dgSearch
@@ -90,15 +89,10 @@
             this.dgSearch.Location = new System.Drawing.Point(0, 27);
             this.dgSearch.Name = "dgSearch";
             this.dgSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dgSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgSearch.Size = new System.Drawing.Size(1212, 542);
             this.dgSearch.TabIndex = 1;
-            // 
-            // toolbtnSearch
-            // 
-            this.toolbtnSearch.Name = "toolbtnSearch";
-            this.toolbtnSearch.Size = new System.Drawing.Size(53, 23);
-            this.toolbtnSearch.Text = "جستجو";
-            this.toolbtnSearch.Click += new System.EventHandler(this.toolbtnSearch_Click);
+            this.dgSearch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgSearch_CellClick);
             // 
             // FormWorks
             // 
@@ -112,6 +106,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormWorks";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "کارها";
             this.Load += new System.EventHandler(this.FormWorks_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -130,6 +125,5 @@
         private System.Windows.Forms.ToolStripMenuItem toolbtnIncomplete;
         private System.Windows.Forms.ToolStripTextBox tooltxtSearch;
         private System.Windows.Forms.DataGridView dgSearch;
-        private System.Windows.Forms.ToolStripMenuItem toolbtnSearch;
     }
 }
