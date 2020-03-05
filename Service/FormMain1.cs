@@ -1523,5 +1523,11 @@ namespace Laundry
         {
             frmNoti.Visible = false;
         }
+
+        private void toolWorks_Click(object sender, EventArgs e)
+        {
+            FormWorks frmWorks = new FormWorks();
+            frmWorks.Show();
+        }
     }
 }

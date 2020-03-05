@@ -2347,3 +2347,4 @@ C:\Users\Amir\Desktop\Develop\C#\Laundry\Service\obj\Debug\Laundry.log.resources
 C:\Users\Amir\Desktop\Develop\C#\Laundry\Service\obj\Debug\Laundry.OnlinForm.resources
 C:\Users\Amir\Desktop\Develop\C#\Laundry\Service\obj\Debug\Laundry.Properties.Resources.resources
 C:\Users\Amir\Desktop\Develop\C#\Laundry\Service\obj\Debug\Laundry.csproj.GenerateResource.Cache
+C:\Users\Amir\Desktop\Develop\C#\Laundry\Service\obj\Debug\Laundry.FormWorks.resources

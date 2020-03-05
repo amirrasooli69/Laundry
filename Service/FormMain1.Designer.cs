@@ -418,6 +418,7 @@
             this.toolWorks.Name = "toolWorks";
             this.toolWorks.Size = new System.Drawing.Size(171, 24);
             this.toolWorks.Text = "لیست کارها";
+            this.toolWorks.Click += new System.EventHandler(this.toolWorks_Click);
             // 
             // FormMain1
             // 

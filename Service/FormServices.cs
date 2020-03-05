@@ -1338,7 +1338,7 @@ namespace Laundry
                     var select = context.ReportService.Where(c => c.CodeRahgiri == codeRahgiri).ToList();
                     for (int i = 0; i < select.Count; i++)
                     {
-                        select[i].Ready = "0";
+                        select[i].Ready = "0"; // 0 = anjam shode
 
                     }
                     context.SaveChanges();
