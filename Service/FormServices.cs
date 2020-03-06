@@ -1310,6 +1310,10 @@ namespace Laundry
             lblError.Text = "";
             int vaziyat = 1;
             string codeRahgiri = "";
+            if (txtEndRahgiri.Text != "")
+                codeRahgiri = txtEndRahgiri.Text;
+            else
+                codeRahgiri = txtCodeRahgiri.Text;
             try
             {
                 if (string.IsNullOrEmpty(txtEndRahgiri.Text) && string.IsNullOrEmpty(txtCodeRahgiri.Text))
@@ -1435,12 +1439,12 @@ namespace Laundry
                     try
                     {
                         kitchenEntities context = new kitchenEntities();
-                        var sendSms = context.Service.Where(c => c.CodeRahgiri == txtCodeRahgiri.Text).FirstOrDefault();
+                        var sendSms = context.Service.Where(c => c.CodeRahgiri == codeRahgiri).FirstOrDefault();
                         if (sendSms.ReadyDate == null || sendSms.ReadyDate == 0)
                             sendSms.ReadyDate = int.Parse(dtNewService.Text.Replace("/", ""));
                         var sms = context.WhiteSms.Where(c => c.R1 != null && c.R1 != "").FirstOrDefault();
                         var setName = context.Setting.Where(c => c.CommercialName != "" || c.CommercialName != null).FirstOrDefault();
-                        var serv = context.Service.Where(c => c.CodeRahgiri == txtCodeRahgiri.Text).FirstOrDefault();
+                        var serv = context.Service.Where(c => c.CodeRahgiri == codeRahgiri).FirstOrDefault();
 
                         //-----
                         string message = Sms.text_Ready_Sms(sms.R1, dtNewService.Text, serv.Eshterak, serv.CodeRahgiri, serv.Name);
@@ -1468,7 +1472,7 @@ namespace Laundry
                 {
                     using (var context = new kitchenEntities())
                     {
-                        var sendSms = context.Service.Where(c => c.CodeRahgiri == txtCodeRahgiri.Text).FirstOrDefault();
+                        var sendSms = context.Service.Where(c => c.CodeRahgiri == codeRahgiri).FirstOrDefault();
                         if (sendSms.ReadyDate == null || sendSms.ReadyDate == null)
                             sendSms.ReadyDate = int.Parse(dtNewService.Text.Replace("/", ""));
                         context.SaveChanges();
