@@ -49,28 +49,31 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menuStrip1.Size = new System.Drawing.Size(1212, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(948, 27);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // toolbtnRefresh
             // 
+            this.toolbtnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("toolbtnRefresh.Image")));
             this.toolbtnRefresh.Name = "toolbtnRefresh";
-            this.toolbtnRefresh.Size = new System.Drawing.Size(72, 23);
+            this.toolbtnRefresh.Size = new System.Drawing.Size(88, 23);
             this.toolbtnRefresh.Text = "بروز رسانی";
             this.toolbtnRefresh.Click += new System.EventHandler(this.toolbtnRefresh_Click);
             // 
             // toolbtnComplete
             // 
+            this.toolbtnComplete.Image = ((System.Drawing.Image)(resources.GetObject("toolbtnComplete.Image")));
             this.toolbtnComplete.Name = "toolbtnComplete";
-            this.toolbtnComplete.Size = new System.Drawing.Size(104, 23);
+            this.toolbtnComplete.Size = new System.Drawing.Size(120, 23);
             this.toolbtnComplete.Text = "کارهای انجام شده";
             this.toolbtnComplete.Click += new System.EventHandler(this.toolbtnComplete_Click);
             // 
             // toolbtnIncomplete
             // 
+            this.toolbtnIncomplete.Image = ((System.Drawing.Image)(resources.GetObject("toolbtnIncomplete.Image")));
             this.toolbtnIncomplete.Name = "toolbtnIncomplete";
-            this.toolbtnIncomplete.Size = new System.Drawing.Size(108, 23);
+            this.toolbtnIncomplete.Size = new System.Drawing.Size(124, 23);
             this.toolbtnIncomplete.Text = "کارهای انجام نشده";
             this.toolbtnIncomplete.Click += new System.EventHandler(this.toolbtnIncomplete_Click);
             // 
@@ -90,7 +93,7 @@
             this.dgSearch.Name = "dgSearch";
             this.dgSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgSearch.Size = new System.Drawing.Size(1212, 542);
+            this.dgSearch.Size = new System.Drawing.Size(948, 563);
             this.dgSearch.TabIndex = 1;
             this.dgSearch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgSearch_CellClick);
             // 
@@ -98,13 +101,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1212, 569);
+            this.ClientSize = new System.Drawing.Size(948, 590);
             this.Controls.Add(this.dgSearch);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximumSize = new System.Drawing.Size(964, 629);
+            this.MinimumSize = new System.Drawing.Size(964, 629);
             this.Name = "FormWorks";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "کارها";
