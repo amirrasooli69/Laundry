@@ -607,9 +607,19 @@ namespace Laundry
                         string message2 = Sms.text_Service_Sms(sms.S1, dtNewService.Text, lblCodeRahgiri.Text, message, txtName.Text, dgShow.RowCount);
 
                         //*********
+                        string signature = sign.Signature;
+                        string numberSms = sign.NumberSms;
+                        if (x.Signature != "" && x.Signature != "" && int.Parse(sms.W2) < 100)
+                        {
+                            int countSmsTest = int.Parse(sms.W2);
+                            countSmsTest++;
+                            sms.W2 = countSmsTest.ToString();
+                            signature = "8B0AA695-E750-4CB3-AF3E-98F9D03F06AC";
+                            numberSms = "10001000300076";
+                        }
                         var check = context.WhiteSms.FirstOrDefault();
                         double warning = double.Parse(check.R10);
-                        Sms.Send_Sms(message2, txtPhone.Text, sign.Signature, sign.NumberSms, warning); //farakhani metod send sms az kelase sms
+                        Sms.Send_Sms(message2, txtPhone.Text, signature, numberSms, warning); //farakhani metod send sms az kelase sms
                     }
 
                 }
@@ -1228,7 +1238,7 @@ namespace Laundry
                 }
                 if (vaziyzt == 0)
                     return;
-
+                
                 var sms = context.WhiteSms.Where(c => c.W1 != null || c.W1 != "").FirstOrDefault();
                 //|| c.CommercialName != null
                 var setName = context.Setting.Where(c => c.CommercialName != "").FirstOrDefault();
@@ -1263,12 +1273,22 @@ namespace Laundry
                         {
                             Ping ping = new Ping();
                             PingReply pingStatus = ping.Send("google.com");
-
                             if (pingStatus.Status == IPStatus.Success)
                             {
+                                string signature = sign.Signature;
+                                string numberSms = sign.NumberSms;
+                                if (x.Signature != "" && x.Signature != "" && int.Parse(sms.W2) < 100)
+                                {
+                                    int countSmsTest = int.Parse(sms.W2);
+                                    countSmsTest++;
+                                    sms.W2 = countSmsTest.ToString();
+                                    signature = "8B0AA695-E750-4CB3-AF3E-98F9D03F06AC";
+                                    numberSms = "10001000300076";
+                                }
                                 var check = context.WhiteSms.FirstOrDefault();
-                                double warning = double.Parse(check.R10);
-                                Sms.Send_Sms(message, txtPhone.Text, sign.Signature, sign.NumberSms, warning);
+                                    double warning = double.Parse(check.R10);
+                                    Sms.Send_Sms(message, txtPhone.Text,signature, numberSms, warning);
+                                
                             }
                         }
 
@@ -1404,8 +1424,19 @@ namespace Laundry
                         //------
                         var check = context.WhiteSms.FirstOrDefault();
                         double warning = double.Parse(check.R10);
-
-                        string result = Sms.Send_Sms(message, phone, sign.Signature, sign.NumberSms, warning);
+                        //-----
+                        string signature = sign.Signature;
+                        string numberSms = sign.NumberSms;
+                        if (sign.Signature != "" && sign.Signature != "" && int.Parse(sms.W2) < 100)
+                        {
+                            int countSmsTest = int.Parse(sms.W2);
+                            countSmsTest++;
+                            sms.W2 = countSmsTest.ToString();
+                            signature = "8B0AA695-E750-4CB3-AF3E-98F9D03F06AC";
+                            numberSms = "10001000300076";
+                        }
+                        //------
+                        string result = Sms.Send_Sms(message, phone, signature, numberSms, warning);
                         if (result == "0")
                         {
                             var sendSms = context.Service.Where(c => c.CodeRahgiri == codeRahgiri).FirstOrDefault();
@@ -1639,7 +1670,18 @@ namespace Laundry
                         lblError.ForeColor = Color.Black;
                         return;
                     }
-                    string result = Sms.Send_Sms(message, serv.Mobile, sign.Signature, sign.NumberSms, warning);
+                    //-------
+                    string signature = sign.Signature;
+                    string numberSms = sign.NumberSms;
+                    if (sign.Signature != "" && sign.Signature != "" && int.Parse(sms.W2) < 100)
+                    {
+                        int countSmsTest = int.Parse(sms.W2);
+                        countSmsTest++;
+                        sms.W2 = countSmsTest.ToString();
+                        signature = "8B0AA695-E750-4CB3-AF3E-98F9D03F06AC";
+                        numberSms = "10001000300076";
+                    }
+                    string result = Sms.Send_Sms(message, serv.Mobile , signature, numberSms , warning);
 
                     //--------
                     //System.Web.HttpUtility.HtmlDecode(text);
