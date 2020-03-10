@@ -610,13 +610,13 @@ namespace Laundry
                         string numberSms = sign.NumberSms;
                         if (sign.Signature != "" && sign.Signature != "" && int.Parse(sms.W2) < 100) // baraye esrasale sms test
                         {
-                            signature = "8B0AA695-E750-4CB3-AF3E-98F9D03F06AC";
+                            signature = "407CA55D-B3C4-4502-ABC5-DB95F7FB2AB0";
                             numberSms = "10001000300076";
                         }
                         var check = context.WhiteSms.FirstOrDefault();
                         double warning = double.Parse(check.R10);
                         string result=Sms.Send_Sms(message2, txtPhone.Text, signature, numberSms, warning); //farakhani metod send sms az kelase sms
-                        if(signature== "8B0AA695-E750-4CB3-AF3E-98F9D03F06AC" && result=="0" ) // kam kardane payamake ferestade shode
+                        if(signature== "407CA55D-B3C4-4502-ABC5-DB95F7FB2AB0" && result=="0" ) // kam kardane payamake ferestade shode
                         {
                             int countSmsTest = int.Parse(sms.W2);
                             countSmsTest++;
@@ -1230,8 +1230,8 @@ namespace Laundry
             try
             {
                 int vaziyzt = 1;
-                var x = context.Setting.FirstOrDefault();
-                if (x.WelcomeSms == "true")
+                var sign = context.Setting.FirstOrDefault();
+                if (sign.WelcomeSms == "true")
                 {
                     vaziyzt = 1;
                 }
@@ -1251,9 +1251,17 @@ namespace Laundry
                     return;
                 }
                 message = Sms.text_Welcom_Sms(sms.W1, dtNewService.Text, txtEshterak.Text, txtName.Text);
-
-                var sign = context.Setting.FirstOrDefault();
-                if (sign.Signature == null || sign.Signature == "" || sign.NumberSms == null || sign.NumberSms == "")
+                string signature = sign.Signature;
+                string numberSms = sign.NumberSms;
+                Int32 countSmsTest=0;
+                if(sms.W2 != null || sms.W2 !="")
+                countSmsTest = int.Parse(sms.W2);
+                if ((signature == "" || signature == null) && (numberSms == "" || numberSms==null) && countSmsTest < 100) // baraye esrasale sms test
+                {
+                    signature = "407CA55D-B3C4-4502-ABC5-DB95F7FB2AB0";
+                    numberSms = "10001000300076";
+                }
+                if (signature == null || signature == "" || numberSms == null || numberSms == "")
                 {
                     //lblError.ForeColor = Color.Red;
                     lblError.Text = "از قسمت تنظیمات امضا دیجیتال و شماره پیامک را ثبت کنید";
@@ -1278,19 +1286,12 @@ namespace Laundry
                             PingReply pingStatus = ping.Send("google.com");
                             if (pingStatus.Status == IPStatus.Success)
                             {
-                                string signature = sign.Signature;
-                                string numberSms = sign.NumberSms;
-                                if (x.Signature != "" && x.Signature != "" && int.Parse(sms.W2) < 100) // baraye esrasale sms test
-                                {
-                                    signature = "8B0AA695-E750-4CB3-AF3E-98F9D03F06AC";
-                                    numberSms = "10001000300076";
-                                }
                                 var check = context.WhiteSms.FirstOrDefault();
                                 double warning = double.Parse(check.R10);
                                 string result =Sms.Send_Sms(message, txtPhone.Text, signature, numberSms, warning);
-                                if (signature == "8B0AA695-E750-4CB3-AF3E-98F9D03F06AC" &&result=="0")
+                                if (signature == "407CA55D-B3C4-4502-ABC5-DB95F7FB2AB0" &&result=="0")
                                 {
-                                    int countSmsTest = int.Parse(sms.W2);
+                                    //int countSmsTest = int.Parse(sms.W2);
                                     countSmsTest++;
                                     sms.W2 = countSmsTest.ToString();
                                 }
@@ -1436,11 +1437,11 @@ namespace Laundry
                         string numberSms = sign.NumberSms;
                         if (sign.Signature != "" && sign.Signature != "" && int.Parse(sms.W2) < 100) // baraye esrasale sms test
                         {
-                            signature = "8B0AA695-E750-4CB3-AF3E-98F9D03F06AC";
+                            signature = "407CA55D-B3C4-4502-ABC5-DB95F7FB2AB0";
                             numberSms = "10001000300076";
                         }
                         string result = Sms.Send_Sms(message, phone, signature, numberSms, warning);
-                        if (signature == "8B0AA695-E750-4CB3-AF3E-98F9D03F06AC" && result=="0")
+                        if (signature == "407CA55D-B3C4-4502-ABC5-DB95F7FB2AB0" && result=="0")
                         {
                             int countSmsTest = int.Parse(sms.W2);
                             countSmsTest++;
@@ -1685,11 +1686,11 @@ namespace Laundry
                     string numberSms = sign.NumberSms;
                     if (sign.Signature != "" && sign.Signature != "" && int.Parse(sms.W2) < 100) // baraye esrasale sms test
                     {
-                        signature = "8B0AA695-E750-4CB3-AF3E-98F9D03F06AC";
+                        signature = "407CA55D-B3C4-4502-ABC5-DB95F7FB2AB0";
                         numberSms = "10001000300076";
                     }
                     string result = Sms.Send_Sms(message, serv.Mobile, signature, numberSms, warning);
-                    if (signature == "8B0AA695-E750-4CB3-AF3E-98F9D03F06AC" && result == "0")
+                    if (signature == "407CA55D-B3C4-4502-ABC5-DB95F7FB2AB0" && result == "0")
                     {
                         int countSmsTest = int.Parse(sms.W2);
                         countSmsTest++;
