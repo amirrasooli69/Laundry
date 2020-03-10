@@ -2348,3 +2348,5 @@ C:\Users\Amir\Desktop\Develop\C#\Laundry\Service\obj\Debug\Laundry.OnlinForm.res
 C:\Users\Amir\Desktop\Develop\C#\Laundry\Service\obj\Debug\Laundry.Properties.Resources.resources
 C:\Users\Amir\Desktop\Develop\C#\Laundry\Service\obj\Debug\Laundry.csproj.GenerateResource.Cache
 C:\Users\Amir\Desktop\Develop\C#\Laundry\Service\obj\Debug\Laundry.FormWorks.resources
+C:\Users\Amir\Desktop\Develop\C#\Laundry\Service\obj\Debug\PapilooDate.FDate.resources
+C:\Users\Amir\Desktop\Develop\C#\Laundry\Service\obj\Debug\ERA.PCalander.resources

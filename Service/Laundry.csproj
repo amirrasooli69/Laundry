@@ -124,12 +124,6 @@
     <Compile Include="FDate.designer.cs">
       <DependentUpon>FDate.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAnbar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormAnbar.Designer.cs">
-      <DependentUpon>FormAnbar.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormBirthDay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -315,6 +309,7 @@
     <Compile Include="Popup.designer.cs">
       <DependentUpon>Popup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Practical.cs" />
     <Compile Include="Prodoct.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -344,9 +339,6 @@
     </Compile>
     <EmbeddedResource Include="FDate.resx">
       <DependentUpon>FDate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormAnbar.resx">
-      <DependentUpon>FormAnbar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBirthDay.resx">
       <DependentUpon>FormBirthDay.cs</DependentUpon>
