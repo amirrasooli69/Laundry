@@ -583,7 +583,15 @@ namespace Laundry
                             txtPhone.Focus();
                             return;
                         }
-                        if (sign.Signature == null || sign.Signature == "" || sign.NumberSms == null || sign.NumberSms == "")
+                        var sms = context.WhiteSms.Where(c => c.S1 != null && c.S1 != "").FirstOrDefault();
+                        string signature = sign.Signature;
+                        string numberSms = sign.NumberSms;
+                        if (signature != "" && signature != "null" && numberSms != "" && numberSms != "null" && int.Parse(sms.W2) < 100) // baraye esrasale sms test
+                        {
+                            signature = "407CA55D-B3C4-4502-ABC5-DB95F7FB2AB0";
+                            numberSms = "10001000300076";
+                        }
+                        if (signature == "null" || signature == "" || numberSms == "null" || numberSms == "")
                         {
                             //lblError.ForeColor = Color.Red;
                             lblError.Text = "از قسمت تنظیمات امضا دیجیتال و شماره پیامک را ثبت کنید";
@@ -596,7 +604,6 @@ namespace Laundry
                         {
                             message += dgShow.Rows[i].Cells[1].Value.ToString() + dgShow.Rows[i].Cells[3].Value.ToString() + "،";
                         }
-                        var sms = context.WhiteSms.Where(c => c.S1 != null && c.S1 != "").FirstOrDefault();
                         var setName = context.Setting.Where(c => c.CommercialName != "" || c.CommercialName != null).FirstOrDefault();
                         if (setName == null)
                         {
@@ -606,16 +613,11 @@ namespace Laundry
                         string message2 = Sms.text_Service_Sms(sms.S1, dtNewService.Text, lblCodeRahgiri.Text, message, txtName.Text, dgShow.RowCount);
 
                         //*********
-                        string signature = sign.Signature;
-                        string numberSms = sign.NumberSms;
-                        if (sign.Signature != "" && sign.Signature != "" && int.Parse(sms.W2) < 100) // baraye esrasale sms test
-                        {
-                            signature = "407CA55D-B3C4-4502-ABC5-DB95F7FB2AB0";
-                            numberSms = "10001000300076";
-                        }
                         var check = context.WhiteSms.FirstOrDefault();
                         double warning = double.Parse(check.R10);
-                        string result=Sms.Send_Sms(message2, txtPhone.Text, signature, numberSms, warning); //farakhani metod send sms az kelase sms
+                        string result = "";
+                        if (signature != "null" && signature != "" && numberSms != "null" && numberSms != "")
+                            result=Sms.Send_Sms(message2, txtPhone.Text, signature, numberSms, warning); //farakhani metod send sms az kelase sms
                         if(signature== "407CA55D-B3C4-4502-ABC5-DB95F7FB2AB0" && result=="0" ) // kam kardane payamake ferestade shode
                         {
                             int countSmsTest = int.Parse(sms.W2);
@@ -1251,12 +1253,10 @@ namespace Laundry
                     return;
                 }
                 message = Sms.text_Welcom_Sms(sms.W1, dtNewService.Text, txtEshterak.Text, txtName.Text);
+                //-----
                 string signature = sign.Signature;
                 string numberSms = sign.NumberSms;
-                Int32 countSmsTest=0;
-                if(sms.W2 != null || sms.W2 !="")
-                countSmsTest = int.Parse(sms.W2);
-                if ((signature == "" || signature == null) && (numberSms == "" || numberSms==null) && countSmsTest < 100) // baraye esrasale sms test
+                if (signature != "" && signature != "null" && numberSms != "" && numberSms != "null" && int.Parse(sms.W2) < 100) // baraye esrasale sms test
                 {
                     signature = "407CA55D-B3C4-4502-ABC5-DB95F7FB2AB0";
                     numberSms = "10001000300076";
@@ -1268,6 +1268,7 @@ namespace Laundry
                     lblError.ForeColor = Color.Black;
                     return;
                 }
+                //-------
                 if (txtPhone.TextLength > 11 || txtPhone.TextLength < 11 || txtPhone.Text.StartsWith("09") == false)
                 {
                     //lblError.ForeColor = Color.Red;
@@ -1288,10 +1289,12 @@ namespace Laundry
                             {
                                 var check = context.WhiteSms.FirstOrDefault();
                                 double warning = double.Parse(check.R10);
-                                string result =Sms.Send_Sms(message, txtPhone.Text, signature, numberSms, warning);
+                                string result = "";
+                                if (signature != "null" && signature != "" && numberSms != "null" && numberSms != "")
+                                     result =Sms.Send_Sms(message, txtPhone.Text, signature, numberSms, warning);
                                 if (signature == "407CA55D-B3C4-4502-ABC5-DB95F7FB2AB0" &&result=="0")
                                 {
-                                    //int countSmsTest = int.Parse(sms.W2);
+                                    int countSmsTest = int.Parse(sms.W2);
                                     countSmsTest++;
                                     sms.W2 = countSmsTest.ToString();
                                 }
@@ -1386,6 +1389,7 @@ namespace Laundry
 
             if (vaziyat == 1)
             {
+                string result = "";
                 try
                 {
                     if (txtPhone.TextLength > 11 || txtPhone.TextLength < 11 || txtPhone.Text.StartsWith("09") == false)
@@ -1413,15 +1417,24 @@ namespace Laundry
                         string name = selectphone.Name;
 
                         var sign = context.Setting.FirstOrDefault();
-                        if (sign.Signature == null || sign.Signature == "" || sign.NumberSms == null || sign.NumberSms == "")
+                        var sms = context.WhiteSms.Where(c => c.R1 != null && c.R1 != "").FirstOrDefault();
+
+                        //------
+                        string signature = sign.Signature;
+                        string numberSms = sign.NumberSms;
+                        if (signature != "" && signature != "null" && numberSms != "" && numberSms != "null" && int.Parse(sms.W2) < 100) // baraye esrasale sms test
+                        {
+                            signature = "407CA55D-B3C4-4502-ABC5-DB95F7FB2AB0";
+                            numberSms = "10001000300076";
+                        }
+                        if (signature == "null" || signature == "" || numberSms == "null" || numberSms == "")
                         {
                             //lblError.ForeColor = Color.Red;
                             lblError.Text = "از قسمت تنظیمات امضا دیجیتال و شماره پیامک را ثبت کنید";
                             //lblError.ForeColor = Color.Black;
                             return;
                         }
-
-                        var sms = context.WhiteSms.Where(c => c.R1 != null && c.R1 != "").FirstOrDefault();
+                        //-----
                         var setName = context.Setting.Where(c => c.CommercialName != "" || c.CommercialName != null).FirstOrDefault();
                         if (setName == null)
                         {
@@ -1433,14 +1446,9 @@ namespace Laundry
                         var check = context.WhiteSms.FirstOrDefault();
                         double warning = double.Parse(check.R10);
                         //-----
-                        string signature = sign.Signature;
-                        string numberSms = sign.NumberSms;
-                        if (sign.Signature != "" && sign.Signature != "" && int.Parse(sms.W2) < 100) // baraye esrasale sms test
-                        {
-                            signature = "407CA55D-B3C4-4502-ABC5-DB95F7FB2AB0";
-                            numberSms = "10001000300076";
-                        }
-                        string result = Sms.Send_Sms(message, phone, signature, numberSms, warning);
+                       
+                        if(signature !="null" && signature !="" && numberSms !="null" && numberSms != "")
+                            result = Sms.Send_Sms(message, phone, signature, numberSms, warning);
                         if (signature == "407CA55D-B3C4-4502-ABC5-DB95F7FB2AB0" && result=="0")
                         {
                             int countSmsTest = int.Parse(sms.W2);
@@ -1458,7 +1466,7 @@ namespace Laundry
                         }
                         else
                         {
-                            var sendSms = context.Service.Where(c => c.CodeRahgiri == txtCodeRahgiri.Text).FirstOrDefault();
+                            var sendSms = context.Service.Where(c => c.CodeRahgiri == codeRahgiri).FirstOrDefault();
                             if (sendSms.ReadyDate == null || sendSms.ReadyDate == 0)
                                 sendSms.ReadyDate = int.Parse(dtNewService.Text.Replace("/", ""));
                             //-----
@@ -1470,8 +1478,10 @@ namespace Laundry
                             En.Time = DateTime.Now.ToLongTimeString();
                             En.CodeRahgiri = txtCodeRahgiri.Text;
                             context.ErsalNashode.Add(En);
-                            MessageBox.Show("اینترنت وصل نیست،در موارد ارسال نشده ذخیره شد", " وصل نیست اینترنت", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                            if (result != "-64")
+                            {
+                                MessageBox.Show("اینترنت وصل نیست،در موارد ارسال نشده ذخیره شد", " وصل نیست اینترنت", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
                         }
                         context.SaveChanges();
                     }
@@ -1674,22 +1684,25 @@ namespace Laundry
                     }
                     var selectphone = context.User.Where(c => c.Eshterak == x.Eshterak).FirstOrDefault();
                     txtPhone.Text = selectphone.Phone;
-                    if (sign.Signature == null || sign.Signature == "" || sign.NumberSms == null || sign.NumberSms == "")
+                    //-----
+                    string signature = sign.Signature;
+                    string numberSms = sign.NumberSms;
+                    if (signature != "" && signature != "null" && numberSms != "" && numberSms != "null" && int.Parse(sms.W2) < 100) // baraye esrasale sms test
+                    {
+                        signature = "407CA55D-B3C4-4502-ABC5-DB95F7FB2AB0";
+                        numberSms = "10001000300076";
+                    }
+                    if (signature == "" || signature == "null" || numberSms == "" || numberSms == "null" ) // baraye esrasale sms test
                     {
                         //lblError.ForeColor = Color.Red;
                         lblError.Text = "از قسمت تنظیمات امضا دیجیتال و شماره پیامک را ثبت کنید";
                         lblError.ForeColor = Color.Black;
                         return;
                     }
-                    //-------            
-                    string signature = sign.Signature;
-                    string numberSms = sign.NumberSms;
-                    if (sign.Signature != "" && sign.Signature != "" && int.Parse(sms.W2) < 100) // baraye esrasale sms test
-                    {
-                        signature = "407CA55D-B3C4-4502-ABC5-DB95F7FB2AB0";
-                        numberSms = "10001000300076";
-                    }
-                    string result = Sms.Send_Sms(message, serv.Mobile, signature, numberSms, warning);
+                    //-------
+                    string result = "";            
+                    if (signature != "null" && signature != "" && numberSms != "null" && numberSms != "")
+                         result = Sms.Send_Sms(message, serv.Mobile, signature, numberSms, warning);
                     if (signature == "407CA55D-B3C4-4502-ABC5-DB95F7FB2AB0" && result == "0")
                     {
                         int countSmsTest = int.Parse(sms.W2);
