@@ -354,18 +354,6 @@ namespace Laundry
 
         }
 
-        public string Get_Serial_Hard() // gereftan serial hard
-        {
-            ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT * FROM Win32_DiskDrive");
-            string hard = "1";
-            foreach (ManagementObject info in searcher.Get())
-            {
-
-                hard = (info["SerialNumber"].ToString()).Trim();
-            }
-            return hard;
-        }
-
         public void First_Enter() //vorod baraye avalin bar
         {
             try
@@ -388,7 +376,7 @@ namespace Laundry
                     string date = DateTime.Now.ToShortDateString().Replace("/", "");
                     //string hard = Get_Serial_Hard();
                     Reg reg = new Reg();
-                    reg.State = IDGenerator.GetCPUId();
+                    reg.State = HDDSerialL.SerialNumber();
                     reg.Date = int.Parse(date);
                     //string version = "1";
                     //string s = hard + version + date;
@@ -462,7 +450,7 @@ namespace Laundry
                 using (var context = new kitchenEntities())
                 {
                     string date = DateTime.Now.ToShortDateString().Replace("/", "");
-                    string hard = Get_Serial_Hard();
+                    //string hard = Get_Serial_Hard();
 
                     MessageBox.Show("نرم افزار کپی شده است.هر کد فعال سازی مخصوص یک دستگاه است", "نرم افزار", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     DialogResult result = MessageBox.Show("آیا همه اطلاعات پاک شود و نسخه آزمایشی استفاده شود؟", "نرم افزار", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -797,7 +785,7 @@ namespace Laundry
             //StreamReader reader;
             //WebRequest request;
             //WebResponse response;
-            //strReq = "http://www.papiloo.ir/Papiloo/Register/Update_Pay.php?Serial=" + IDGenerator.GetCPUId();
+            //strReq = "http://www.papiloo.ir/Papiloo/Register/Update_Pay.php?Serial=" + HDDSerialL.SerialNumber();
             //request = WebRequest.Create(strReq);
             //response = request.GetResponse();
             //dataStream = response.GetResponseStream();
@@ -834,7 +822,7 @@ namespace Laundry
             //StreamReader reader;
             //WebRequest request;
             //WebResponse response;
-            //strReq = "http://www.papiloo.ir/Papiloo/Register/Select_Serial.php?Serial=" + IDGenerator.GetCPUId();
+            //strReq = "http://www.papiloo.ir/Papiloo/Register/Select_Serial.php?Serial=" + HDDSerialL.SerialNumber();
             //request = WebRequest.Create(strReq);
             //response = request.GetResponse();
             //dataStream = response.GetResponseStream();
@@ -889,19 +877,21 @@ namespace Laundry
             {
                 using (var context = new kitchenEntities())
                 {
-
-                    string today = selectDate.Text.Replace("/", "").Substring(4, 4);
-                    var tavalod = context.User.Where(c => c.BirthDayDate.ToString().Substring(4, 4) == today).ToList();
-                    //PopupNotifier noti = new PopupNotifier();
-                    if (tavalod.Count() > 0)
+                    if (context.User.Count() > 0)
                     {
-                        //MessageBox.Show("امروز تولد " + tavalod.Count.ToString() + " نفر از مشتری ها است", "یاداوری تولد", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        picbirthDayNoti.Visible = true;
-                        lblContBirthDayNoti.Visible = true;
-                        lblContBirthDayNoti.Text = tavalod.Count.ToString();
-                        //noti.TitleText = "تولد";
-                        //noti.ContentText = "امروز تولد " + count.ToString() + " نفر از مشتری ها است";
-                        //noti.Popup();
+                        string today = selectDate.Text.Replace("/", "").Substring(4, 4);
+                        var tavalod = context.User.Where(c => c.BirthDayDate.ToString().Substring(4, 4) == today).ToList();
+                        //PopupNotifier noti = new PopupNotifier();
+                        if (tavalod.Count() > 0)
+                        {
+                            //MessageBox.Show("امروز تولد " + tavalod.Count.ToString() + " نفر از مشتری ها است", "یاداوری تولد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            picbirthDayNoti.Visible = true;
+                            lblContBirthDayNoti.Visible = true;
+                            lblContBirthDayNoti.Text = tavalod.Count.ToString();
+                            //noti.TitleText = "تولد";
+                            //noti.ContentText = "امروز تولد " + count.ToString() + " نفر از مشتری ها است";
+                            //noti.Popup();
+                        }
                     }
                 }
             }
@@ -1001,7 +991,7 @@ namespace Laundry
                             StreamReader reader;
                             WebRequest request;
                             WebResponse response;
-                            strReq = "http://www.papiloo.ir/Papiloo/Register/Select_Serial.php?Serial=" + IDGenerator.GetCPUId();
+                            strReq = "http://www.papiloo.ir/Papiloo/Register/Select_Serial.php?Serial=" + HDDSerialL.SerialNumber();
                             request = WebRequest.Create(strReq);
                             response = request.GetResponse();
                             dataStream = response.GetResponseStream();
@@ -1018,14 +1008,14 @@ namespace Laundry
                                     Reg reg = new Reg();
                                     reg.IdPaye = a[0];
                                     string date = DateTime.Now.ToShortDateString().Replace("/", "");
-                                    reg.State = IDGenerator.GetCPUId();
+                                    reg.State = HDDSerialL.SerialNumber();
                                     reg.Date = int.Parse(date);
                                     reg.CountOpen = 1;
                                     if (a[4] == "1")// pardakht karde 
                                     {
                                         MessageBox.Show("شما قبلا پرداخت کرده اید،نسخه کامل در دسترس شماست", " ثبت نام", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                         strlblVersion.Text = "نسخه کامل";
-                                        reg.Serial1 = IDGenerator.GetOpenLock(IDGenerator.GetCPUId());
+                                        reg.Serial1 = IDGenerator.GetOpenLock(HDDSerialL.SerialNumber());
                                     }
                                     else //pardakht naharde
                                     {
@@ -1056,80 +1046,7 @@ namespace Laundry
                                     //-----------------
                                 }
                                 context.SaveChanges();
-                                //}
-                                //}
-                                //else
-                                //{
-                                //    var save = context.Setting.FirstOrDefault();
-                                //    //---------------bekhatere inke table faghat 1 record dashte bashad if gozashtam
-                                //    if (save != null)
-                                //    {
-                                //        //------------tarif etelaate foroshgah va modir
-                                //        paye.IdPaye = a[0];
-                                //        save.CommercialName = a[3];
-                                //        save.ManageName = a[2];
-                                //        save.Mobile = a[6];
-                                //        save.Tel = a[7];
-                                //        save.Email = a[8];
-                                //        save.Address = a[9];
-                                //        //-----------tanzimate sms
-                                //        save.GroupSms = "true";
-                                //        save.WelcomeSms = "true";
-                                //        save.AcceptSms = "true";
-                                //        save.ReadySms = "true";
-                                //        save.DeliverySms = "true";
-                                //        save.BirthDaySms = "true";
-                                //        save.InviteClubeSms = "true";
-                                //        //-----------------
-                                //        context.SaveChanges();
-                                //        MessageBox.Show("شما قبلا پرداخت کرده اید،نسخه کامل در دسترس شماست", " ثبت نام", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                //        strlblVersion.Text = "نسخه کامل";
-                                //    }
-                                //    else
-                                //    {
-                                //        if (context.Reg.Count() <= 0)
-                                //        {
-                                //            Reg reg2 = new Reg();
-                                //            reg2.IdPaye = a[0];
-                                //            string date = DateTime.Now.ToShortDateString().Replace("/", "");
-                                //            reg2.State = IDGenerator.GetCPUId();
-                                //            reg2.Date = int.Parse(date);
-                                //            reg2.CountOpen = 1;
-                                //            context.Reg.Add(reg2);
-
-                                //        }
-                                //        if (context.Setting.Count() <= 0)
-                                //        {
-                                //            Setting setting = new Setting();
-                                //            setting.ManageName = a[2];
-                                //            setting.CommercialName = a[3];
-                                //            setting.Mobile = a[6];
-                                //            setting.Tel = a[7];
-                                //            setting.Email = a[8];
-                                //            setting.Address = a[9];
-                                //            //-----------tanzimate sms
-                                //            setting.GroupSms = "true";
-                                //            setting.WelcomeSms = "true";
-                                //            setting.AcceptSms = "true";
-                                //            setting.ReadySms = "true";
-                                //            setting.DeliverySms = "true";
-                                //            setting.BirthDaySms = "true";
-                                //            setting.InviteClubeSms = "true";
-                                //            context.Setting.Add(setting);
-                                //            //-----------------
-                                //        }
-                                //        context.SaveChanges();
-                                //        MessageBox.Show("شما قبلا پرداخت کرده اید،نسخه کامل در دسترس شماست", " ثبت نام", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                //        strlblVersion.Text = "نسخه کامل";
-                                //    }
-
-                                //    var reg = context.Reg.FirstOrDefault();
-                                //    reg.Serial1 = IDGenerator.GetOpenLock(IDGenerator.GetCPUId());
-                                //    context.SaveChanges();
-                                //    //this.Close();
-                                //    //return;
-                                //    //MessageBox.Show("sabte nam shode,pardakht karde");
-                                //}
+                                //-------
                                 toolCreateServiceToolStripMenuItem.Enabled = true;
                                 toolToolsToolStripMenuItem.Enabled = true;
                                 toolSearchToolStripMenuItem.Enabled = true;
@@ -1204,7 +1121,7 @@ namespace Laundry
 
                     if (calCount(check.CountOpen.ToString()) != checkOpen.D11)
                     {
-                        string reg = IDGenerator.GetOpenLock(IDGenerator.GetCPUId());
+                        string reg = IDGenerator.GetOpenLock(HDDSerialL.SerialNumber());
                         if (reg == check.Serial1)
                             goto Act;
                         MessageBox.Show("اختلال در نرم افزار.نرم افزار را فعال کنید", "نرم افزار", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -1227,7 +1144,7 @@ namespace Laundry
 
                     if (File.Exists(stPath + "\\RptUsers.mrt"))
                     {
-                        string reg = IDGenerator.GetOpenLock(IDGenerator.GetCPUId());
+                        string reg = IDGenerator.GetOpenLock(HDDSerialL.SerialNumber());
                         if (reg == check.Serial1)
                             goto Act;
                         MessageBox.Show("اختلال در نرم افزار.نرم افزار را فعال کنید", "نرم افزار", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -1255,9 +1172,9 @@ namespace Laundry
                         frmFirst.ShowDialog();
                         return;
                     }
-                    if (check.State == IDGenerator.GetCPUId())
+                    if (check.State == HDDSerialL.SerialNumber())
                     {
-                        string reg = IDGenerator.GetOpenLock(IDGenerator.GetCPUId());
+                        string reg = IDGenerator.GetOpenLock(HDDSerialL.SerialNumber());
                         reg = reg + "8a1e98m";
                         string code = check.Serial1 + white.R11;
                         if (code == reg)

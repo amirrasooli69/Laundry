@@ -476,11 +476,11 @@ namespace Laundry
                     var ser = context.Reg.FirstOrDefault();
                     if (ser == null)
                         return;
-                    txtSerial.Text = IDGenerator.GetCPUId() + "/" + ser.CountOpen + ser.Date;
+                    txtSerial.Text = HDDSerialL.SerialNumber() + "/" + ser.CountOpen + ser.Date;
                     txtRegister.Text = ser.IdPaye;
                     txtRegister.ForeColor = Color.Red;
                     //----------
-                    if (ser.Serial1 == IDGenerator.GetOpenLock(IDGenerator.GetCPUId()))
+                    if (ser.Serial1 == IDGenerator.GetOpenLock(HDDSerialL.SerialNumber()))
                     {
                         txtRegister.Text = "نرم افزار فعال است";
                         txtSerial.Enabled = false;
