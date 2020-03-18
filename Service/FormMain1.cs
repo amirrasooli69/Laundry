@@ -1011,6 +1011,11 @@ namespace Laundry
                                     reg.State = HDDSerialL.SerialNumber();
                                     reg.Date = int.Parse(date);
                                     reg.CountOpen = 1;
+                                    if(context.WhiteSms.Count()>0)
+                                    {
+                                        var w = context.WhiteSms.FirstOrDefault();
+                                        w.D11 = "y";
+                                    }
                                     if (a[4] == "1")// pardakht karde 
                                     {
                                         MessageBox.Show("شما قبلا پرداخت کرده اید،نسخه کامل در دسترس شماست", " ثبت نام", MessageBoxButtons.OK, MessageBoxIcon.Information);
