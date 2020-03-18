@@ -170,7 +170,8 @@ namespace Laundry
             VName = VName.Substring(0, VName.IndexOf('\0'));
             FSName = FSName.Substring(0, FSName.IndexOf('\0'));
             //Return Trim(Str(Serial))
-            return Serial.ToString().Trim() + "1000";
+            string ser = Serial.ToString().Replace("-", "");
+            return ser.ToString().Trim() + "1000";
         }
         public static string GetCurrentDrive()
         {
