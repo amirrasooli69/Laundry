@@ -12,17 +12,20 @@ namespace Laundry
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class Store
     {
-        public string Eshterak { get; set; }
-        public string Name { get; set; }
-        public Nullable<long> Date { get; set; }
-        public string Phone { get; set; }
-        public string Email { get; set; }
-        public Nullable<long> BirthDayDate { get; set; }
-        public string Address { get; set; }
-        public string PostiCode { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Store()
+        {
+            this.Anbar = new HashSet<Anbar>();
+        }
+    
         public long Id { get; set; }
-        public string Sex { get; set; }
+        public string Name { get; set; }
+        public string Phone { get; set; }
+        public string Address { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Anbar> Anbar { get; set; }
     }
 }

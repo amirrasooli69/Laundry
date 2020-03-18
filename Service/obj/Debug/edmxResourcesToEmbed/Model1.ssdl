@@ -1,22 +1,66 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="StimulsoftModel.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="data source=&quot;C:\Users\Amir\Desktop\Develop\C#\Service Project ------\Service\bin\Debug\Stimulsoft.dll&quot;" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="StimulsoftModel.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="data source=C:\Users\Amir\Desktop\Laundry\Service\bin\Debug\Stimulsoft.dll" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="Anbar">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Name" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="IdProdoct" Type="integer" />
+    <Property Name="IdParent" Type="integer" />
+    <Property Name="Count" Type="integer" />
     <Property Name="Some" Type="integer" />
+    <Property Name="Price" Type="integer" />
+    <Property Name="Description" Type="nvarchar" MaxLength="2147483647" />
     <Property Name="DateBuild" Type="integer" />
     <Property Name="DateExpierd" Type="integer" />
-    <Property Name="DateEnter" Type="integer" />
-    <Property Name="DateOut" Type="integer" />
+    <Property Name="CodeRahgiri" Type="integer" />
+    <Property Name="IdStore" Type="integer" />
     <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AnbarParent">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Case" Type="integer" />
+    <Property Name="Date" Type="integer" />
+    <Property Name="Description" Type="nvarchar" MaxLength="2147483647" />
+  </EntityType>
+  <EntityType Name="AnbarProdoct">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUnit" Type="integer" />
+    <Property Name="Name" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Code" Type="integer" />
+    <Property Name="Description" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Barcode" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="RfID" Type="nvarchar" MaxLength="2147483647" />
   </EntityType>
   <EntityType Name="Category">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Name" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Colleague">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Name" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Tel" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="DateEnter" Type="integer" />
+    <Property Name="DateBirthDay" Type="integer" />
+    <Property Name="Sex" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Address" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="CardNumber" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="AccountNumber" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Description" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Email" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Eshterak" Type="nvarchar" MaxLength="2147483647" />
     <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
   <EntityType Name="Device">
@@ -164,6 +208,22 @@
     <Property Name="EndCreateCodeRahgiri" Type="integer" />
     <Property Name="ValueAddedPercent" Type="integer" />
   </EntityType>
+  <EntityType Name="Store">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Address" Type="nvarchar" MaxLength="2147483647" />
+  </EntityType>
+  <EntityType Name="Unit">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="2147483647" />
+  </EntityType>
   <EntityType Name="User">
     <Key>
       <PropertyRef Name="Id" />
@@ -177,6 +237,7 @@
     <Property Name="Address" Type="nvarchar" MaxLength="2147483647" />
     <Property Name="PostiCode" Type="nvarchar" MaxLength="2147483647" />
     <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sex" Type="nvarchar" MaxLength="2147483647" />
   </EntityType>
   <EntityType Name="WhiteSms">
     <Key>
@@ -229,9 +290,60 @@
     <Property Name="S13" Type="nvarchar" MaxLength="2147483647" />
     <Property Name="S14" Type="nvarchar" MaxLength="2147483647" />
   </EntityType>
+  <Association Name="FK_Anbar_0_0">
+    <End Role="AnbarParent" Type="Self.AnbarParent" Multiplicity="0..1" />
+    <End Role="Anbar" Type="Self.Anbar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AnbarParent">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Anbar">
+        <PropertyRef Name="IdParent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Anbar_1_0">
+    <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
+    <End Role="Anbar" Type="Self.Anbar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Anbar">
+        <PropertyRef Name="IdStore" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Anbar_2_0">
+    <End Role="AnbarProdoct" Type="Self.AnbarProdoct" Multiplicity="0..1" />
+    <End Role="Anbar" Type="Self.Anbar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AnbarProdoct">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Anbar">
+        <PropertyRef Name="IdProdoct" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AnbarProdoct_0_0">
+    <End Role="Unit" Type="Self.Unit" Multiplicity="0..1" />
+    <End Role="AnbarProdoct" Type="Self.AnbarProdoct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unit">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AnbarProdoct">
+        <PropertyRef Name="IdUnit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="StimulsoftModelStoreContainer">
     <EntitySet Name="Anbar" EntityType="Self.Anbar" store:Type="Tables" />
+    <EntitySet Name="AnbarParent" EntityType="Self.AnbarParent" store:Type="Tables" />
+    <EntitySet Name="AnbarProdoct" EntityType="Self.AnbarProdoct" store:Type="Tables" />
     <EntitySet Name="Category" EntityType="Self.Category" store:Type="Tables" />
+    <EntitySet Name="Colleague" EntityType="Self.Colleague" store:Type="Tables" />
     <EntitySet Name="Device" EntityType="Self.Device" store:Type="Tables" />
     <EntitySet Name="ErsalNashode" EntityType="Self.ErsalNashode" store:Type="Tables" />
     <EntitySet Name="Manage" EntityType="Self.Manage" store:Type="Tables" />
@@ -242,7 +354,25 @@
     <EntitySet Name="Service" EntityType="Self.Service" store:Type="Tables" />
     <EntitySet Name="ServicesPrice" EntityType="Self.ServicesPrice" store:Type="Tables" />
     <EntitySet Name="Setting" EntityType="Self.Setting" store:Type="Tables" />
+    <EntitySet Name="Store" EntityType="Self.Store" store:Type="Tables" />
+    <EntitySet Name="Unit" EntityType="Self.Unit" store:Type="Tables" />
     <EntitySet Name="User" EntityType="Self.User" store:Type="Tables" />
     <EntitySet Name="WhiteSms" EntityType="Self.WhiteSms" store:Type="Tables" />
+    <AssociationSet Name="FK_Anbar_0_0" Association="Self.FK_Anbar_0_0">
+      <End Role="AnbarParent" EntitySet="AnbarParent" />
+      <End Role="Anbar" EntitySet="Anbar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Anbar_1_0" Association="Self.FK_Anbar_1_0">
+      <End Role="Store" EntitySet="Store" />
+      <End Role="Anbar" EntitySet="Anbar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Anbar_2_0" Association="Self.FK_Anbar_2_0">
+      <End Role="AnbarProdoct" EntitySet="AnbarProdoct" />
+      <End Role="Anbar" EntitySet="Anbar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AnbarProdoct_0_0" Association="Self.FK_AnbarProdoct_0_0">
+      <End Role="Unit" EntitySet="Unit" />
+      <End Role="AnbarProdoct" EntitySet="AnbarProdoct" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>

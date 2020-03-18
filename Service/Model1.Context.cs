@@ -26,7 +26,10 @@ namespace Laundry
         }
     
         public virtual DbSet<Anbar> Anbar { get; set; }
+        public virtual DbSet<AnbarParent> AnbarParent { get; set; }
+        public virtual DbSet<AnbarProdoct> AnbarProdoct { get; set; }
         public virtual DbSet<Category> Category { get; set; }
+        public virtual DbSet<Colleague> Colleague { get; set; }
         public virtual DbSet<Device> Device { get; set; }
         public virtual DbSet<ErsalNashode> ErsalNashode { get; set; }
         public virtual DbSet<Manage> Manage { get; set; }
@@ -37,6 +40,8 @@ namespace Laundry
         public virtual DbSet<Service> Service { get; set; }
         public virtual DbSet<ServicesPrice> ServicesPrice { get; set; }
         public virtual DbSet<Setting> Setting { get; set; }
+        public virtual DbSet<Store> Store { get; set; }
+        public virtual DbSet<Unit> Unit { get; set; }
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<WhiteSms> WhiteSms { get; set; }
     }

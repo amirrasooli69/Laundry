@@ -12,17 +12,20 @@ namespace Laundry
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class Colleague
     {
-        public string Eshterak { get; set; }
         public string Name { get; set; }
-        public Nullable<long> Date { get; set; }
         public string Phone { get; set; }
-        public string Email { get; set; }
-        public Nullable<long> BirthDayDate { get; set; }
-        public string Address { get; set; }
-        public string PostiCode { get; set; }
-        public long Id { get; set; }
+        public string Tel { get; set; }
+        public Nullable<long> DateEnter { get; set; }
+        public Nullable<long> DateBirthDay { get; set; }
         public string Sex { get; set; }
+        public string Address { get; set; }
+        public string CardNumber { get; set; }
+        public string AccountNumber { get; set; }
+        public string Description { get; set; }
+        public string Email { get; set; }
+        public string Eshterak { get; set; }
+        public long Id { get; set; }
     }
 }

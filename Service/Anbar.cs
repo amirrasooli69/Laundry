@@ -15,11 +15,20 @@ namespace Laundry
     public partial class Anbar
     {
         public string Name { get; set; }
+        public Nullable<long> IdProdoct { get; set; }
+        public Nullable<long> IdParent { get; set; }
+        public Nullable<long> Count { get; set; }
         public Nullable<long> Some { get; set; }
+        public Nullable<long> Price { get; set; }
+        public string Description { get; set; }
         public Nullable<long> DateBuild { get; set; }
         public Nullable<long> DateExpierd { get; set; }
-        public Nullable<long> DateEnter { get; set; }
-        public Nullable<long> DateOut { get; set; }
+        public Nullable<long> CodeRahgiri { get; set; }
+        public Nullable<long> IdStore { get; set; }
         public long Id { get; set; }
+    
+        public virtual AnbarParent AnbarParent { get; set; }
+        public virtual Store Store { get; set; }
+        public virtual AnbarProdoct AnbarProdoct { get; set; }
     }
 }
