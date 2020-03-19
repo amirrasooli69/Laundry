@@ -804,37 +804,40 @@ namespace Laundry
                     //*******Auto Fill Eshterak - Name - Phone
                     if (chxNewCustomer.Checked == false)
                     {
-                        var select = context.User.ToList();
-                        //------
+                        if (context.User.Count() > 0)
+                        {
+                            var select = context.User.ToList();
+                            //------
 
-                        string[] eshterak = new string[select.Count];
-                        for (int i = 0; i < select.Count; i++)
-                        {
-                            eshterak[i] = select[i].Eshterak.ToString();
+                            string[] eshterak = new string[select.Count];
+                            for (int i = 0; i < select.Count; i++)
+                            {
+                                eshterak[i] = select[i].Eshterak.ToString();
+                            }
+                            //txtEshterak.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                            AutoCompleteStringCollection suggest = new AutoCompleteStringCollection();
+                            txtEshterak.AutoCompleteCustomSource = suggest;
+                            suggest.AddRange(eshterak);
+                            //-----------
+                            string[] Name = new string[select.Count];
+                            for (int i = 0; i < select.Count; i++)
+                            {
+                                Name[i] = select[i].Name.ToString();
+                            }
+                            //txtName.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                            AutoCompleteStringCollection suggestName = new AutoCompleteStringCollection();
+                            txtName.AutoCompleteCustomSource = suggestName;
+                            suggestName.AddRange(Name);
+                            //-------
+                            string[] Phone = new string[select.Count];
+                            for (int i = 0; i < select.Count; i++)
+                            {
+                                Phone[i] = select[i].Phone.ToString();
+                            }
+                            AutoCompleteStringCollection suggestPhone = new AutoCompleteStringCollection();
+                            txtPhone.AutoCompleteCustomSource = suggestPhone;
+                            suggestPhone.AddRange(Phone);
                         }
-                        //txtEshterak.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                        AutoCompleteStringCollection suggest = new AutoCompleteStringCollection();
-                        txtEshterak.AutoCompleteCustomSource = suggest;
-                        suggest.AddRange(eshterak);
-                        //-----------
-                        string[] Name = new string[select.Count];
-                        for (int i = 0; i < select.Count; i++)
-                        {
-                            Name[i] = select[i].Name.ToString();
-                        }
-                        //txtName.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                        AutoCompleteStringCollection suggestName = new AutoCompleteStringCollection();
-                        txtName.AutoCompleteCustomSource = suggestName;
-                        suggestName.AddRange(Name);
-                        //-------
-                        string[] Phone = new string[select.Count];
-                        for (int i = 0; i < select.Count; i++)
-                        {
-                            Phone[i] = select[i].Phone.ToString();
-                        }
-                        AutoCompleteStringCollection suggestPhone = new AutoCompleteStringCollection();
-                        txtPhone.AutoCompleteCustomSource = suggestPhone;
-                        suggestPhone.AddRange(Phone);
                     }
                     //var selectCodeRahgiri = context.Service.ToList();
                     //string[] CodeRahgiri = new string[selectCodeRahgiri.Count];
