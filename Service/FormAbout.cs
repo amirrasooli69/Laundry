@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using System.Net.NetworkInformation;
 
-namespace Laundry
+namespace Service
 {
     public partial class FormAbout : Form
     {

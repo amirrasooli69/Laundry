@@ -17,7 +17,7 @@ using BPersianCalender;
 using System.Drawing.Printing;
 using System.Threading;
 
-namespace Laundry
+namespace Service
 {
     public partial class FormServices : Form
     {

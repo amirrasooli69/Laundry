@@ -17,7 +17,7 @@ using System.Timers;
 using System.Data.SQLite;
 using System.Data.Entity;
 
-namespace Laundry
+namespace Service
 {
     public partial class FormMain1 : Form
     {

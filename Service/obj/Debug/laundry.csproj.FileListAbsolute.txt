@@ -2409,3 +2409,6 @@ C:\Users\Amir\Desktop\Laundry\Service\obj\Debug\Laundry.OnlinForm.resources
 C:\Users\Amir\Desktop\Laundry\Service\obj\Debug\ERA.PCalander.resources
 C:\Users\Amir\Desktop\Laundry\Service\obj\Debug\Laundry.Properties.Resources.resources
 C:\Users\Amir\Desktop\Laundry\Service\obj\Debug\Laundry.csproj.GenerateResource.Cache
+C:\Users\Amir\Desktop\Ali\Service\bin\Debug\Laundry.exe.config
+C:\Users\Amir\Desktop\Ali\Service\obj\Debug\Laundry.exe
+C:\Users\Amir\Desktop\Ali\Service\obj\Debug\Laundry.pdb

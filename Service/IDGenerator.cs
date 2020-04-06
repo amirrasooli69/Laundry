@@ -4,7 +4,7 @@ using System.Net.NetworkInformation;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Laundry
+namespace Service
 {
    public class IDGenerator
     {

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Entity;
 
-namespace Laundry
+namespace Service
 {
     public partial class FormDelete : Form
     {

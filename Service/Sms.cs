@@ -5,7 +5,7 @@ using System.Net;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Laundry
+namespace Service
 {
     public class Sms
     {

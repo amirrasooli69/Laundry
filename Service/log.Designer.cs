@@ -1,4 +1,4 @@
-﻿namespace Laundry
+﻿namespace Service
 {
     partial class log
     {

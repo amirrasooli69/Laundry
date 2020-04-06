@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PARSGREEN;
 
-namespace Laundry
+namespace Service
 {
     public partial class FormSms : Form
     {

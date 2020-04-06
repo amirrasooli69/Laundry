@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Laundry
+namespace Service
 {
     using System;
     using System.Data.Entity;

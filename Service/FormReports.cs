@@ -10,7 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Laundry
+namespace Service
 {
     public partial class FormReports : Form
     {

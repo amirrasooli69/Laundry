@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-namespace Laundry
+namespace Service
 {
     public partial class FormMange : Form
     {
