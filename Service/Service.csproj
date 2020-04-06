@@ -104,6 +104,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddProdoct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddProdoct.designer.cs">
+      <DependentUpon>AddProdoct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Anbar.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -352,6 +358,9 @@
     <Compile Include="WhiteSms.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddProdoct.resx">
+      <DependentUpon>AddProdoct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FDate.resx">
       <DependentUpon>FDate.cs</DependentUpon>
     </EmbeddedResource>
