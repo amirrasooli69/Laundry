@@ -151,6 +151,12 @@
     <Compile Include="FormAddUnit.designer.cs">
       <DependentUpon>FormAddUnit.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAnbar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAnbar.designer.cs">
+      <DependentUpon>FormAnbar.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBirthDay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -381,6 +387,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAddUnit.resx">
       <DependentUpon>FormAddUnit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAnbar.resx">
+      <DependentUpon>FormAnbar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBirthDay.resx">
       <DependentUpon>FormBirthDay.cs</DependentUpon>
