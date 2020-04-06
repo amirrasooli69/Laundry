@@ -229,3 +229,13 @@ C:\Users\Amir\Desktop\Ali\Service\obj\Debug\Service.pdb
 C:\Users\Amir\Desktop\Ali\Service\bin\Debug\Service.exe
 C:\Users\Amir\Desktop\Ali\Service\bin\Debug\Service.pdb
 C:\Users\Amir\Desktop\Ali\Service\obj\Debug\Service.Properties.Resources.resources
+C:\Users\Amir\Desktop\Ali\Service\obj\Debug\PapilooDate.AddProdoct.resources
+C:\Users\Amir\Desktop\Ali\Service\obj\Debug\Papiloo.ucAddProdoctStore.resources
+C:\Users\Amir\Desktop\Ali\Service\obj\Debug\Service.FormAddUnit.resources
+C:\Users\Amir\Desktop\Ali\Service\obj\Debug\Service.FormAnbar.resources
+C:\Users\Amir\Desktop\Ali\Service\obj\Debug\Service.FormLittelEnter.resources
+C:\Users\Amir\Desktop\Ali\Service\obj\Debug\Service.FormReportAnbar.resources
+C:\Users\Amir\Desktop\Ali\Service\obj\Debug\Papiloo.ucAddUnit.resources
+C:\Users\Amir\Desktop\Ali\Service\obj\Debug\Papiloo.ucButton.resources
+C:\Users\Amir\Desktop\Ali\Service\obj\Debug\Papiloo.FDate.resources
+C:\Users\Amir\Desktop\Ali\Service\obj\Debug\Papiloo.PCalander.resources

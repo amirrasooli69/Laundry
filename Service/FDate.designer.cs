@@ -1,4 +1,4 @@
-﻿namespace PapilooDate
+﻿namespace Papiloo
 {
     partial class FDate
     {
@@ -49,12 +49,12 @@
             // 
             // S_Date
             // 
-            this.S_Date.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.S_Date.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.S_Date.Location = new System.Drawing.Point(38, 3);
             this.S_Date.MaxLength = 10;
             this.S_Date.Name = "S_Date";
             this.S_Date.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.S_Date.Size = new System.Drawing.Size(100, 24);
+            this.S_Date.Size = new System.Drawing.Size(100, 26);
             this.S_Date.TabIndex = 307;
             this.S_Date.TextChanged += new System.EventHandler(this.S_Date_TextChanged);
             this.S_Date.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.S_Date_KeyPress);

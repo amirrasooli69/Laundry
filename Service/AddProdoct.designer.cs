@@ -1,4 +1,4 @@
-﻿namespace PapilooDate
+﻿namespace Papiloo
 {
     partial class AddProdoct
     {

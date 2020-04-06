@@ -8,8 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Globalization;
 using PopupControl;
-using ERA;
-namespace PapilooDate
+namespace Papiloo
 {
     public partial class FDate : UserControl
     {
@@ -98,6 +97,7 @@ namespace PapilooDate
 
         private void T_Date_Click(object sender, EventArgs e)
         {
+            
             PCalander frm = new PCalander();
             popup = new Popup(frm);
             popup.Closed += popup_Closed;

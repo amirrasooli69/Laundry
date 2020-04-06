@@ -1,4 +1,4 @@
-﻿namespace ERA
+﻿namespace Papiloo
 {
     partial class PCalander
     {
@@ -356,7 +356,7 @@
             this.dgCalander.StandardTab = true;
             this.dgCalander.TabIndex = 23;
             this.dgCalander.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgCalander_CellClick);
-             this.dgCalander.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgCalander_CellDoubleClick);
+            this.dgCalander.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgCalander_CellDoubleClick);
             this.dgCalander.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgCalander_CellEnter);
             // 
             // c0
@@ -426,7 +426,7 @@
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "PCalander";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Size = new System.Drawing.Size(328, 224);
+            this.Size = new System.Drawing.Size(334, 228);
             this.Load += new System.EventHandler(this.frmCalander_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
