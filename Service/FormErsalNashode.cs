@@ -14,7 +14,7 @@ namespace Service
 {
     public partial class FormErsalNashode : Form
     {
-        kitchenEntities context = new kitchenEntities();
+        StimulsoftEntities context = new StimulsoftEntities();
         public FormErsalNashode()
         {
             InitializeComponent();

@@ -56,7 +56,7 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     int date = Find_BirthDay(dtBirthDay.Text, int.Parse(comRemeberBirthDay.Text));
                     var tavalod = context.User.Where(c => c.BirthDayDate == date).ToList();

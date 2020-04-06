@@ -23,7 +23,7 @@ namespace Service
             try
             {
                 
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     var find = context.User.Where(current => current.Eshterak.Contains(txtEshterak.Text)).ToList();
                     dgDelete.DataSource = find;
@@ -62,7 +62,7 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     var find = context.Service.Where(current => current.Eshterak.Contains(txtEshterak.Text)).ToList();
                     dgDelete.DataSource = find;
@@ -162,7 +162,7 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     dgDelete.DataSource = context.User.Where(current => current.Eshterak != null).ToList();
                     dgDelete.Columns[0].HeaderText = "اشتراک";
@@ -191,7 +191,7 @@ namespace Service
          }
         public void Refresh_dgService()
         {
-            using (var context = new kitchenEntities())
+            using (var context = new StimulsoftEntities())
             {
                 dgDelete.DataSource = context.Service.Where(current => current.Eshterak != null).ToList();
                 dgDelete.DataSource = context.Service.Where(current => current.Eshterak != null).ToList();
@@ -233,7 +233,7 @@ namespace Service
                     lblError.Text = "";
                     try
                     {
-                        using (var context = new kitchenEntities())
+                        using (var context = new StimulsoftEntities())
                         {
                             var delete = context.User.Where(current => current.Eshterak==txtEshterak.Text).ToList();
                             if (delete.Count == 0)
@@ -291,7 +291,7 @@ namespace Service
                 try
                 {
                   lblError.Text = "";
-                        using (var context = new kitchenEntities())
+                        using (var context = new StimulsoftEntities())
                         {
                         string id = dgDelete.CurrentRow.Cells[14].Value.ToString();
                         var delete = context.Service.Where(current => current.IdService.ToString()==id).ToList();
@@ -344,7 +344,7 @@ namespace Service
 
         private void FormDelete_Load(object sender, EventArgs e)
         {
-            kitchenEntities context = new kitchenEntities();
+            StimulsoftEntities context = new StimulsoftEntities();
 
             if (lbldel.Text == "2")
             {

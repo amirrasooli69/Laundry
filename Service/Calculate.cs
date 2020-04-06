@@ -10,7 +10,7 @@ namespace Service
     {
         public static string Calculet_total_Service_Mande(string eshterak)
         {
-            kitchenEntities context = new kitchenEntities();
+            StimulsoftEntities context = new StimulsoftEntities();
             var price = context.Service.Where(c => c.Eshterak == eshterak).ToList();
             //------mohasebe jame baghimande
             long bestankar = 0, takhfif = 0, pardakhti = 0, sumService = 0, sum = 0, totalSum = 0, valueAdded = 0,

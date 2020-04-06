@@ -178,7 +178,7 @@ namespace Service
             try
             {
                 int vaziyzt = 1;
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     try
                     {
@@ -368,7 +368,7 @@ namespace Service
             {
 
                 dgSearch.DataSource = null;
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
 
                 }
@@ -385,7 +385,7 @@ namespace Service
             try
             {
                 dgSearch.DataSource = null;
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     var AllUser = context.User.Where(c => c.Phone != null || c.Phone != "0").ToList();
                     dgSearch.DataSource = AllUser;
@@ -410,7 +410,7 @@ namespace Service
             comRemeberBirthDay.SelectedIndex = 0;
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
 
                     var set = context.Setting.FirstOrDefault();
@@ -448,7 +448,7 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     int date = Find_BirthDay(dtSearch.Text, int.Parse(comRemeberBirthDay.Text));
                     string findDay = date.ToString();
@@ -473,7 +473,7 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     int date = int.Parse(dtSearch.Text.Replace("/", ""));
                     var service = context.Service.Where(c => c.DateService == date).ToList();
@@ -511,7 +511,7 @@ namespace Service
         }
         private void dgSearch_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //kitchenEntities context = new kitchenEntities();
+            //StimulsoftEntities context = new StimulsoftEntities();
 
             //if (x == 0)
             //{

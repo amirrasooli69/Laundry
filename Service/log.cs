@@ -21,7 +21,7 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     var userManage = context.Manage.Where(current => current.UserName == txtUsername.Text).FirstOrDefault();//ya avali o miyare ya hichi
                     if (userManage == null)
@@ -72,7 +72,7 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     //var name = context.Settings.FirstOrDefault();
                     //if (name == null)

@@ -14,18 +14,9 @@ namespace Service
     
     public partial class AnbarParent
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public AnbarParent()
-        {
-            this.Anbar = new HashSet<Anbar>();
-        }
-    
         public long Id { get; set; }
         public Nullable<long> Case { get; set; }
         public Nullable<long> Date { get; set; }
         public string Description { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Anbar> Anbar { get; set; }
     }
 }

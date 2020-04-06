@@ -777,8 +777,7 @@ namespace Service
 
         private void delToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormTest frmTest = new FormTest();
-            frmTest.Show();
+
             //FormNewUser frmNewUser = new FormNewUser();
             //frmNewUser.Show();
 
@@ -812,12 +811,12 @@ namespace Service
             //response.Close();
             //MessageBox.Show(strData);
             //string[] a = strData.Split('*');
-            //kitchenEntities context = new kitchenEntities();
+            //StimulsoftEntities context = new StimulsoftEntities();
             //var paye = context.Reg.FirstOrDefault();
             //paye.IdPaye = a[0];
             //context.SaveChanges();
             //--------
-            //kitchenEntities context = new kitchenEntities();
+            //StimulsoftEntities context = new StimulsoftEntities();
             //var test = context.Reg.FirstOrDefault();
             //test.IdPaye = "asghar11111";
             //context.SaveChanges();
@@ -1535,8 +1534,7 @@ namespace Service
 
         private void toolTurn_Click(object sender, EventArgs e)
         {
-            FormTurn frmTurn = new FormTurn();
-            frmTurn.Show();
+
         }
     }
 }

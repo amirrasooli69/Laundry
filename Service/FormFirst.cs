@@ -145,7 +145,7 @@ namespace Service
                 {
                     FormMain1 frmMain = new FormMain1();
 
-                    using (var context = new kitchenEntities())
+                    using (var context = new StimulsoftEntities())
                     {
                         var save = context.Setting.FirstOrDefault();
                         //---------------bekhatere inke table faghat 1 record dashte bashad if gozashtam

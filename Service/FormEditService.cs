@@ -48,7 +48,7 @@ namespace Service
                     lblError.Text = "شماره موبایل 11 عدد نیست";
                     return;
                 }
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     
                     var editService = context.Service.Where(c => c.CodeRahgiri == txtCodeRahgiri.Text).FirstOrDefault();

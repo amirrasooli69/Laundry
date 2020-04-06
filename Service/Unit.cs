@@ -14,16 +14,7 @@ namespace Service
     
     public partial class Unit
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Unit()
-        {
-            this.AnbarProdoct = new HashSet<AnbarProdoct>();
-        }
-    
         public long Id { get; set; }
         public string Name { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AnbarProdoct> AnbarProdoct { get; set; }
     }
 }

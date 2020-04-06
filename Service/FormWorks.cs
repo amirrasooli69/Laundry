@@ -25,7 +25,7 @@ namespace Service
                 if (e.ColumnIndex == 12)
                 {
                     int selectId = int.Parse(dgSearch.CurrentRow.Cells[10].Value.ToString());
-                    using (var context = new kitchenEntities())
+                    using (var context = new StimulsoftEntities())
                     {
                         var select = context.ReportService.Where(c => c.Id == selectId).FirstOrDefault();
                         if (select.Ready == "1")
@@ -108,7 +108,7 @@ namespace Service
         {
             try
             {
-                kitchenEntities context = new kitchenEntities();
+                StimulsoftEntities context = new StimulsoftEntities();
                 var search = context.ReportService.Where(c => c.CodeRahgiri == coderahgiri).ToList();
                 dgSearch.DataSource = search;
                 Works_Refresh();
@@ -141,7 +141,7 @@ namespace Service
         {
             try
             {
-                kitchenEntities context = new kitchenEntities();
+                StimulsoftEntities context = new StimulsoftEntities();
                 var works = context.ReportService.Where(c => c.Ready == "1").ToList();
                 dgSearch.DataSource = works;
             }
@@ -181,7 +181,7 @@ namespace Service
             try
             {
                 //tooltxtSearch.Text = "";
-                kitchenEntities context = new kitchenEntities();
+                StimulsoftEntities context = new StimulsoftEntities();
                 var works = context.ReportService.Where(c => c.Ready == "0").ToList();
                 dgSearch.DataSource = works;
                 

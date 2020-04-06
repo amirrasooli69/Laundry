@@ -113,6 +113,8 @@
             this.radOffline = new System.Windows.Forms.RadioButton();
             this.radOnline = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtBeforeBeiane = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.numSome = new System.Windows.Forms.TextBox();
             this.txtValueAdded = new System.Windows.Forms.TextBox();
@@ -120,8 +122,6 @@
             this.panelPaye = new System.Windows.Forms.Panel();
             this.radNaghdi = new System.Windows.Forms.RadioButton();
             this.radKart = new System.Windows.Forms.RadioButton();
-            this.txtBeforeBeiane = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgShow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgCategory)).BeginInit();
@@ -1149,6 +1149,27 @@
             this.panel1.Size = new System.Drawing.Size(1113, 559);
             this.panel1.TabIndex = 58;
             // 
+            // txtBeforeBeiane
+            // 
+            this.txtBeforeBeiane.Enabled = false;
+            this.txtBeforeBeiane.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBeforeBeiane.Location = new System.Drawing.Point(259, 420);
+            this.txtBeforeBeiane.MaxLength = 20;
+            this.txtBeforeBeiane.Multiline = true;
+            this.txtBeforeBeiane.Name = "txtBeforeBeiane";
+            this.txtBeforeBeiane.Size = new System.Drawing.Size(101, 23);
+            this.txtBeforeBeiane.TabIndex = 95;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(366, 422);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 16);
+            this.label1.TabIndex = 96;
+            this.label1.Text = "بیعانه قبل";
+            // 
             // txtPrice
             // 
             this.txtPrice.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
@@ -1235,27 +1256,6 @@
             this.radKart.Text = "کارت";
             this.radKart.UseVisualStyleBackColor = true;
             // 
-            // txtBeforeBeiane
-            // 
-            this.txtBeforeBeiane.Enabled = false;
-            this.txtBeforeBeiane.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBeforeBeiane.Location = new System.Drawing.Point(259, 420);
-            this.txtBeforeBeiane.MaxLength = 20;
-            this.txtBeforeBeiane.Multiline = true;
-            this.txtBeforeBeiane.Name = "txtBeforeBeiane";
-            this.txtBeforeBeiane.Size = new System.Drawing.Size(101, 23);
-            this.txtBeforeBeiane.TabIndex = 95;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(366, 422);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 16);
-            this.label1.TabIndex = 96;
-            this.label1.Text = "بیعانه قبل";
-            // 
             // FormServices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1265,6 +1265,7 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(1145, 729);
             this.Name = "FormServices";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

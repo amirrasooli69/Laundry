@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="StimulsoftModelStoreContainer" CdmEntityContainer="kitchenEntities">
+  <EntityContainerMapping StorageEntityContainer="StimulsoftModelStoreContainer" CdmEntityContainer="StimulsoftEntities1">
     <EntitySetMapping Name="Anbar">
       <EntityTypeMapping TypeName="StimulsoftModel.Anbar">
         <MappingFragment StoreEntitySet="Anbar">
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="IdProdoct" ColumnName="IdProdoct" />
           <ScalarProperty Name="IdParent" ColumnName="IdParent" />
-          <ScalarProperty Name="Count" ColumnName="Count" />
-          <ScalarProperty Name="Some" ColumnName="Some" />
+          <ScalarProperty Name="Positiv" ColumnName="Positiv" />
+          <ScalarProperty Name="Negativ" ColumnName="Negativ" />
           <ScalarProperty Name="Price" ColumnName="Price" />
           <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="DateBuild" ColumnName="DateBuild" />
@@ -221,6 +221,7 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="EndCreateCodeRahgiri" ColumnName="EndCreateCodeRahgiri" />
           <ScalarProperty Name="ValueAddedPercent" ColumnName="ValueAddedPercent" />
+          <ScalarProperty Name="CalculateAnbar" ColumnName="CalculateAnbar" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

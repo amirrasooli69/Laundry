@@ -32,5 +32,6 @@ namespace Service
         public long Id { get; set; }
         public Nullable<long> EndCreateCodeRahgiri { get; set; }
         public Nullable<long> ValueAddedPercent { get; set; }
+        public string CalculateAnbar { get; set; }
     }
 }
