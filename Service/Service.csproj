@@ -205,6 +205,12 @@
     <Compile Include="FormAbout.designer.cs">
       <DependentUpon>FormAbout.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormLitelEnter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLitelEnter.designer.cs">
+      <DependentUpon>FormLitelEnter.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMain1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -414,6 +420,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAbout.resx">
       <DependentUpon>FormAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLitelEnter.resx">
+      <DependentUpon>FormLitelEnter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain1.resx">
       <DependentUpon>FormMain1.cs</DependentUpon>
