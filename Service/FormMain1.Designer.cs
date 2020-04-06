@@ -37,13 +37,13 @@
             this.toolDeleteUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolDeleteServiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolBirthDay = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolWorks = new System.Windows.Forms.ToolStripMenuItem();
             this.toolSearchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolSmsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolReports = new System.Windows.Forms.ToolStripMenuItem();
             this.toolDate = new System.Windows.Forms.ToolStripMenuItem();
             this.toolReportUser = new System.Windows.Forms.ToolStripMenuItem();
             this.toolReportProdoct = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolAnbar = new System.Windows.Forms.ToolStripMenuItem();
             this.toolBackupRestore = new System.Windows.Forms.ToolStripMenuItem();
             this.toolBackup = new System.Windows.Forms.ToolStripMenuItem();
             this.toolRestore = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,6 +65,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.strlblVersion = new System.Windows.Forms.Label();
             this.timSms = new System.Windows.Forms.Timer(this.components);
+            this.toolTurn = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -83,11 +84,13 @@
             this.toolSearchToolStripMenuItem,
             this.toolSmsToolStripMenuItem,
             this.toolReports,
+            this.toolAnbar,
             this.toolBackupRestore,
             this.toolManageToolStripMenuItem,
             this.toolAbuot,
             this.tooExitToolStripMenuItem,
-            this.delToolStripMenuItem});
+            this.delToolStripMenuItem,
+            this.toolTurn});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
@@ -109,8 +112,7 @@
             this.toolToolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolDeleteUserToolStripMenuItem,
             this.toolDeleteServiceToolStripMenuItem,
-            this.toolBirthDay,
-            this.toolWorks});
+            this.toolBirthDay});
             this.toolToolsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("toolToolsToolStripMenuItem.Image")));
             this.toolToolsToolStripMenuItem.Name = "toolToolsToolStripMenuItem";
             this.toolToolsToolStripMenuItem.Size = new System.Drawing.Size(78, 23);
@@ -141,14 +143,6 @@
             this.toolBirthDay.Text = "تولد";
             this.toolBirthDay.Visible = false;
             this.toolBirthDay.Click += new System.EventHandler(this.toolBirthDay_Click);
-            // 
-            // toolWorks
-            // 
-            this.toolWorks.Image = ((System.Drawing.Image)(resources.GetObject("toolWorks.Image")));
-            this.toolWorks.Name = "toolWorks";
-            this.toolWorks.Size = new System.Drawing.Size(171, 24);
-            this.toolWorks.Text = "لیست کارها";
-            this.toolWorks.Click += new System.EventHandler(this.toolWorks_Click);
             // 
             // toolSearchToolStripMenuItem
             // 
@@ -197,6 +191,14 @@
             this.toolReportProdoct.Size = new System.Drawing.Size(145, 24);
             this.toolReportProdoct.Text = "محصول";
             this.toolReportProdoct.Click += new System.EventHandler(this.toolReportProdoct_Click);
+            // 
+            // toolAnbar
+            // 
+            this.toolAnbar.Image = ((System.Drawing.Image)(resources.GetObject("toolAnbar.Image")));
+            this.toolAnbar.Name = "toolAnbar";
+            this.toolAnbar.Size = new System.Drawing.Size(62, 23);
+            this.toolAnbar.Text = "انبار";
+            this.toolAnbar.Click += new System.EventHandler(this.toolAnbar_Click);
             // 
             // toolBackupRestore
             // 
@@ -276,7 +278,6 @@
             this.delToolStripMenuItem.Name = "delToolStripMenuItem";
             this.delToolStripMenuItem.Size = new System.Drawing.Size(42, 23);
             this.delToolStripMenuItem.Text = "del";
-            this.delToolStripMenuItem.Visible = false;
             this.delToolStripMenuItem.Click += new System.EventHandler(this.delToolStripMenuItem_Click);
             // 
             // splitContainer1
@@ -333,7 +334,7 @@
             // 
             this.lblCountSmsNoti.AutoSize = true;
             this.lblCountSmsNoti.ForeColor = System.Drawing.Color.White;
-            this.lblCountSmsNoti.Location = new System.Drawing.Point(1206, 7);
+            this.lblCountSmsNoti.Location = new System.Drawing.Point(1207, 7);
             this.lblCountSmsNoti.Name = "lblCountSmsNoti";
             this.lblCountSmsNoti.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblCountSmsNoti.Size = new System.Drawing.Size(13, 13);
@@ -343,7 +344,7 @@
             // picSmsNoti
             // 
             this.picSmsNoti.Image = ((System.Drawing.Image)(resources.GetObject("picSmsNoti.Image")));
-            this.picSmsNoti.Location = new System.Drawing.Point(1225, 3);
+            this.picSmsNoti.Location = new System.Drawing.Point(1226, 3);
             this.picSmsNoti.Name = "picSmsNoti";
             this.picSmsNoti.Size = new System.Drawing.Size(35, 20);
             this.picSmsNoti.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -355,7 +356,7 @@
             // 
             this.lblContBirthDayNoti.AutoSize = true;
             this.lblContBirthDayNoti.ForeColor = System.Drawing.Color.White;
-            this.lblContBirthDayNoti.Location = new System.Drawing.Point(1141, 5);
+            this.lblContBirthDayNoti.Location = new System.Drawing.Point(1144, 5);
             this.lblContBirthDayNoti.Name = "lblContBirthDayNoti";
             this.lblContBirthDayNoti.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblContBirthDayNoti.Size = new System.Drawing.Size(13, 13);
@@ -366,7 +367,7 @@
             // picbirthDayNoti
             // 
             this.picbirthDayNoti.Image = ((System.Drawing.Image)(resources.GetObject("picbirthDayNoti.Image")));
-            this.picbirthDayNoti.Location = new System.Drawing.Point(1160, 3);
+            this.picbirthDayNoti.Location = new System.Drawing.Point(1163, 3);
             this.picbirthDayNoti.Name = "picbirthDayNoti";
             this.picbirthDayNoti.Size = new System.Drawing.Size(35, 20);
             this.picbirthDayNoti.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -399,7 +400,6 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(93, 7);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 13);
@@ -421,6 +421,13 @@
             this.timSms.Enabled = true;
             this.timSms.Interval = 60000;
             this.timSms.Tick += new System.EventHandler(this.timSms_Tick);
+            // 
+            // toolTurn
+            // 
+            this.toolTurn.Name = "toolTurn";
+            this.toolTurn.Size = new System.Drawing.Size(90, 23);
+            this.toolTurn.Text = "نوبت دهی";
+            this.toolTurn.Click += new System.EventHandler(this.toolTurn_Click);
             // 
             // FormMain1
             // 
@@ -490,7 +497,8 @@
         private System.Windows.Forms.Label lblCountSmsNoti;
         private System.Windows.Forms.PictureBox picSmsNoti;
         private System.Windows.Forms.Timer timSms;
-        private System.Windows.Forms.ToolStripMenuItem toolWorks;
+        private System.Windows.Forms.ToolStripMenuItem toolAnbar;
+        private System.Windows.Forms.ToolStripMenuItem toolTurn;
     }
 }
 

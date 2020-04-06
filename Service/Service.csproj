@@ -214,7 +214,7 @@
     <Compile Include="FormMain1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMain1.Designer.cs">
+    <Compile Include="FormMain1.designer.cs">
       <DependentUpon>FormMain1.cs</DependentUpon>
     </Compile>
     <Compile Include="FormManagePrice.cs">
@@ -240,6 +240,12 @@
     </Compile>
     <Compile Include="FormNotification.Designer.cs">
       <DependentUpon>FormNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReportAnbar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReportAnbar.designer.cs">
+      <DependentUpon>FormReportAnbar.cs</DependentUpon>
     </Compile>
     <Compile Include="FormReports.cs">
       <SubType>Form</SubType>
@@ -438,6 +444,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormNotification.resx">
       <DependentUpon>FormNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReportAnbar.resx">
+      <DependentUpon>FormReportAnbar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormReports.resx">
       <DependentUpon>FormReports.cs</DependentUpon>

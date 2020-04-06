@@ -354,18 +354,28 @@ namespace Service
 
         }
 
+        public string Get_Serial_Hard() // gereftan serial hard
+        {
+            ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT * FROM Win32_DiskDrive");
+            string hard = "1";
+            foreach (ManagementObject info in searcher.Get())
+            {
+
+                hard = (info["SerialNumber"].ToString()).Trim();
+            }
+            return hard;
+        }
+
         public void First_Enter() //vorod baraye avalin bar
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     if (context.Reg.Count() > 0)
                     {
                         var deleteReg = context.Reg.ToList();
                         context.Reg.RemoveRange(deleteReg);
-                        context.Reg.SqlQuery("DBCC CHECKIDENT (Reg, RESEED, 0)");
-
                     }
                     //------
                     if (context.Setting.Count() > 0)
@@ -389,6 +399,8 @@ namespace Service
                     Setting avlie = new Setting();
                     avlie.EndCreateCodeRahgiri = 0;
                     avlie.ValueAddedPercent = 1;
+                    avlie.CalculateAnbar = "آخرین خرید";
+
                     context.Setting.Add(avlie);
 
                     //-----
@@ -430,7 +442,7 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     strlblVersion.Text = "برنامه کامل";
                     Accsess();
@@ -447,10 +459,10 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     string date = DateTime.Now.ToShortDateString().Replace("/", "");
-                    //string hard = Get_Serial_Hard();
+                    string hard = Get_Serial_Hard();
 
                     MessageBox.Show("نرم افزار کپی شده است.هر کد فعال سازی مخصوص یک دستگاه است", "نرم افزار", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     DialogResult result = MessageBox.Show("آیا همه اطلاعات پاک شود و نسخه آزمایشی استفاده شود؟", "نرم افزار", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -562,7 +574,7 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     var Access = context.Manage.Where(current => current.UserName == stripLblLogin.Text).FirstOrDefault();
                     if (Access.NewService == "1")
@@ -765,18 +777,22 @@ namespace Service
 
         private void delToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            FormTest frmTest = new FormTest();
+            frmTest.Show();
+            //FormNewUser frmNewUser = new FormNewUser();
+            //frmNewUser.Show();
 
-            using (var context = new kitchenEntities())
-            {
-                if (context.Reg.Count() > 0)
-                {
-                    var deleteReg = context.Reg.ToList();
-                    context.Reg.RemoveRange(deleteReg);
+            //using (var context = new StimulsoftEntities())
+            //{
+            //    if (context.Reg.Count() > 0)
+            //    {
+            //        var deleteReg = context.Reg.ToList();
+            //        context.Reg.RemoveRange(deleteReg);
                     
-                    //context.Reg.SqlQuery("DBCC CHECKIDENT (Reg, RESEED, 0)");
-                }
-                context.SaveChanges();
-            }
+            //        //context.Reg.SqlQuery("DBCC CHECKIDENT (Reg, RESEED, 0)");
+            //    }
+            //    context.SaveChanges();
+            //}
 
             //------ // BARAYE INKE IdPaye ra begirad
             //string strReq;
@@ -875,23 +891,21 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
-                    if (context.User.Count() > 0)
+
+                    string today = selectDate.Text.Replace("/", "").Substring(4, 4);
+                    var tavalod = context.User.Where(c => c.BirthDayDate.ToString().Substring(4, 4) == today).ToList();
+                    //PopupNotifier noti = new PopupNotifier();
+                    if (tavalod.Count() > 0)
                     {
-                        string today = selectDate.Text.Replace("/", "").Substring(4, 4);
-                        var tavalod = context.User.Where(c => c.BirthDayDate.ToString().Substring(4, 4) == today).ToList();
-                        //PopupNotifier noti = new PopupNotifier();
-                        if (tavalod.Count() > 0)
-                        {
-                            //MessageBox.Show("امروز تولد " + tavalod.Count.ToString() + " نفر از مشتری ها است", "یاداوری تولد", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            picbirthDayNoti.Visible = true;
-                            lblContBirthDayNoti.Visible = true;
-                            lblContBirthDayNoti.Text = tavalod.Count.ToString();
-                            //noti.TitleText = "تولد";
-                            //noti.ContentText = "امروز تولد " + count.ToString() + " نفر از مشتری ها است";
-                            //noti.Popup();
-                        }
+                        //MessageBox.Show("امروز تولد " + tavalod.Count.ToString() + " نفر از مشتری ها است", "یاداوری تولد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        picbirthDayNoti.Visible = true;
+                        lblContBirthDayNoti.Visible = true;
+                        lblContBirthDayNoti.Text = tavalod.Count.ToString();
+                        //noti.TitleText = "تولد";
+                        //noti.ContentText = "امروز تولد " + count.ToString() + " نفر از مشتری ها است";
+                        //noti.Popup();
                     }
                 }
             }
@@ -909,7 +923,7 @@ namespace Service
 
                 if (pingStatus.Status == IPStatus.Success)
                 {
-                    kitchenEntities context = new kitchenEntities();
+                    StimulsoftEntities context = new StimulsoftEntities();
                     var sign = context.Setting.FirstOrDefault();
                     if (sign != null)
                     {
@@ -970,7 +984,7 @@ namespace Service
         {
             try
             {
-                kitchenEntities context = new kitchenEntities();
+                StimulsoftEntities context = new StimulsoftEntities();
                 // baraye inke tashkhis dahad db por ast ya khali agar khali bashad true mishavad
                 var set = context.Setting.FirstOrDefault();
                 var countOpen = context.Reg.FirstOrDefault();
@@ -1011,11 +1025,6 @@ namespace Service
                                     reg.State = HDDSerialL.SerialNumber();
                                     reg.Date = int.Parse(date);
                                     reg.CountOpen = 1;
-                                    if(context.WhiteSms.Count()>0)
-                                    {
-                                        var w = context.WhiteSms.FirstOrDefault();
-                                        w.D11 = "y";
-                                    }
                                     if (a[4] == "1")// pardakht karde 
                                     {
                                         MessageBox.Show("شما قبلا پرداخت کرده اید،نسخه کامل در دسترس شماست", " ثبت نام", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -1051,7 +1060,80 @@ namespace Service
                                     //-----------------
                                 }
                                 context.SaveChanges();
-                                //-------
+                                //}
+                                //}
+                                //else
+                                //{
+                                //    var save = context.Setting.FirstOrDefault();
+                                //    //---------------bekhatere inke table faghat 1 record dashte bashad if gozashtam
+                                //    if (save != null)
+                                //    {
+                                //        //------------tarif etelaate foroshgah va modir
+                                //        paye.IdPaye = a[0];
+                                //        save.CommercialName = a[3];
+                                //        save.ManageName = a[2];
+                                //        save.Mobile = a[6];
+                                //        save.Tel = a[7];
+                                //        save.Email = a[8];
+                                //        save.Address = a[9];
+                                //        //-----------tanzimate sms
+                                //        save.GroupSms = "true";
+                                //        save.WelcomeSms = "true";
+                                //        save.AcceptSms = "true";
+                                //        save.ReadySms = "true";
+                                //        save.DeliverySms = "true";
+                                //        save.BirthDaySms = "true";
+                                //        save.InviteClubeSms = "true";
+                                //        //-----------------
+                                //        context.SaveChanges();
+                                //        MessageBox.Show("شما قبلا پرداخت کرده اید،نسخه کامل در دسترس شماست", " ثبت نام", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                //        strlblVersion.Text = "نسخه کامل";
+                                //    }
+                                //    else
+                                //    {
+                                //        if (context.Reg.Count() <= 0)
+                                //        {
+                                //            Reg reg2 = new Reg();
+                                //            reg2.IdPaye = a[0];
+                                //            string date = DateTime.Now.ToShortDateString().Replace("/", "");
+                                //            reg2.State = HDDSerialL.SerialNumber();
+                                //            reg2.Date = int.Parse(date);
+                                //            reg2.CountOpen = 1;
+                                //            context.Reg.Add(reg2);
+
+                                //        }
+                                //        if (context.Setting.Count() <= 0)
+                                //        {
+                                //            Setting setting = new Setting();
+                                //            setting.ManageName = a[2];
+                                //            setting.CommercialName = a[3];
+                                //            setting.Mobile = a[6];
+                                //            setting.Tel = a[7];
+                                //            setting.Email = a[8];
+                                //            setting.Address = a[9];
+                                //            //-----------tanzimate sms
+                                //            setting.GroupSms = "true";
+                                //            setting.WelcomeSms = "true";
+                                //            setting.AcceptSms = "true";
+                                //            setting.ReadySms = "true";
+                                //            setting.DeliverySms = "true";
+                                //            setting.BirthDaySms = "true";
+                                //            setting.InviteClubeSms = "true";
+                                //            context.Setting.Add(setting);
+                                //            //-----------------
+                                //        }
+                                //        context.SaveChanges();
+                                //        MessageBox.Show("شما قبلا پرداخت کرده اید،نسخه کامل در دسترس شماست", " ثبت نام", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                //        strlblVersion.Text = "نسخه کامل";
+                                //    }
+
+                                //    var reg = context.Reg.FirstOrDefault();
+                                //    reg.Serial1 = IDGenerator.GetOpenLock(HDDSerialL.SerialNumber());
+                                //    context.SaveChanges();
+                                //    //this.Close();
+                                //    //return;
+                                //    //MessageBox.Show("sabte nam shode,pardakht karde");
+                                //}
                                 toolCreateServiceToolStripMenuItem.Enabled = true;
                                 toolToolsToolStripMenuItem.Enabled = true;
                                 toolSearchToolStripMenuItem.Enabled = true;
@@ -1118,7 +1200,7 @@ namespace Service
             {
                 selectDate.Today_Click(null, null);
                 string stPath = Application.StartupPath;
-                kitchenEntities context = new kitchenEntities();
+                StimulsoftEntities context = new StimulsoftEntities();
                 if (context.Reg.Count() > 0)
                 {
                     var check = context.Reg.Where(c => c.State != "" || c.State != null).FirstOrDefault();
@@ -1238,7 +1320,6 @@ namespace Service
             timSms.Start();
             //-----
             Design_Notidication();
-
         }
 
         private void toolReportProdoct_Click(object sender, EventArgs e)
@@ -1293,7 +1374,6 @@ namespace Service
                 frmNoti.Location = new Point(splitContainer1.Panel1.Right - frmNoti.Width, splitContainer1.Panel1.Bottom - frmNoti.Height);
                 frmNoti.Visible = true;
                 frmNoti.show = 1;
-                Design_Notidication();
             }
             else
                 frmNoti.Visible = false;
@@ -1311,7 +1391,7 @@ namespace Service
                 {
                     Ping ping = new Ping();
                     PingReply pingStatus = ping.Send("papiloo.ir");
-                    kitchenEntities context = new kitchenEntities();
+                    StimulsoftEntities context = new StimulsoftEntities();
                     if (pingStatus.Status == IPStatus.Success)
                     {
                         var sign = context.Setting.FirstOrDefault();
@@ -1398,7 +1478,7 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
 
                     string today = selectDate.Text.Replace("/", "").Substring(4, 4);
@@ -1446,10 +1526,17 @@ namespace Service
             frmNoti.Visible = false;
         }
 
-        private void toolWorks_Click(object sender, EventArgs e)
+        private void toolAnbar_Click(object sender, EventArgs e)
         {
-            FormWorks frmWorks = new FormWorks();
-            frmWorks.Show();
+            FormAnbar frmAnbar = new FormAnbar();
+            frmAnbar.ShowDialog();
+
+        }
+
+        private void toolTurn_Click(object sender, EventArgs e)
+        {
+            FormTurn frmTurn = new FormTurn();
+            frmTurn.Show();
         }
     }
 }
