@@ -66,6 +66,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.strlblVersion = new System.Windows.Forms.Label();
             this.timSms = new System.Windows.Forms.Timer(this.components);
+            this.toolWorks = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -112,7 +113,8 @@
             this.toolToolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolDeleteUserToolStripMenuItem,
             this.toolDeleteServiceToolStripMenuItem,
-            this.toolBirthDay});
+            this.toolBirthDay,
+            this.toolWorks});
             this.toolToolsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("toolToolsToolStripMenuItem.Image")));
             this.toolToolsToolStripMenuItem.Name = "toolToolsToolStripMenuItem";
             this.toolToolsToolStripMenuItem.Size = new System.Drawing.Size(78, 23);
@@ -431,6 +433,14 @@
             this.timSms.Interval = 60000;
             this.timSms.Tick += new System.EventHandler(this.timSms_Tick);
             // 
+            // toolWorks
+            // 
+            this.toolWorks.Image = ((System.Drawing.Image)(resources.GetObject("toolWorks.Image")));
+            this.toolWorks.Name = "toolWorks";
+            this.toolWorks.Size = new System.Drawing.Size(171, 24);
+            this.toolWorks.Text = "لیست کارها";
+            this.toolWorks.Click += new System.EventHandler(this.toolWorks_Click);
+            // 
             // FormMain1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -501,6 +511,7 @@
         private System.Windows.Forms.Timer timSms;
         private System.Windows.Forms.ToolStripMenuItem toolAnbar;
         private System.Windows.Forms.ToolStripMenuItem toolTurn;
+        private System.Windows.Forms.ToolStripMenuItem toolWorks;
     }
 }
 

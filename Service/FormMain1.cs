@@ -1536,5 +1536,11 @@ namespace Service
         {
 
         }
+
+        private void toolWorks_Click(object sender, EventArgs e)
+        {
+            FormWorks frmWorks = new FormWorks();
+            frmWorks.Show();
+        }
     }
 }
