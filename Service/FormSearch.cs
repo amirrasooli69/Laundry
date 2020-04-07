@@ -175,7 +175,7 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     dgSearch.DataSource = null;
                     var find = context.User.Where(c => c.Eshterak.Contains(txtSearch.Text)).ToList();
@@ -200,7 +200,7 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     int dtsearch = int.Parse(dtSearch.Text.Replace("/", ""));
                     var find = context.Service.Where(current => current.DateService == dtsearch).ToList();
@@ -229,7 +229,7 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     var find = context.User.Where(current => current.Phone.Contains(txtSearch.Text)).ToList();
                     dgSearch.DataSource = find;
@@ -257,7 +257,7 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     int dtsearch = int.Parse(dtSearch.Text.Replace("/", ""));
                     var find = context.User.Where(current => current.Date == dtsearch).ToList();
@@ -315,7 +315,7 @@ namespace Service
 
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     dgSearch.DataSource = null;
                     var find = context.ReportService.Where(current => current.CodeRahgiri == txtSearch.Text).ToList();
@@ -345,7 +345,7 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     var find = context.User.Where(c => c.Name.Contains(txtSearch.Text)).ToList();
                     dgSearch.DataSource = find;
@@ -367,7 +367,7 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     var find = context.User.Where(c => c.Name.StartsWith(txtSearch.Text)).ToList();
                     dgSearch.DataSource = find;

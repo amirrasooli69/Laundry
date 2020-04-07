@@ -101,7 +101,7 @@ namespace Service
         {
             try
             {
-                kitchenEntities context = new kitchenEntities();
+                StimulsoftEntities context = new StimulsoftEntities();
                 var user = context.User.Where(c => c.Eshterak == dgShow.CurrentRow.Cells[0].Value.ToString()).FirstOrDefault();
                 if(user==null)//agar shomare eshterak dar DB nabood ya vared nakarde bood ya eshtebah bood
                 {

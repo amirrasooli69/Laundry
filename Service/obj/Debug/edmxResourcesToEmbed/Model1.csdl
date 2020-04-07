@@ -7,8 +7,8 @@
     <Property Name="Name" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
     <Property Name="IdProdoct" Type="Int64" />
     <Property Name="IdParent" Type="Int64" />
-    <Property Name="Count" Type="Int64" />
-    <Property Name="Some" Type="Int64" />
+    <Property Name="Positiv" Type="Int64" />
+    <Property Name="Negativ" Type="Int64" />
     <Property Name="Price" Type="Int64" />
     <Property Name="Description" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
     <Property Name="DateBuild" Type="Int64" />
@@ -16,9 +16,6 @@
     <Property Name="CodeRahgiri" Type="Int64" />
     <Property Name="IdStore" Type="Int64" />
     <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <NavigationProperty Name="AnbarParent" Relationship="Self.FK_Anbar_0_0" FromRole="Anbar" ToRole="AnbarParent" />
-    <NavigationProperty Name="Store" Relationship="Self.FK_Anbar_1_0" FromRole="Anbar" ToRole="Store" />
-    <NavigationProperty Name="AnbarProdoct" Relationship="Self.FK_Anbar_2_0" FromRole="Anbar" ToRole="AnbarProdoct" />
   </EntityType>
   <EntityType Name="AnbarParent">
     <Key>
@@ -28,7 +25,6 @@
     <Property Name="Case" Type="Int64" />
     <Property Name="Date" Type="Int64" />
     <Property Name="Description" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Anbar" Relationship="Self.FK_Anbar_0_0" FromRole="AnbarParent" ToRole="Anbar" />
   </EntityType>
   <EntityType Name="AnbarProdoct">
     <Key>
@@ -41,8 +37,6 @@
     <Property Name="Description" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
     <Property Name="Barcode" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
     <Property Name="RfID" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Anbar" Relationship="Self.FK_Anbar_2_0" FromRole="AnbarProdoct" ToRole="Anbar" />
-    <NavigationProperty Name="Unit" Relationship="Self.FK_AnbarProdoct_0_0" FromRole="AnbarProdoct" ToRole="Unit" />
   </EntityType>
   <EntityType Name="Category">
     <Key>
@@ -213,6 +207,7 @@
     <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="EndCreateCodeRahgiri" Type="Int64" />
     <Property Name="ValueAddedPercent" Type="Int64" />
+    <Property Name="CalculateAnbar" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Store">
     <Key>
@@ -222,7 +217,6 @@
     <Property Name="Name" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
     <Property Name="Phone" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
     <Property Name="Address" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Anbar" Relationship="Self.FK_Anbar_1_0" FromRole="Store" ToRole="Anbar" />
   </EntityType>
   <EntityType Name="Unit">
     <Key>
@@ -230,7 +224,6 @@
     </Key>
     <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="AnbarProdoct" Relationship="Self.FK_AnbarProdoct_0_0" FromRole="Unit" ToRole="AnbarProdoct" />
   </EntityType>
   <EntityType Name="User">
     <Key>
@@ -298,55 +291,7 @@
     <Property Name="S13" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
     <Property Name="S14" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
   </EntityType>
-  <Association Name="FK_Anbar_0_0">
-    <End Role="AnbarParent" Type="Self.AnbarParent" Multiplicity="0..1" />
-    <End Role="Anbar" Type="Self.Anbar" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="AnbarParent">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Anbar">
-        <PropertyRef Name="IdParent" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Anbar_1_0">
-    <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
-    <End Role="Anbar" Type="Self.Anbar" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Store">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Anbar">
-        <PropertyRef Name="IdStore" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Anbar_2_0">
-    <End Role="AnbarProdoct" Type="Self.AnbarProdoct" Multiplicity="0..1" />
-    <End Role="Anbar" Type="Self.Anbar" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="AnbarProdoct">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Anbar">
-        <PropertyRef Name="IdProdoct" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_AnbarProdoct_0_0">
-    <End Role="Unit" Type="Self.Unit" Multiplicity="0..1" />
-    <End Role="AnbarProdoct" Type="Self.AnbarProdoct" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Unit">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="AnbarProdoct">
-        <PropertyRef Name="IdUnit" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityContainer Name="kitchenEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="StimulsoftEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Anbar" EntityType="Self.Anbar" />
     <EntitySet Name="AnbarParent" EntityType="Self.AnbarParent" />
     <EntitySet Name="AnbarProdoct" EntityType="Self.AnbarProdoct" />
@@ -366,21 +311,5 @@
     <EntitySet Name="Unit" EntityType="Self.Unit" />
     <EntitySet Name="User" EntityType="Self.User" />
     <EntitySet Name="WhiteSms" EntityType="Self.WhiteSms" />
-    <AssociationSet Name="FK_Anbar_0_0" Association="Self.FK_Anbar_0_0">
-      <End Role="AnbarParent" EntitySet="AnbarParent" />
-      <End Role="Anbar" EntitySet="Anbar" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Anbar_1_0" Association="Self.FK_Anbar_1_0">
-      <End Role="Store" EntitySet="Store" />
-      <End Role="Anbar" EntitySet="Anbar" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Anbar_2_0" Association="Self.FK_Anbar_2_0">
-      <End Role="AnbarProdoct" EntitySet="AnbarProdoct" />
-      <End Role="Anbar" EntitySet="Anbar" />
-    </AssociationSet>
-    <AssociationSet Name="FK_AnbarProdoct_0_0" Association="Self.FK_AnbarProdoct_0_0">
-      <End Role="Unit" EntitySet="Unit" />
-      <End Role="AnbarProdoct" EntitySet="AnbarProdoct" />
-    </AssociationSet>
   </EntityContainer>
 </Schema>

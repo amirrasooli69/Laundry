@@ -21,7 +21,7 @@ namespace Service
         }
         public void Refresh_Manage()//tanzim deta gride
         {
-            using (var context=new kitchenEntities())
+            using (var context=new StimulsoftEntities())
             {
                 dgManage.DataSource = context.Manage.Where(ex => ex.UserName != null).ToList();
                 dgManage.Columns[0].HeaderText = "نام کاربری";
@@ -45,7 +45,7 @@ namespace Service
             {
                 //FormMain1 frmMain = new FormMain1();
                 
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     var select = context.Manage.Where(current => current.UserName == label6.Text).FirstOrDefault();
 
@@ -103,7 +103,7 @@ namespace Service
             {
                 if(txtPassword.Text==txtConfrimPasword.Text)
                 {
-                using (var context=new kitchenEntities())
+                using (var context=new StimulsoftEntities())
                 {
                     var exist = context.Manage.Where(ex => ex.UserName == txtUsername.Text).ToList();
                         if (exist.Count == 0)
@@ -183,7 +183,7 @@ namespace Service
             lblError.Text = "";
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     var delete = context.Manage.Where(current => current.UserName.Contains(txtUsername.Text)).ToList();
                     if (delete.Count == 0)
@@ -231,7 +231,7 @@ namespace Service
             lblError.Text = "";
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     if (txtUsername.Text != "")
                     {

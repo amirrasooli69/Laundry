@@ -59,7 +59,7 @@ namespace Service
             //--------
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
 
                     var user = context.ReportService.Where(c => c.CodeRahgiri == label1.Text).ToList();
@@ -96,7 +96,7 @@ namespace Service
                 if (e.ColumnIndex == 11)
                 {
                     int selectId =int.Parse( dgSearch.CurrentRow.Cells[10].Value.ToString());
-                    using (var context = new kitchenEntities())
+                    using (var context = new StimulsoftEntities())
                     {
                         var select = context.ReportService.Where(c => c.Id == selectId).FirstOrDefault();
                         if(select.Ready=="1")

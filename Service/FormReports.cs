@@ -239,7 +239,7 @@ namespace Service
         private void FormReports_Load(object sender, EventArgs e)
         {
             //------
-            using (var context = new kitchenEntities())
+            using (var context = new StimulsoftEntities())
             {
                 if (PanelUser.Visible == true) // amade kardane panel user baraye gozaresh bar asase moshtari
                 {
@@ -303,7 +303,7 @@ namespace Service
             {
                 int startDate = int.Parse(dtStart.Text.Replace("/", ""));
                 int endDate = int.Parse(dtEnd.Text.Replace("/", ""));
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     var findDate = context.Service.Where(c => c.DateService >= startDate && c.DateService <= endDate).ToList();
                     dgSearch.DataSource = findDate;
@@ -330,7 +330,7 @@ namespace Service
             {
                 if (txtEshterak.Text == "")
                     txtEshterak.Focus();
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     var find = context.Service.Where(c => c.Eshterak == txtEshterak.Text).ToList();
 
@@ -355,7 +355,7 @@ namespace Service
             try
             {
 
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     var find = context.Service.Where(c => c.Eshterak == txtEshterak.Text).ToList();
                     
@@ -384,7 +384,7 @@ namespace Service
             try
             {
                 
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     var user = context.Service.Where(c => c.Mobile == txtPhone.Text).ToList();
                     dgSearch.DataSource = user;
@@ -531,7 +531,7 @@ namespace Service
             try
             {
                 dgSearch.DataSource = null;
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     int startDate = int.Parse(dtStart1.Text.Replace("/", ""));
                     int endDate = int.Parse(dtEnd1.Text.Replace("/", ""));
@@ -560,7 +560,7 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     var prodoct = context.Prodoct.Where(c => c.NameService == comCategory.Text).ToList();
                     comProdoct.DataSource = prodoct;

@@ -54,6 +54,7 @@
             this.toolAbuot = new System.Windows.Forms.ToolStripMenuItem();
             this.tooExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.delToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolTurn = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.selectDate = new BPersianCalender.BPersianCalenderTextBox();
             this.lblCountSmsNoti = new System.Windows.Forms.Label();
@@ -65,7 +66,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.strlblVersion = new System.Windows.Forms.Label();
             this.timSms = new System.Windows.Forms.Timer(this.components);
-            this.toolTurn = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -278,7 +278,16 @@
             this.delToolStripMenuItem.Name = "delToolStripMenuItem";
             this.delToolStripMenuItem.Size = new System.Drawing.Size(42, 23);
             this.delToolStripMenuItem.Text = "del";
+            this.delToolStripMenuItem.Visible = false;
             this.delToolStripMenuItem.Click += new System.EventHandler(this.delToolStripMenuItem_Click);
+            // 
+            // toolTurn
+            // 
+            this.toolTurn.Name = "toolTurn";
+            this.toolTurn.Size = new System.Drawing.Size(90, 23);
+            this.toolTurn.Text = "نوبت دهی";
+            this.toolTurn.Visible = false;
+            this.toolTurn.Click += new System.EventHandler(this.toolTurn_Click);
             // 
             // splitContainer1
             // 
@@ -421,13 +430,6 @@
             this.timSms.Enabled = true;
             this.timSms.Interval = 60000;
             this.timSms.Tick += new System.EventHandler(this.timSms_Tick);
-            // 
-            // toolTurn
-            // 
-            this.toolTurn.Name = "toolTurn";
-            this.toolTurn.Size = new System.Drawing.Size(90, 23);
-            this.toolTurn.Text = "نوبت دهی";
-            this.toolTurn.Click += new System.EventHandler(this.toolTurn_Click);
             // 
             // FormMain1
             // 

@@ -56,7 +56,7 @@ namespace Service
         }
         private void Design_GrideView_Edit_Report_Service()
         {
-            kitchenEntities context = new kitchenEntities();
+            StimulsoftEntities context = new StimulsoftEntities();
             dgSearch.DataSource = null;
             dgSearch.Rows.Clear();
             dgSearch.Columns.Clear();
@@ -111,7 +111,7 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
 
                     var user = context.ReportService.Where(c => c.CodeRahgiri == label1.Text).ToList();
@@ -152,7 +152,7 @@ namespace Service
                 if (e.ColumnIndex == 12)
                 {
                     int selectId = int.Parse(dgSearch.CurrentRow.Cells[10].Value.ToString());
-                    using (var context = new kitchenEntities())
+                    using (var context = new StimulsoftEntities())
                     {
                         var select = context.ReportService.Where(c => c.Id == selectId).FirstOrDefault();
                         if (select.Ready == "1")
@@ -174,7 +174,7 @@ namespace Service
                 if (e.ColumnIndex == 13)
                 {
                     int selectId = int.Parse(dgSearch.CurrentRow.Cells[10].Value.ToString());
-                    using (var context = new kitchenEntities())
+                    using (var context = new StimulsoftEntities())
                     {
                         var del = context.ReportService.Where(c => c.Id == selectId).FirstOrDefault();
                         context.ReportService.Remove(del);
@@ -226,7 +226,7 @@ namespace Service
                     return;
                 }
                 string nameshop;
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     var Name = context.Setting.Where(current => current.CommercialName != null).FirstOrDefault();
                     nameshop = Name.CommercialName;

@@ -40,7 +40,7 @@ namespace Service
                     //txtPhone.Text = "0";
                     return;
                 }
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     var findPhone = context.User.Where(c => c.Phone == txtPhone.Text).ToList();
                     if (phoneNumber != txtPhone.Text || phoneNumber!=txtPhone.Text)

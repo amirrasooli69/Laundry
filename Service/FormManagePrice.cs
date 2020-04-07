@@ -30,7 +30,7 @@ namespace Service
             lblError.Text = "";
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     var name = context.ServicesPrice.Where(current => current.ServisKind == comGroup.Text && current.ServiceKala==txtKindKala.Text && current.ServiseName==txtServiceName.Text).ToList();
                     if (name.Count == 0)
@@ -83,7 +83,7 @@ namespace Service
             try
             {
 
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     Int64 price = Convert.ToInt64(txtServisPrice.Text);
                     var service = context.ServicesPrice.Where(current => current.ServisKind == comGroup.Text && current.ServiceKala == txtKindKala.Text && current.ServiseName == txtServiceName.Text && current.ServicePrice ==price ).ToList();
@@ -137,7 +137,7 @@ namespace Service
             {
                 if (txtKindKala.Text == "" || txtServisPrice.Text == "")
                 {
-                    using (var context = new kitchenEntities())
+                    using (var context = new StimulsoftEntities())
                     {
                         var update = context.ServicesPrice.Where(current => current.ServiseName.Contains(txtKindKala.Text)).ToList();
                         if (update != null)
@@ -173,7 +173,7 @@ namespace Service
         }
         public void Refresh_Price()
         {
-            using (var context = new kitchenEntities())
+            using (var context = new StimulsoftEntities())
             {
 
                 dgShow.DataSource = context.ServicesPrice.ToList();
@@ -194,7 +194,7 @@ namespace Service
             lblError.Text = "";
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     int x = Convert.ToInt16(dgShow.CurrentRow.Cells[4].Value.ToString());
 

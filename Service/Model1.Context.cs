@@ -13,10 +13,10 @@ namespace Service
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class kitchenEntities : DbContext
+    public partial class StimulsoftEntities : DbContext
     {
-        public kitchenEntities()
-            : base("name=kitchenEntities")
+        public StimulsoftEntities()
+            : base("name=StimulsoftEntities")
         {
         }
     

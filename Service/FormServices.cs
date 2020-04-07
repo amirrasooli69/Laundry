@@ -33,7 +33,7 @@ namespace Service
         public void Service_Register() // sabte ghaza 
         {
             //btnSave2.Enabled = true;
-            kitchenEntities context = new kitchenEntities();
+            StimulsoftEntities context = new StimulsoftEntities();
             lblError.Text = "";
             if (txtEshterak.Text == "" || txtName.Text == "" || txtPhone.Text == "")
             {
@@ -90,7 +90,7 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     var price = context.ServicesPrice.Where(c => c.ServisKind == categorySelect && c.ServiceKala == foodSelect && c.ServiseName == serviceSelect).FirstOrDefault();
                     if (price != null)
@@ -409,7 +409,7 @@ namespace Service
             try
             {
 
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     var repeatRahgiri = context.Service.Where(c => c.CodeRahgiri == lblCodeRahgiri.Text).FirstOrDefault();
                     if (repeatRahgiri != null)
@@ -563,7 +563,7 @@ namespace Service
 
                 try
                 {
-                    kitchenEntities context = new kitchenEntities();
+                    StimulsoftEntities context = new StimulsoftEntities();
                     var sign = context.Setting.FirstOrDefault();
                     if (sign.AcceptSms == "true")
                     {
@@ -631,7 +631,7 @@ namespace Service
                 catch (Exception)
                 {
 
-                    kitchenEntities context = new kitchenEntities();
+                    StimulsoftEntities context = new StimulsoftEntities();
                     var sms = context.WhiteSms.Where(c => c.S1 != null && c.S1 != "").FirstOrDefault();
                     var sign = context.Setting.FirstOrDefault();
                     var setName = context.Setting.Where(c => c.CommercialName != "" || c.CommercialName != null).FirstOrDefault();
@@ -721,7 +721,7 @@ namespace Service
             dgFood3.Rows.Clear();
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     //var kindServ = context.KindService.ToList();
                     //dgCategory.DataSource = kindServ;
@@ -780,7 +780,7 @@ namespace Service
             try
             {
                 lblSomeService.Text = "0";
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     var kindServ = context.Category.ToList();
                     if (kindServ.Count > 0)
@@ -934,7 +934,7 @@ namespace Service
                     return;
                 }
                 string nameshop="";
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     var Name = context.Setting.Where(current => current.CommercialName != null).FirstOrDefault();
                     if (Name.CommercialName == "")
@@ -1074,7 +1074,7 @@ namespace Service
             string code2 = "";
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     var getCode = context.Setting.FirstOrDefault();
                     if (getCode.EndCreateCodeRahgiri != null)
@@ -1150,7 +1150,7 @@ namespace Service
 
         private void btnSaveUser_Click(object sender, EventArgs e)
         {
-            kitchenEntities context = new kitchenEntities();
+            StimulsoftEntities context = new StimulsoftEntities();
             string message = "";
             try
             {
@@ -1356,7 +1356,7 @@ namespace Service
                     lblError.Text = "کد رهگیری را وارد کنید";
                     return;
                 }
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
 
                     var x = context.Setting.FirstOrDefault();
@@ -1404,7 +1404,7 @@ namespace Service
                         return;
                     }
 
-                    using (var context = new kitchenEntities())
+                    using (var context = new StimulsoftEntities())
                     {
                         var x = context.ReportService.Where(c => c.CodeRahgiri == codeRahgiri).FirstOrDefault();
 
@@ -1493,7 +1493,7 @@ namespace Service
                 {
                     try
                     {
-                        kitchenEntities context = new kitchenEntities();
+                        StimulsoftEntities context = new StimulsoftEntities();
                         var sendSms = context.Service.Where(c => c.CodeRahgiri == codeRahgiri).FirstOrDefault();
                         if (sendSms.ReadyDate == null || sendSms.ReadyDate == 0)
                             sendSms.ReadyDate = int.Parse(dtNewService.Text.Replace("/", ""));
@@ -1525,7 +1525,7 @@ namespace Service
             {
                 try
                 {
-                    using (var context = new kitchenEntities())
+                    using (var context = new StimulsoftEntities())
                     {
                         var sendSms = context.Service.Where(c => c.CodeRahgiri == codeRahgiri).FirstOrDefault();
                         if (sendSms.ReadyDate == null || sendSms.ReadyDate == null)
@@ -1548,7 +1548,7 @@ namespace Service
             lblError.Text = "";
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     var name = context.ServicesPrice.Where(c => c.ServisKind == categorySelect && c.ServiceKala == foodSelect && c.ServiseName == serviceSelect).FirstOrDefault();
                     if (name == null)
@@ -1631,7 +1631,7 @@ namespace Service
             int vaziyat = 1;
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
 
 
@@ -1654,7 +1654,7 @@ namespace Service
             }
             try
             {
-                kitchenEntities context = new kitchenEntities();
+                StimulsoftEntities context = new StimulsoftEntities();
                 var serv = context.Service.Where(c => c.CodeRahgiri == codeRahgiri).FirstOrDefault();
                 var sms = context.WhiteSms.Where(c => c.D1 != null && c.D1 != "").FirstOrDefault();
                 var x = context.ReportService.Where(c => c.CodeRahgiri == codeRahgiri).FirstOrDefault();
@@ -1733,7 +1733,7 @@ namespace Service
             {
                 try
                 {
-                    kitchenEntities context = new kitchenEntities();
+                    StimulsoftEntities context = new StimulsoftEntities();
                     var serv = context.Service.Where(c => c.CodeRahgiri == txtCodeRahgiri.Text).FirstOrDefault();
                     var sms = context.WhiteSms.Where(c => c.D1 != null && c.D1 != "").FirstOrDefault();
                     var x = context.ReportService.Where(c => c.CodeRahgiri == txtCodeRahgiri.Text).FirstOrDefault();
@@ -1783,7 +1783,7 @@ namespace Service
                     lblError.Text = "کد رهگیری را وارد کنید";
                     return;
                 }
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     string codeRahgiri = "";
                     if (txtEndRahgiri.Text != "")
@@ -2043,7 +2043,7 @@ namespace Service
                 //-----
                 if (chxNewCustomer.Checked == false)
                 {
-                    using (var context = new kitchenEntities())
+                    using (var context = new StimulsoftEntities())
                     {
                         var countService = context.Service.Where(c => c.Eshterak == txtEshterak.Text).ToList();
                         lblSomeService.Text = countService.Count.ToString();
@@ -2108,7 +2108,7 @@ namespace Service
 
         public string Kole_Mande(string eshterak)
         {
-            kitchenEntities context = new kitchenEntities();
+            StimulsoftEntities context = new StimulsoftEntities();
             var price = context.Service.Where(c => c.Eshterak == txtEshterak.Text).ToList();
             //------mohasebe jame baghimande
             long bestankar = 0, takhfif = 0, pardakhti = 0, sumService = 0, sum = 0, totalSum = 0, valueAdded = 0;
@@ -2167,7 +2167,7 @@ namespace Service
         {
             try
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     string today = dtNewService.Text.Replace("/", "").Substring(4, 4);
                     var Userbirthday = context.User.Where(c => c.Eshterak == txtEshterak.Text).First();
@@ -2235,7 +2235,7 @@ namespace Service
         private void txtPhone_TextChanged_1(object sender, EventArgs e)
         {
             lblError.Text = "";
-            kitchenEntities context = new kitchenEntities();
+            StimulsoftEntities context = new StimulsoftEntities();
             var select = context.User.Where(serv => serv.Phone == txtPhone.Text).FirstOrDefault();
             if (chxNewCustomer.Checked == false)
             {
@@ -2296,7 +2296,7 @@ namespace Service
                 }
                 else
                 {
-                    kitchenEntities context = new kitchenEntities();
+                    StimulsoftEntities context = new StimulsoftEntities();
                     var selectUser = context.User.Where(c => c.Eshterak == txtEshterak.Text).FirstOrDefault();
                     if (selectUser != null)
                     {
@@ -2323,7 +2323,7 @@ namespace Service
         {
             try
             {
-                kitchenEntities context = new kitchenEntities();
+                StimulsoftEntities context = new StimulsoftEntities();
                 ReportService repServ = new ReportService();
                 repServ.Eshterak = eshterak;
                 repServ.Date = int.Parse(dtNewService.Text.Replace("/", ""));
@@ -2348,7 +2348,7 @@ namespace Service
         {
             try
             {
-                kitchenEntities context = new kitchenEntities();
+                StimulsoftEntities context = new StimulsoftEntities();
                 Service serv = new Service();
                 var selectUser = context.User.Where(c => c.Eshterak == eshterak).FirstOrDefault();
                 serv.Eshterak = selectUser.Eshterak;
@@ -2401,7 +2401,7 @@ namespace Service
         {
             if (chxNewCustomer.Checked == false)
             {
-                kitchenEntities context = new kitchenEntities();
+                StimulsoftEntities context = new StimulsoftEntities();
                 var select = context.User.Where(serv => serv.Name == txtName.Text).FirstOrDefault();
                 if (select != null)
                 {
@@ -2425,7 +2425,7 @@ namespace Service
                 if (txtCodeRahgiri.Text == "")
                     return;
 
-                kitchenEntities context = new kitchenEntities();
+                StimulsoftEntities context = new StimulsoftEntities();
                 var selectRahgiri = context.Service.Where(c => c.CodeRahgiri == txtCodeRahgiri.Text).FirstOrDefault();
                 if (selectRahgiri == null)
                 {
@@ -2475,7 +2475,7 @@ namespace Service
         {
             if (chxNewCustomer.Checked == false)
             {
-                using (var context = new kitchenEntities())
+                using (var context = new StimulsoftEntities())
                 {
                     //*******Auto Fill Eshterak - Name - Phone
                     if (chxNewCustomer.Checked == false)
@@ -2530,7 +2530,7 @@ namespace Service
 
         private void txtEshterak_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            using (var context = new kitchenEntities())
+            using (var context = new StimulsoftEntities())
             {
                 var editUser = context.User.Where(c => c.Eshterak == txtEshterak.Text).FirstOrDefault();
                 if (editUser != null)
@@ -2566,7 +2566,7 @@ namespace Service
 
         private void txtName_DoubleClick(object sender, EventArgs e)
         {
-            using (var context = new kitchenEntities())
+            using (var context = new StimulsoftEntities())
             {
                 var editUser = context.User.Where(c => c.Name == txtName.Text).FirstOrDefault();
                 if (editUser != null)
@@ -2595,7 +2595,7 @@ namespace Service
 
         private void txtPhone_DoubleClick(object sender, EventArgs e)
         {
-            using (var context = new kitchenEntities())
+            using (var context = new StimulsoftEntities())
             {
                 var editUser = context.User.Where(c => c.Phone == txtPhone.Text).FirstOrDefault();
                 if (editUser != null)
@@ -2624,7 +2624,7 @@ namespace Service
 
         private void txtCodeRahgiri_DoubleClick(object sender, EventArgs e)
         {
-            using (var context = new kitchenEntities())
+            using (var context = new StimulsoftEntities())
             {
                 var editService = context.Service.Where(c => c.CodeRahgiri == txtCodeRahgiri.Text).FirstOrDefault();
                 if (editService != null)

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PapilooDate
+namespace Papiloo
 {
     public partial class AddProdoct : UserControl
     {
