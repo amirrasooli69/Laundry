@@ -28,14 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.dgSearch = new System.Windows.Forms.DataGridView();
             this.btnSearch = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dtBirthDay = new BPersianCalender.BPersianCalenderTextBox();
             this.label34 = new System.Windows.Forms.Label();
             this.comRemeberBirthDay = new System.Windows.Forms.ComboBox();
+            this.dtBirthDay = new Papiloo.FDate();
             ((System.ComponentModel.ISupportInitialize)(this.dgSearch)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -81,20 +80,6 @@
             this.panel2.Size = new System.Drawing.Size(297, 531);
             this.panel2.TabIndex = 3;
             // 
-            // dtBirthDay
-            // 
-            this.dtBirthDay.BackColor = System.Drawing.Color.White;
-            this.dtBirthDay.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.dtBirthDay.Location = new System.Drawing.Point(7, 36);
-            this.dtBirthDay.Miladi = new System.DateTime(((long)(0)));
-            this.dtBirthDay.Name = "dtBirthDay";
-            this.dtBirthDay.NowDateSelected = false;
-            this.dtBirthDay.ReadOnly = true;
-            this.dtBirthDay.SelectedDate = null;
-            this.dtBirthDay.Shamsi = null;
-            this.dtBirthDay.Size = new System.Drawing.Size(162, 27);
-            this.dtBirthDay.TabIndex = 47;
-            // 
             // label34
             // 
             this.label34.AutoSize = true;
@@ -128,6 +113,15 @@
             this.comRemeberBirthDay.TabIndex = 45;
             this.comRemeberBirthDay.SelectedIndexChanged += new System.EventHandler(this.comRemeberBirthDay_SelectedIndexChanged);
             // 
+            // dtBirthDay
+            // 
+            this.dtBirthDay.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.dtBirthDay.Location = new System.Drawing.Point(3, 34);
+            this.dtBirthDay.Name = "dtBirthDay";
+            this.dtBirthDay.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dtBirthDay.Size = new System.Drawing.Size(162, 31);
+            this.dtBirthDay.TabIndex = 48;
+            // 
             // FormBirthDay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -156,6 +150,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.ComboBox comRemeberBirthDay;
-        private BPersianCalender.BPersianCalenderTextBox dtBirthDay;
+        private Papiloo.FDate dtBirthDay;
     }
 }

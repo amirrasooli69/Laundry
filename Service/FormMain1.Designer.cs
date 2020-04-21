@@ -37,6 +37,7 @@
             this.toolDeleteUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolDeleteServiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolBirthDay = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolWorks = new System.Windows.Forms.ToolStripMenuItem();
             this.toolSearchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolSmsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolReports = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,7 +57,6 @@
             this.delToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTurn = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.selectDate = new BPersianCalender.BPersianCalenderTextBox();
             this.lblCountSmsNoti = new System.Windows.Forms.Label();
             this.picSmsNoti = new System.Windows.Forms.PictureBox();
             this.lblContBirthDayNoti = new System.Windows.Forms.Label();
@@ -66,10 +66,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.strlblVersion = new System.Windows.Forms.Label();
             this.timSms = new System.Windows.Forms.Timer(this.components);
-            this.toolWorks = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSmsNoti)).BeginInit();
@@ -145,6 +143,14 @@
             this.toolBirthDay.Text = "تولد";
             this.toolBirthDay.Visible = false;
             this.toolBirthDay.Click += new System.EventHandler(this.toolBirthDay_Click);
+            // 
+            // toolWorks
+            // 
+            this.toolWorks.Image = ((System.Drawing.Image)(resources.GetObject("toolWorks.Image")));
+            this.toolWorks.Name = "toolWorks";
+            this.toolWorks.Size = new System.Drawing.Size(171, 24);
+            this.toolWorks.Text = "لیست کارها";
+            this.toolWorks.Click += new System.EventHandler(this.toolWorks_Click);
             // 
             // toolSearchToolStripMenuItem
             // 
@@ -305,7 +311,6 @@
             this.splitContainer1.Panel1.AutoScroll = true;
             this.splitContainer1.Panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("splitContainer1.Panel1.BackgroundImage")));
             this.splitContainer1.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.splitContainer1.Panel1.Controls.Add(this.selectDate);
             this.splitContainer1.Panel1.Click += new System.EventHandler(this.splitContainer1_Panel1_Click);
             // 
             // splitContainer1.Panel2
@@ -323,23 +328,6 @@
             this.splitContainer1.Size = new System.Drawing.Size(1268, 754);
             this.splitContainer1.SplitterDistance = 723;
             this.splitContainer1.TabIndex = 7;
-            // 
-            // selectDate
-            // 
-            this.selectDate.BackColor = System.Drawing.Color.White;
-            this.selectDate.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.selectDate.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.selectDate.Location = new System.Drawing.Point(5, 672);
-            this.selectDate.Miladi = new System.DateTime(((long)(0)));
-            this.selectDate.Name = "selectDate";
-            this.selectDate.NowDateSelected = false;
-            this.selectDate.ReadOnly = true;
-            this.selectDate.SelectedDate = null;
-            this.selectDate.Shamsi = null;
-            this.selectDate.Size = new System.Drawing.Size(20, 23);
-            this.selectDate.TabIndex = 44;
-            this.selectDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.selectDate.Visible = false;
             // 
             // lblCountSmsNoti
             // 
@@ -433,14 +421,6 @@
             this.timSms.Interval = 60000;
             this.timSms.Tick += new System.EventHandler(this.timSms_Tick);
             // 
-            // toolWorks
-            // 
-            this.toolWorks.Image = ((System.Drawing.Image)(resources.GetObject("toolWorks.Image")));
-            this.toolWorks.Name = "toolWorks";
-            this.toolWorks.Size = new System.Drawing.Size(171, 24);
-            this.toolWorks.Text = "لیست کارها";
-            this.toolWorks.Click += new System.EventHandler(this.toolWorks_Click);
-            // 
             // FormMain1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -462,8 +442,6 @@
             this.Load += new System.EventHandler(this.FormMain1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -502,7 +480,6 @@
         public System.Windows.Forms.ToolStripMenuItem toolReports;
         public System.Windows.Forms.Label toolStripVersion;
         private System.Windows.Forms.ToolStripMenuItem toolReportProdoct;
-        public BPersianCalender.BPersianCalenderTextBox selectDate;
         private System.Windows.Forms.ToolStripMenuItem toolAbuot;
         private System.Windows.Forms.Label lblContBirthDayNoti;
         private System.Windows.Forms.PictureBox picbirthDayNoti;

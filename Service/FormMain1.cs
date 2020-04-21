@@ -893,7 +893,7 @@ namespace Service
                 using (var context = new StimulsoftEntities())
                 {
 
-                    string today = selectDate.Text.Replace("/", "").Substring(4, 4);
+                    string today = Practical.Today_Date().Replace("/", "").Substring(4, 4);
                     var tavalod = context.User.Where(c => c.BirthDayDate.ToString().Substring(4, 4) == today).ToList();
                     //PopupNotifier noti = new PopupNotifier();
                     if (tavalod.Count() > 0)
@@ -1197,7 +1197,7 @@ namespace Service
         {
             try
             {
-                selectDate.Today_Click(null, null);
+                //selectDate.Today_Click(null, null);
                 string stPath = Application.StartupPath;
                 StimulsoftEntities context = new StimulsoftEntities();
                 if (context.Reg.Count() > 0)
@@ -1309,7 +1309,8 @@ namespace Service
         }
         private void FormMain1_Load(object sender, EventArgs e)
         {
-            selectDate.Today_Click(null, null);
+            //selectDate.Today_Click(null, null);
+            
             version();
             First_Check_Internet(); // check kardan ba site
             Run_Program();
@@ -1480,7 +1481,7 @@ namespace Service
                 using (var context = new StimulsoftEntities())
                 {
 
-                    string today = selectDate.Text.Replace("/", "").Substring(4, 4);
+                    string today = Practical.Today_Date().Replace("/", "").Substring(4, 4);
                     var tavalod = context.User.Where(c => c.BirthDayDate.ToString().Substring(4, 4) == today).ToList();
                     //PopupNotifier noti = new PopupNotifier();
                     if (tavalod.Count() > 0)

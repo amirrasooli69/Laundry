@@ -126,7 +126,7 @@ namespace Service
         }
         private void FormBirthDay_Load(object sender, EventArgs e)
         {
-            dtBirthDay.Today_Click(null, null);
+            dtBirthDay.Text = Practical.Today_Date();
             comRemeberBirthDay.SelectedIndex = 0;
 
         }

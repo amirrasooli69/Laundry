@@ -28,20 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSearch));
             this.btnSearch = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.comSearch = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dtSearch = new BPersianCalender.BPersianCalenderTextBox();
             this.lblError = new System.Windows.Forms.Label();
             this.dgSearch = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnPdfExport = new System.Windows.Forms.Button();
             this.btnExcelExport = new System.Windows.Forms.Button();
             this.btnWordExport = new System.Windows.Forms.Button();
+            this.dtSearch = new Papiloo.FDate();
             ((System.ComponentModel.ISupportInitialize)(this.dgSearch)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -67,7 +66,7 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(316, 23);
+            this.txtSearch.Location = new System.Drawing.Point(315, 23);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtSearch.Size = new System.Drawing.Size(154, 27);
@@ -100,23 +99,6 @@
             this.label2.Size = new System.Drawing.Size(44, 19);
             this.label2.TabIndex = 4;
             this.label2.Text = "مقدار";
-            // 
-            // dtSearch
-            // 
-            this.dtSearch.BackColor = System.Drawing.Color.White;
-            this.dtSearch.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtSearch.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.dtSearch.Location = new System.Drawing.Point(316, 23);
-            this.dtSearch.Miladi = new System.DateTime(((long)(0)));
-            this.dtSearch.Name = "dtSearch";
-            this.dtSearch.NowDateSelected = false;
-            this.dtSearch.ReadOnly = true;
-            this.dtSearch.SelectedDate = null;
-            this.dtSearch.Shamsi = null;
-            this.dtSearch.Size = new System.Drawing.Size(153, 27);
-            this.dtSearch.TabIndex = 2;
-            this.dtSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.dtSearch.TextChanged += new System.EventHandler(this.dtSearch_TextChanged);
             // 
             // lblError
             // 
@@ -182,18 +164,27 @@
             this.btnWordExport.UseVisualStyleBackColor = false;
             this.btnWordExport.Click += new System.EventHandler(this.btnWordExport_Click);
             // 
+            // dtSearch
+            // 
+            this.dtSearch.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.dtSearch.Location = new System.Drawing.Point(315, 20);
+            this.dtSearch.Name = "dtSearch";
+            this.dtSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dtSearch.Size = new System.Drawing.Size(154, 31);
+            this.dtSearch.TabIndex = 34;
+            // 
             // FormSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(772, 551);
+            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.dtSearch);
             this.Controls.Add(this.btnPdfExport);
             this.Controls.Add(this.btnExcelExport);
             this.Controls.Add(this.btnWordExport);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.dtSearch);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comSearch);
             this.Controls.Add(this.label1);
@@ -222,12 +213,12 @@
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.ComboBox comSearch;
         private System.Windows.Forms.Label label2;
-        private BPersianCalender.BPersianCalenderTextBox dtSearch;
         private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.DataGridView dgSearch;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnPdfExport;
         private System.Windows.Forms.Button btnExcelExport;
         private System.Windows.Forms.Button btnWordExport;
+        private Papiloo.FDate dtSearch;
     }
 }

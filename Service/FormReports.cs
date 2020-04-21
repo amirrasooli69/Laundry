@@ -276,8 +276,8 @@ namespace Service
                     comProdoct.DataSource = prodoct;
                     comProdoct.DisplayMember = "Name";
                     //----------
-                    dtStart1.Today_Click(null, null);
-                    dtEnd1.Today_Click(null, null);
+                    dtStart1.Text = Practical.Today_Date() ;
+                    dtEnd1.Text = Practical.Today_Date();
                     //----------
                     label4.Text = "تعداد:";
                     label7.Visible = false;

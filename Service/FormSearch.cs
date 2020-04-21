@@ -388,7 +388,7 @@ namespace Service
         #endregion
         private void FormSearch_Load(object sender, EventArgs e)
         {
-            dtSearch.Today_Click(null, null);
+            dtSearch.Text=Practical.Today_Date();
             comSearch.SelectedIndex = 0;
             dtSearch.Visible = true;
 

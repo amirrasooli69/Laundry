@@ -406,7 +406,7 @@ namespace Service
 
         private void FormSms_Load(object sender, EventArgs e)
         {
-            dtSearch.Today_Click(null, null);
+            dtSearch.Text=Practical.Today_Date();
             comRemeberBirthDay.SelectedIndex = 0;
             try
             {

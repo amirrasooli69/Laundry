@@ -853,12 +853,12 @@ namespace Service
 
                     //******
 
-                    dtNewService.Today_Click(null, null);
+                    dtNewService.Text=Practical.Today_Date();
 
                     if (txtPrice.Text == "")
                         btnAddService.Enabled = true;
 
-                    dtNewService.Today_Click(null, null);
+                    dtNewService.Text=Practical.Today_Date();
 
 
                     ////var kindServ = context.KindService.ToList();

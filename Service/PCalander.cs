@@ -12,6 +12,7 @@ namespace Papiloo
 {
     public partial class PCalander : UserControl
     {
+        public bool dontClose=true;
         PersianCalendar pc = new PersianCalendar();
         HijriCalendar hc = new HijriCalendar();
         shamsiCalander objshamsiCalander = new shamsiCalander();
@@ -22,6 +23,18 @@ namespace Papiloo
         int rowIndex, columnIndex;
         string selectedShamsiDate;
         DateTime selectedMiladiDate;
+        public string T_Date
+        {
+            get
+            {
+                return lblShamsi.Text;
+            }
+            set
+            {
+                lblShamsi.Text = value;
+            }
+        }
+
         public PCalander()
         {
             InitializeComponent();
@@ -198,9 +211,10 @@ namespace Papiloo
             YearName--;
             lblYear.Text = YearName.ToString();
         }
-        private void dgCalander_CellClick(object sender, DataGridViewCellEventArgs e)
+        
+        public string GetSelectDate()
         {
-            FindCurrentCell();
+            return this.T_Date;
         }
         private void getDates()
         {
@@ -286,8 +300,23 @@ namespace Papiloo
                 objshamsiCalander.ShamsiDate = MiladiToShamsi(DateTime.Now);
                 objshamsiCalander.HejriDate = MiladiTohejri(DateTime.Now);
             }
-            (Parent as Popup).Close();
+            if (dontClose == true)
+            {
+                (Parent as Popup).Close();
+            }
         }
+
+        private void dgCalander_Click(object sender, EventArgs e)
+        {
+            this.T_Date = lblShamsi.Text;
+            GetSelectDate();
+        }
+
+        private void PCalander_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void FindCurrentCell()
         {
             if (dgCalander.CurrentCell.Value != null)

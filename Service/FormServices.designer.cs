@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormServices));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dtNewService = new BPersianCalender.BPersianCalenderTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -55,7 +53,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
-            this.dtBirthDay = new BPersianCalender.BPersianCalenderTextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -122,6 +119,8 @@
             this.panelPaye = new System.Windows.Forms.Panel();
             this.radNaghdi = new System.Windows.Forms.RadioButton();
             this.radKart = new System.Windows.Forms.RadioButton();
+            this.dtNewService = new Papiloo.FDate();
+            this.dtBirthDay = new Papiloo.FDate();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgShow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgCategory)).BeginInit();
@@ -134,22 +133,6 @@
             this.panel1.SuspendLayout();
             this.panelPaye.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // dtNewService
-            // 
-            this.dtNewService.BackColor = System.Drawing.Color.White;
-            this.dtNewService.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.dtNewService.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.dtNewService.Location = new System.Drawing.Point(860, 9);
-            this.dtNewService.Miladi = new System.DateTime(((long)(0)));
-            this.dtNewService.Name = "dtNewService";
-            this.dtNewService.NowDateSelected = false;
-            this.dtNewService.ReadOnly = true;
-            this.dtNewService.SelectedDate = null;
-            this.dtNewService.Shamsi = null;
-            this.dtNewService.Size = new System.Drawing.Size(140, 23);
-            this.dtNewService.TabIndex = 1;
-            this.dtNewService.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label4
             // 
@@ -243,6 +226,8 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.dtBirthDay);
+            this.panel2.Controls.Add(this.dtNewService);
             this.panel2.Controls.Add(this.btnViewService);
             this.panel2.Controls.Add(this.txtEndRahgiri);
             this.panel2.Controls.Add(this.lblTotalPrice);
@@ -256,12 +241,10 @@
             this.panel2.Controls.Add(this.label16);
             this.panel2.Controls.Add(this.label15);
             this.panel2.Controls.Add(this.txtAddress);
-            this.panel2.Controls.Add(this.dtBirthDay);
             this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.btnSaveUser);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.dtNewService);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.lblSomeService);
@@ -424,22 +407,6 @@
             this.txtAddress.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtAddress.Size = new System.Drawing.Size(588, 23);
             this.txtAddress.TabIndex = 5;
-            // 
-            // dtBirthDay
-            // 
-            this.dtBirthDay.BackColor = System.Drawing.Color.White;
-            this.dtBirthDay.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.dtBirthDay.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.dtBirthDay.Location = new System.Drawing.Point(15, 39);
-            this.dtBirthDay.Miladi = new System.DateTime(((long)(0)));
-            this.dtBirthDay.Name = "dtBirthDay";
-            this.dtBirthDay.NowDateSelected = false;
-            this.dtBirthDay.ReadOnly = true;
-            this.dtBirthDay.SelectedDate = null;
-            this.dtBirthDay.Shamsi = null;
-            this.dtBirthDay.Size = new System.Drawing.Size(154, 23);
-            this.dtBirthDay.TabIndex = 7;
-            this.dtBirthDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label14
             // 
@@ -1256,6 +1223,24 @@
             this.radKart.Text = "کارت";
             this.radKart.UseVisualStyleBackColor = true;
             // 
+            // dtNewService
+            // 
+            this.dtNewService.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.dtNewService.Location = new System.Drawing.Point(860, 4);
+            this.dtNewService.Name = "dtNewService";
+            this.dtNewService.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dtNewService.Size = new System.Drawing.Size(141, 31);
+            this.dtNewService.TabIndex = 89;
+            // 
+            // dtBirthDay
+            // 
+            this.dtBirthDay.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.dtBirthDay.Location = new System.Drawing.Point(12, 33);
+            this.dtBirthDay.Name = "dtBirthDay";
+            this.dtBirthDay.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dtBirthDay.Size = new System.Drawing.Size(141, 31);
+            this.dtBirthDay.TabIndex = 90;
+            // 
             // FormServices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1291,7 +1276,6 @@
         }
 
         #endregion
-        public BPersianCalender.BPersianCalenderTextBox dtNewService;
         public System.Windows.Forms.Label label4;
         public System.Windows.Forms.Label label5;
         public System.Windows.Forms.Label label11;
@@ -1305,7 +1289,6 @@
         public System.Windows.Forms.Label label16;
         public System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtAddress;
-        public BPersianCalender.BPersianCalenderTextBox dtBirthDay;
         public System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtPostiCode;
         private System.Windows.Forms.TextBox txtEshterak;
@@ -1382,5 +1365,7 @@
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.TextBox txtBeforeBeiane;
         public System.Windows.Forms.Label label1;
+        private Papiloo.FDate dtBirthDay;
+        private Papiloo.FDate dtNewService;
     }
 }

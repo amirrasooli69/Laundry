@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -77,7 +76,6 @@
             this.txtSignature = new System.Windows.Forms.TextBox();
             this.lblMoney = new System.Windows.Forms.Label();
             this.dgSearch = new System.Windows.Forms.DataGridView();
-            this.dtSearch = new BPersianCalender.BPersianCalenderTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAllUser = new System.Windows.Forms.Button();
             this.label34 = new System.Windows.Forms.Label();
@@ -86,6 +84,7 @@
             this.btnSearchServic = new System.Windows.Forms.Button();
             this.lblUserCount = new System.Windows.Forms.Label();
             this.lbl1 = new System.Windows.Forms.Label();
+            this.dtSearch = new Papiloo.FDate();
             ((System.ComponentModel.ISupportInitialize)(this.dgView)).BeginInit();
             this.GroupBox2.SuspendLayout();
             this.GroupBox1.SuspendLayout();
@@ -574,20 +573,6 @@
             this.dgSearch.TabIndex = 32;
             this.dgSearch.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgSearch_CellClick);
             // 
-            // dtSearch
-            // 
-            this.dtSearch.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtSearch.Location = new System.Drawing.Point(223, 23);
-            this.dtSearch.Miladi = new System.DateTime(((long)(0)));
-            this.dtSearch.Name = "dtSearch";
-            this.dtSearch.NowDateSelected = false;
-            this.dtSearch.ReadOnly = true;
-            this.dtSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dtSearch.SelectedDate = null;
-            this.dtSearch.Shamsi = null;
-            this.dtSearch.Size = new System.Drawing.Size(147, 30);
-            this.dtSearch.TabIndex = 34;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -696,11 +681,21 @@
             this.lbl1.TabIndex = 52;
             this.lbl1.Text = "تعداد مشترک ها :";
             // 
+            // dtSearch
+            // 
+            this.dtSearch.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.dtSearch.Location = new System.Drawing.Point(223, 22);
+            this.dtSearch.Name = "dtSearch";
+            this.dtSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dtSearch.Size = new System.Drawing.Size(141, 31);
+            this.dtSearch.TabIndex = 54;
+            // 
             // FormSms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1053, 729);
+            this.Controls.Add(this.dtSearch);
             this.Controls.Add(this.lblUserCount);
             this.Controls.Add(this.lbl1);
             this.Controls.Add(this.btnSearchServic);
@@ -709,7 +704,6 @@
             this.Controls.Add(this.btnSearchBirthday);
             this.Controls.Add(this.btnAllUser);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dtSearch);
             this.Controls.Add(this.dgSearch);
             this.Controls.Add(this.dgView);
             this.Controls.Add(this.GroupBox2);
@@ -764,7 +758,6 @@
         internal System.Windows.Forms.Label lblSendMessage;
         internal System.Windows.Forms.Label label10;
         internal System.Windows.Forms.DataGridView dgSearch;
-        private BPersianCalender.BPersianCalenderTextBox dtSearch;
         internal System.Windows.Forms.Label label1;
         internal System.Windows.Forms.Button btnAllUser;
         private System.Windows.Forms.Label label34;
@@ -787,5 +780,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn RecSuccess;
         internal System.Windows.Forms.Label lblUserCount;
         internal System.Windows.Forms.Label lbl1;
+        private Papiloo.FDate dtSearch;
     }
 }

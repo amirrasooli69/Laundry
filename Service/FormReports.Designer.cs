@@ -39,6 +39,8 @@
             this.dgSearch = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblBestankar = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.lblTotallTakhfif = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.lblTotalMande = new System.Windows.Forms.Label();
@@ -58,16 +60,14 @@
             this.btnPdfExport = new System.Windows.Forms.Button();
             this.panelProdoct = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
-            this.dtEnd1 = new BPersianCalender.BPersianCalenderTextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.dtStart1 = new BPersianCalender.BPersianCalenderTextBox();
             this.comProdoct = new System.Windows.Forms.ComboBox();
             this.comCategory = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btnReportProdoct = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.lblBestankar = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.dtEnd1 = new Papiloo.FDate();
+            this.dtStart1 = new Papiloo.FDate();
             this.PanelDate.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgSearch)).BeginInit();
             this.panel1.SuspendLayout();
@@ -184,6 +184,25 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(945, 56);
             this.panel2.TabIndex = 25;
+            // 
+            // lblBestankar
+            // 
+            this.lblBestankar.AutoSize = true;
+            this.lblBestankar.Location = new System.Drawing.Point(195, 17);
+            this.lblBestankar.Name = "lblBestankar";
+            this.lblBestankar.Size = new System.Drawing.Size(18, 19);
+            this.lblBestankar.TabIndex = 66;
+            this.lblBestankar.Text = "0";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(282, 17);
+            this.label14.Name = "label14";
+            this.label14.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label14.Size = new System.Drawing.Size(71, 19);
+            this.label14.TabIndex = 65;
+            this.label14.Text = "بستانکار:";
             // 
             // lblTotallTakhfif
             // 
@@ -333,9 +352,9 @@
             // 
             this.btnWordExport.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnWordExport.Image = ((System.Drawing.Image)(resources.GetObject("btnWordExport.Image")));
-            this.btnWordExport.Location = new System.Drawing.Point(12, 6);
+            this.btnWordExport.Location = new System.Drawing.Point(74, 6);
             this.btnWordExport.Name = "btnWordExport";
-            this.btnWordExport.Size = new System.Drawing.Size(60, 53);
+            this.btnWordExport.Size = new System.Drawing.Size(60, 57);
             this.btnWordExport.TabIndex = 28;
             this.btnWordExport.UseVisualStyleBackColor = false;
             this.btnWordExport.Click += new System.EventHandler(this.btnWordExport_Click);
@@ -344,7 +363,7 @@
             // 
             this.btnExcelExport.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnExcelExport.Image = ((System.Drawing.Image)(resources.GetObject("btnExcelExport.Image")));
-            this.btnExcelExport.Location = new System.Drawing.Point(72, 6);
+            this.btnExcelExport.Location = new System.Drawing.Point(12, 6);
             this.btnExcelExport.Name = "btnExcelExport";
             this.btnExcelExport.Size = new System.Drawing.Size(62, 53);
             this.btnExcelExport.TabIndex = 29;
@@ -364,10 +383,10 @@
             // 
             // panelProdoct
             // 
-            this.panelProdoct.Controls.Add(this.label11);
-            this.panelProdoct.Controls.Add(this.dtEnd1);
-            this.panelProdoct.Controls.Add(this.label12);
             this.panelProdoct.Controls.Add(this.dtStart1);
+            this.panelProdoct.Controls.Add(this.dtEnd1);
+            this.panelProdoct.Controls.Add(this.label11);
+            this.panelProdoct.Controls.Add(this.label12);
             this.panelProdoct.Controls.Add(this.comProdoct);
             this.panelProdoct.Controls.Add(this.comCategory);
             this.panelProdoct.Controls.Add(this.label8);
@@ -382,69 +401,37 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label11.Location = new System.Drawing.Point(554, 15);
+            this.label11.Location = new System.Drawing.Point(575, 16);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(46, 16);
+            this.label11.Size = new System.Drawing.Size(16, 16);
             this.label11.TabIndex = 60;
-            this.label11.Text = "تا تاریخ";
-            // 
-            // dtEnd1
-            // 
-            this.dtEnd1.BackColor = System.Drawing.Color.White;
-            this.dtEnd1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.dtEnd1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.dtEnd1.Location = new System.Drawing.Point(443, 12);
-            this.dtEnd1.Miladi = new System.DateTime(((long)(0)));
-            this.dtEnd1.Name = "dtEnd1";
-            this.dtEnd1.NowDateSelected = false;
-            this.dtEnd1.ReadOnly = true;
-            this.dtEnd1.SelectedDate = null;
-            this.dtEnd1.Shamsi = null;
-            this.dtEnd1.Size = new System.Drawing.Size(105, 23);
-            this.dtEnd1.TabIndex = 59;
-            this.dtEnd1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.label11.Text = "تا";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label12.Location = new System.Drawing.Point(714, 15);
+            this.label12.Location = new System.Drawing.Point(740, 16);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(46, 16);
+            this.label12.Size = new System.Drawing.Size(20, 16);
             this.label12.TabIndex = 58;
-            this.label12.Text = "از تاریخ";
-            // 
-            // dtStart1
-            // 
-            this.dtStart1.BackColor = System.Drawing.Color.White;
-            this.dtStart1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.dtStart1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.dtStart1.Location = new System.Drawing.Point(606, 12);
-            this.dtStart1.Miladi = new System.DateTime(((long)(0)));
-            this.dtStart1.Name = "dtStart1";
-            this.dtStart1.NowDateSelected = false;
-            this.dtStart1.ReadOnly = true;
-            this.dtStart1.SelectedDate = null;
-            this.dtStart1.Shamsi = null;
-            this.dtStart1.Size = new System.Drawing.Size(105, 23);
-            this.dtStart1.TabIndex = 57;
-            this.dtStart1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.label12.Text = "از ";
             // 
             // comProdoct
             // 
             this.comProdoct.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.comProdoct.FormattingEnabled = true;
-            this.comProdoct.Location = new System.Drawing.Point(86, 13);
+            this.comProdoct.Location = new System.Drawing.Point(86, 10);
             this.comProdoct.Name = "comProdoct";
             this.comProdoct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.comProdoct.Size = new System.Drawing.Size(140, 24);
+            this.comProdoct.Size = new System.Drawing.Size(124, 24);
             this.comProdoct.TabIndex = 56;
             // 
             // comCategory
             // 
             this.comCategory.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.comCategory.FormattingEnabled = true;
-            this.comCategory.Location = new System.Drawing.Point(286, 13);
+            this.comCategory.Location = new System.Drawing.Point(273, 10);
             this.comCategory.Name = "comCategory";
             this.comCategory.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.comCategory.Size = new System.Drawing.Size(108, 24);
@@ -455,7 +442,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label8.Location = new System.Drawing.Point(232, 16);
+            this.label8.Location = new System.Drawing.Point(216, 13);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(48, 16);
             this.label8.TabIndex = 54;
@@ -464,7 +451,7 @@
             // btnReportProdoct
             // 
             this.btnReportProdoct.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.btnReportProdoct.Location = new System.Drawing.Point(9, 8);
+            this.btnReportProdoct.Location = new System.Drawing.Point(9, 6);
             this.btnReportProdoct.Name = "btnReportProdoct";
             this.btnReportProdoct.Size = new System.Drawing.Size(71, 32);
             this.btnReportProdoct.TabIndex = 5;
@@ -476,30 +463,29 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label10.Location = new System.Drawing.Point(398, 15);
+            this.label10.Location = new System.Drawing.Point(387, 16);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(39, 16);
             this.label10.TabIndex = 53;
             this.label10.Text = "دسته";
             // 
-            // lblBestankar
+            // dtEnd1
             // 
-            this.lblBestankar.AutoSize = true;
-            this.lblBestankar.Location = new System.Drawing.Point(195, 17);
-            this.lblBestankar.Name = "lblBestankar";
-            this.lblBestankar.Size = new System.Drawing.Size(18, 19);
-            this.lblBestankar.TabIndex = 66;
-            this.lblBestankar.Text = "0";
+            this.dtEnd1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.dtEnd1.Location = new System.Drawing.Point(432, 8);
+            this.dtEnd1.Name = "dtEnd1";
+            this.dtEnd1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dtEnd1.Size = new System.Drawing.Size(145, 31);
+            this.dtEnd1.TabIndex = 61;
             // 
-            // label14
+            // dtStart1
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(282, 17);
-            this.label14.Name = "label14";
-            this.label14.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label14.Size = new System.Drawing.Size(71, 19);
-            this.label14.TabIndex = 65;
-            this.label14.Text = "بستانکار:";
+            this.dtStart1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.dtStart1.Location = new System.Drawing.Point(593, 9);
+            this.dtStart1.Name = "dtStart1";
+            this.dtStart1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dtStart1.Size = new System.Drawing.Size(141, 31);
+            this.dtStart1.TabIndex = 62;
             // 
             // FormReports
             // 
@@ -572,10 +558,10 @@
         public System.Windows.Forms.ComboBox comProdoct;
         public System.Windows.Forms.ComboBox comCategory;
         private System.Windows.Forms.Label label11;
-        public BPersianCalender.BPersianCalenderTextBox dtEnd1;
         private System.Windows.Forms.Label label12;
-        public BPersianCalender.BPersianCalenderTextBox dtStart1;
         private System.Windows.Forms.Label lblBestankar;
         public System.Windows.Forms.Label label14;
+        private Papiloo.FDate dtStart1;
+        private Papiloo.FDate dtEnd1;
     }
 }
