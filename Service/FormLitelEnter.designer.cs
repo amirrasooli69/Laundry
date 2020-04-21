@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLittelEnter));
             this.panelProdoct = new System.Windows.Forms.Panel();
             this.btnAddUnit = new System.Windows.Forms.Button();
             this.btnDelUnit = new System.Windows.Forms.Button();
@@ -257,6 +258,7 @@
             this.txtStoreName.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStoreName.Location = new System.Drawing.Point(8, 15);
             this.txtStoreName.Name = "txtStoreName";
+            this.txtStoreName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtStoreName.Size = new System.Drawing.Size(199, 22);
             this.txtStoreName.TabIndex = 0;
             // 
@@ -304,6 +306,7 @@
             this.txtAddressStore.Location = new System.Drawing.Point(9, 73);
             this.txtAddressStore.Multiline = true;
             this.txtAddressStore.Name = "txtAddressStore";
+            this.txtAddressStore.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtAddressStore.Size = new System.Drawing.Size(198, 90);
             this.txtAddressStore.TabIndex = 6;
             // 
@@ -327,6 +330,7 @@
             this.Controls.Add(this.panelProdoct);
             this.Controls.Add(this.panelStore);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormLittelEnter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormLitelEnter";
