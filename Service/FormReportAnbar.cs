@@ -141,8 +141,9 @@ namespace Service
                 var prodocts = context.AnbarProdoct.ToList();
                 comProdoct.DataSource = prodocts;
                 comProdoct.DisplayMember = "Name";
+                Refresh_dgSearch();
             }
-            Refresh_dgSearch();
+
 
 
 

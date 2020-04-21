@@ -510,6 +510,8 @@ namespace Service
             {
                 var selectStore = context.Store.Where(c => c.Name.Contains(txtNameStore.Text)).ToList();
                 dgStore.DataSource = selectStore;
+                Refresh_dgStore();
+
             }
             else if (txtNameStore.Text == "طرف حساب" || txtNameStore.Text == "")
             {
@@ -595,16 +597,25 @@ namespace Service
                 frmLittelEnter.Text = "ویرایش محصول";
                 if (dgProdoct.SelectedRows.Count == 1)
                 {
-                    frmLittelEnter.majhool = new string[]{
-                    "editProdoct",  //frmLittelEnter.prodoct[0] = "2";
-                    dgProdoct.CurrentRow.Cells[0].Value.ToString(), // dadane id meghdare entekhab shode
-                    dgProdoct.CurrentRow.Cells[1].Value.ToString(), // dadane meghdare unit entekhab shode
-                    dgProdoct.CurrentRow.Cells[2].Value.ToString(),
-                    dgProdoct.CurrentRow.Cells[3].Value.ToString(),
-                    dgProdoct.CurrentRow.Cells[4].Value.ToString(),
-                    dgProdoct.CurrentRow.Cells[5].Value.ToString(),
-                    dgProdoct.CurrentRow.Cells[6].Value.ToString(),
-                };
+                    frmLittelEnter.majhool = new string[] { "editProdoct", "0", "0", "-", "-", "-", "-", "-" };
+                    frmLittelEnter.majhool[0] = "editProdoct"; //frmLittelEnter.prodoct[0] = "2";
+
+                    frmLittelEnter.majhool[1] = dgProdoct.CurrentRow.Cells[0].Value.ToString(); // dadane id meghdare entekhab shode
+                    frmLittelEnter.majhool[2] = dgProdoct.CurrentRow.Cells[1].Value.ToString(); // dadane meghdare unit entekhab shode
+                    frmLittelEnter.majhool[3] = dgProdoct.CurrentRow.Cells[2].Value.ToString();
+                    frmLittelEnter.majhool[4] = dgProdoct.CurrentRow.Cells[3].Value.ToString();
+                    if (dgProdoct.CurrentRow.Cells[4].Value == null)
+                    {
+                        frmLittelEnter.majhool[5] = "-";
+                    }
+                    if ( dgProdoct.CurrentRow.Cells[5].Value == null)
+                    {
+                        frmLittelEnter.majhool[6] = "-";
+                    }
+                    if ( dgProdoct.CurrentRow.Cells[6].Value == null)
+                    {
+                        frmLittelEnter.majhool[7] = "-";
+                    }
                     frmLittelEnter.ShowDialog();
                 }
             }
@@ -620,13 +631,20 @@ namespace Service
             {
                 FormLittelEnter frmLittelEnter = new FormLittelEnter();
                 frmLittelEnter.Text = "ویرایش فروشگاه یا فرد";
-                frmLittelEnter.majhool = new string[]{
-                "editStore",
-                dgStore.CurrentRow.Cells[0].Value.ToString(),
-                dgStore.CurrentRow.Cells[1].Value.ToString(),
-                dgStore.CurrentRow.Cells[2].Value.ToString(),
-                dgStore.CurrentRow.Cells[3].Value.ToString()
-                    };
+                frmLittelEnter.majhool = new string[] { "editStore", "-", "-", "-", "-"};
+                if (dgProdoct.CurrentRow.Cells[1].Value == null)
+                {
+                    frmLittelEnter.majhool[1] = "-";
+                }
+                if (dgProdoct.CurrentRow.Cells[2].Value == null)
+                {
+                    frmLittelEnter.majhool[2] = "-";
+                }
+                if (dgProdoct.CurrentRow.Cells[3].Value == null)
+                {
+                    frmLittelEnter.majhool[3] = "-";
+                }
+
                 frmLittelEnter.ShowDialog();
             }
             else
@@ -794,7 +812,8 @@ namespace Service
         private void btnTest_Click(object sender, EventArgs e)
         {
             FormReportAnbar frmAnbarReport = new FormReportAnbar();
-            frmAnbarReport.Show();
+            frmAnbarReport.ShowDialog();
+            //frmAnbarReport.Show();
         }
 
         private void toolBtnAnbarReport_Click(object sender, EventArgs e)

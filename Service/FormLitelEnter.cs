@@ -24,6 +24,10 @@ namespace Service
         public string[] majhool;
         public void Select_Show()
         {
+            if (context.Unit.Count() > 0)
+            {
+                comUnit.DataSource = context.Unit.ToList();
+            }
             if (majhool[0] == "editProdoct")
             {
                 panelStore.Visible = false;
@@ -33,7 +37,20 @@ namespace Service
                 //tooltxtSearch.Visible = false;
                 Fill_ComUnit();
                 //----
-                comUnit.SelectedIndex = int.Parse(majhool[2]);
+                if (majhool[2] != "")
+                {
+                    if (context.Unit.Count() > 0)
+                    {
+                        if (context.Unit.Count() > int.Parse(majhool[2]))
+                        {
+                            comUnit.SelectedIndex = int.Parse(majhool[2]);
+                        }
+                        else
+                        {
+                            comUnit.SelectedIndex = 0;
+                        }
+                    }
+                }
                 txtNameProdoct.Text = majhool[3];
                 txtCodeProdoct.Text = majhool[4];
                 txtDetails.Text = majhool[5];
@@ -96,8 +113,11 @@ namespace Service
         }
         public void Fill_ComUnit()
         {
-            comUnit.DataSource = context.Unit.ToList();
-            comUnit.DisplayMember = "Name";
+            if (context.Unit.Count() > 0)
+            {
+                comUnit.DataSource = context.Unit.ToList();
+                comUnit.DisplayMember = "Name";
+            }
         }
         private void FormLitelEnter_Load(object sender, EventArgs e)
         {
@@ -178,7 +198,7 @@ namespace Service
 
         private void btnDelUnit_Click(object sender, EventArgs e)
         {
-            if(comUnit.Items.Count>0)
+            if(comUnit.Items.Count>1)
             {
                 var selectUnit = context.Unit.Where(c => c.Name == comUnit.Text).FirstOrDefault();
                 context.Unit.Remove(selectUnit);
