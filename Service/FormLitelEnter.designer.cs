@@ -276,6 +276,7 @@
             // 
             this.txtTelStore.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelStore.Location = new System.Drawing.Point(8, 45);
+            this.txtTelStore.MaxLength = 11;
             this.txtTelStore.Name = "txtTelStore";
             this.txtTelStore.Size = new System.Drawing.Size(199, 22);
             this.txtTelStore.TabIndex = 2;

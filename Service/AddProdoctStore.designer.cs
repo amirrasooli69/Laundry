@@ -257,6 +257,7 @@
             this.txtStoreName.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStoreName.Location = new System.Drawing.Point(8, 15);
             this.txtStoreName.Name = "txtStoreName";
+            this.txtStoreName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtStoreName.Size = new System.Drawing.Size(199, 22);
             this.txtStoreName.TabIndex = 0;
             // 
@@ -274,9 +275,11 @@
             // 
             this.txtPhoneStore.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhoneStore.Location = new System.Drawing.Point(8, 45);
+            this.txtPhoneStore.MaxLength = 11;
             this.txtPhoneStore.Name = "txtPhoneStore";
             this.txtPhoneStore.Size = new System.Drawing.Size(199, 22);
             this.txtPhoneStore.TabIndex = 2;
+            this.txtPhoneStore.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhoneStore_KeyPress);
             // 
             // label25
             // 

@@ -100,6 +100,11 @@ namespace Papiloo
             }
         }
 
+        private void txtPhoneStore_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Service.Practical.Enter_Number(sender, e);
+        }
+
         private void ucAddProdoctStore_Load(object sender, EventArgs e)
         {
             Refresh_comUnit();

@@ -33,7 +33,6 @@
             this.btnNew = new System.Windows.Forms.Button();
             this.comCase = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.Date = new Papiloo.FDate();
             this.label2 = new System.Windows.Forms.Label();
             this.txtDetails = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
@@ -59,12 +58,9 @@
             this.lblSugettion = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnTest = new System.Windows.Forms.Button();
-            this.dateExpird = new Papiloo.FDate();
             this.btnRefreshDgProdoct = new System.Windows.Forms.Button();
             this.btnRefreshDgStore = new System.Windows.Forms.Button();
             this.btnDelStore = new System.Windows.Forms.Button();
-            this.ucDelStore = new Papiloo.ucButton();
-            this.ucAddStore = new Papiloo.ucButton();
             this.btnDelProdoct = new System.Windows.Forms.Button();
             this.btnEditProdoct = new System.Windows.Forms.Button();
             this.btnEditStore = new System.Windows.Forms.Button();
@@ -77,6 +73,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolBtnAnbarReport = new System.Windows.Forms.ToolStripMenuItem();
+            this.dateExpird = new Papiloo.FDate();
+            this.ucDelStore = new Papiloo.ucButton();
+            this.ucAddStore = new Papiloo.ucButton();
+            this.Date = new Papiloo.FDate();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAnbar)).BeginInit();
             this.groupProdoct.SuspendLayout();
@@ -139,16 +139,6 @@
             this.label4.Size = new System.Drawing.Size(65, 18);
             this.label4.TabIndex = 31;
             this.label4.Text = "تاریخ ورود";
-            // 
-            // Date
-            // 
-            this.Date.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.Date.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.Date.Location = new System.Drawing.Point(493, 20);
-            this.Date.Name = "Date";
-            this.Date.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Date.Size = new System.Drawing.Size(141, 31);
-            this.Date.TabIndex = 1;
             // 
             // label2
             // 
@@ -401,7 +391,7 @@
             // 
             this.lblExistingProdoct.AutoSize = true;
             this.lblExistingProdoct.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExistingProdoct.Location = new System.Drawing.Point(296, 196);
+            this.lblExistingProdoct.Location = new System.Drawing.Point(196, 154);
             this.lblExistingProdoct.Name = "lblExistingProdoct";
             this.lblExistingProdoct.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblExistingProdoct.Size = new System.Drawing.Size(0, 18);
@@ -411,7 +401,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(372, 196);
+            this.label7.Location = new System.Drawing.Point(279, 154);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(65, 18);
             this.label7.TabIndex = 105;
@@ -449,16 +439,6 @@
             this.btnTest.UseVisualStyleBackColor = true;
             this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
             // 
-            // dateExpird
-            // 
-            this.dateExpird.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.dateExpird.Location = new System.Drawing.Point(5, 51);
-            this.dateExpird.Name = "dateExpird";
-            this.dateExpird.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dateExpird.Size = new System.Drawing.Size(141, 31);
-            this.dateExpird.TabIndex = 101;
-            this.dateExpird.Load += new System.EventHandler(this.dateExpird_Load);
-            // 
             // btnRefreshDgProdoct
             // 
             this.btnRefreshDgProdoct.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRefreshDgProdoct.BackgroundImage")));
@@ -494,26 +474,6 @@
             this.btnDelStore.Text = "-";
             this.btnDelStore.UseVisualStyleBackColor = false;
             this.btnDelStore.Click += new System.EventHandler(this.btnDelStore_Click);
-            // 
-            // ucDelStore
-            // 
-            this.ucDelStore.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.ucDelStore.Location = new System.Drawing.Point(890, 250);
-            this.ucDelStore.Margin = new System.Windows.Forms.Padding(4);
-            this.ucDelStore.Name = "ucDelStore";
-            this.ucDelStore.Size = new System.Drawing.Size(42, 24);
-            this.ucDelStore.TabIndex = 97;
-            this.ucDelStore.Load += new System.EventHandler(this.ucDelStore_Load);
-            // 
-            // ucAddStore
-            // 
-            this.ucAddStore.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.ucAddStore.Location = new System.Drawing.Point(641, 250);
-            this.ucAddStore.Margin = new System.Windows.Forms.Padding(4);
-            this.ucAddStore.Name = "ucAddStore";
-            this.ucAddStore.Size = new System.Drawing.Size(42, 24);
-            this.ucAddStore.TabIndex = 96;
-            this.ucAddStore.Load += new System.EventHandler(this.ucAddStore_Load);
             // 
             // btnDelProdoct
             // 
@@ -577,7 +537,7 @@
             // 
             this.lblCodeRahgiri.AutoSize = true;
             this.lblCodeRahgiri.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodeRahgiri.Location = new System.Drawing.Point(171, 154);
+            this.lblCodeRahgiri.Location = new System.Drawing.Point(195, 192);
             this.lblCodeRahgiri.Name = "lblCodeRahgiri";
             this.lblCodeRahgiri.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblCodeRahgiri.Size = new System.Drawing.Size(0, 18);
@@ -587,7 +547,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(240, 154);
+            this.label1.Location = new System.Drawing.Point(264, 192);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 18);
             this.label1.TabIndex = 42;
@@ -645,6 +605,46 @@
             this.toolBtnAnbarReport.Text = "گزارش انبار";
             this.toolBtnAnbarReport.Click += new System.EventHandler(this.toolBtnAnbarReport_Click);
             // 
+            // dateExpird
+            // 
+            this.dateExpird.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.dateExpird.Location = new System.Drawing.Point(5, 51);
+            this.dateExpird.Name = "dateExpird";
+            this.dateExpird.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dateExpird.Size = new System.Drawing.Size(141, 31);
+            this.dateExpird.TabIndex = 101;
+            this.dateExpird.Load += new System.EventHandler(this.dateExpird_Load);
+            // 
+            // ucDelStore
+            // 
+            this.ucDelStore.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.ucDelStore.Location = new System.Drawing.Point(890, 250);
+            this.ucDelStore.Margin = new System.Windows.Forms.Padding(4);
+            this.ucDelStore.Name = "ucDelStore";
+            this.ucDelStore.Size = new System.Drawing.Size(42, 24);
+            this.ucDelStore.TabIndex = 97;
+            this.ucDelStore.Load += new System.EventHandler(this.ucDelStore_Load);
+            // 
+            // ucAddStore
+            // 
+            this.ucAddStore.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.ucAddStore.Location = new System.Drawing.Point(641, 250);
+            this.ucAddStore.Margin = new System.Windows.Forms.Padding(4);
+            this.ucAddStore.Name = "ucAddStore";
+            this.ucAddStore.Size = new System.Drawing.Size(42, 24);
+            this.ucAddStore.TabIndex = 96;
+            this.ucAddStore.Load += new System.EventHandler(this.ucAddStore_Load);
+            // 
+            // Date
+            // 
+            this.Date.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.Date.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.Date.Location = new System.Drawing.Point(493, 20);
+            this.Date.Name = "Date";
+            this.Date.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Date.Size = new System.Drawing.Size(141, 31);
+            this.Date.TabIndex = 1;
+            // 
             // FormAnbar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -659,6 +659,9 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(976, 722);
+            this.MinimumSize = new System.Drawing.Size(976, 722);
             this.Name = "FormAnbar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "انبار";

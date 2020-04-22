@@ -631,18 +631,23 @@ namespace Service
             {
                 FormLittelEnter frmLittelEnter = new FormLittelEnter();
                 frmLittelEnter.Text = "ویرایش فروشگاه یا فرد";
-                frmLittelEnter.majhool = new string[] { "editStore", "-", "-", "-", "-"};
-                if (dgProdoct.CurrentRow.Cells[1].Value == null)
+                frmLittelEnter.majhool = new string[] { "editStore","-", "-", "-", "-"};
+                if (dgStore.CurrentRow.Cells[0].Value != null)
                 {
-                    frmLittelEnter.majhool[1] = "-";
+                    frmLittelEnter.majhool[1] = dgStore.CurrentRow.Cells[0].Value.ToString();
+
                 }
-                if (dgProdoct.CurrentRow.Cells[2].Value == null)
+                if (dgStore.CurrentRow.Cells[1].Value != null)
                 {
-                    frmLittelEnter.majhool[2] = "-";
+                    frmLittelEnter.majhool[2] = dgStore.CurrentRow.Cells[1].Value.ToString();
                 }
-                if (dgProdoct.CurrentRow.Cells[3].Value == null)
+                if (dgStore.CurrentRow.Cells[2].Value != null)
                 {
-                    frmLittelEnter.majhool[3] = "-";
+                    frmLittelEnter.majhool[3] = dgStore.CurrentRow.Cells[2].Value.ToString();
+                }
+                if (dgStore.CurrentRow.Cells[3].Value != null)
+                {
+                    frmLittelEnter.majhool[4] = dgStore.CurrentRow.Cells[3].Value.ToString();
                 }
 
                 frmLittelEnter.ShowDialog();
