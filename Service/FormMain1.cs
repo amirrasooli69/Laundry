@@ -1216,6 +1216,7 @@ namespace Service
                         toolSearchToolStripMenuItem.Enabled = false;
                         toolSmsToolStripMenuItem.Enabled = false;
                         toolReports.Enabled = false;
+                        toolAnbar.Enabled = false;
                         toolBackupRestore.Enabled = false;
                         toolManageToolStripMenuItem1.Visible = false;
                         toolManagePriceToolStripMenuItem.Visible = false;
@@ -1239,6 +1240,7 @@ namespace Service
                         toolSearchToolStripMenuItem.Enabled = false;
                         toolSmsToolStripMenuItem.Enabled = false;
                         toolReports.Enabled = false;
+                        toolAnbar.Enabled = false;
                         toolBackupRestore.Enabled = false;
                         toolManageToolStripMenuItem1.Visible = false;
                         toolManagePriceToolStripMenuItem.Visible = false;
