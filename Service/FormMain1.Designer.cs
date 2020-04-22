@@ -486,9 +486,9 @@
         private System.Windows.Forms.Label lblCountSmsNoti;
         private System.Windows.Forms.PictureBox picSmsNoti;
         private System.Windows.Forms.Timer timSms;
-        private System.Windows.Forms.ToolStripMenuItem toolAnbar;
         private System.Windows.Forms.ToolStripMenuItem toolTurn;
         private System.Windows.Forms.ToolStripMenuItem toolWorks;
+        public System.Windows.Forms.ToolStripMenuItem toolAnbar;
     }
 }
 

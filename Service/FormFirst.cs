@@ -199,6 +199,7 @@ namespace Service
                                     frmMain.toolToolsToolStripMenuItem.Enabled = true;
                                     frmMain.toolSearchToolStripMenuItem.Enabled = true;
                                     frmMain.toolSmsToolStripMenuItem.Enabled = true;
+                                    frmMain.toolAnbar.Enabled = true;
                                     frmMain.toolReports.Enabled = true;
                                     frmMain.toolBackupRestore.Enabled = true;
                                     frmMain.toolManageToolStripMenuItem1.Visible = true;

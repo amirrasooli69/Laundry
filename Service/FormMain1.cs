@@ -493,6 +493,34 @@ namespace Service
                         if (delServicePrice != null)
                             context.ServicesPrice.RemoveRange(delServicePrice);
                         //------
+                        var delAnbar = context.Anbar.ToList();
+                        if (delAnbar != null)
+                            context.Anbar.RemoveRange(delAnbar);
+                        //------
+                        var delAnbarParent = context.AnbarParent.ToList();
+                        if (delAnbarParent != null)
+                            context.AnbarParent.RemoveRange(delAnbarParent);
+                        //------
+                        var delAnbarProdoct = context.AnbarProdoct.ToList();
+                        if (delAnbarProdoct != null)
+                            context.AnbarProdoct.RemoveRange(delAnbarProdoct);
+                        //------
+                        var delStore = context.Store.ToList();
+                        if (delStore != null)
+                            context.Store.RemoveRange(delStore);
+                        //------
+                        //var delUnit = context.Unit.ToList();
+                        //if (delUnit != null)
+                        //    context.Unit.RemoveRange(delUnit);
+                        //------
+                        var delcolleague = context.Colleague.ToList();
+                        if (delcolleague != null)
+                            context.Colleague.RemoveRange(delcolleague);
+                        //------
+                        var delDevice = context.Device.ToList();
+                        if (delDevice != null)
+                            context.Device.RemoveRange(delDevice);
+                        //------
                         //var delNameService = context.NameServices.ToList();
                         //if (delNameService != null)
                         //    context.NameServices.RemoveRange(delNameService);
@@ -1138,6 +1166,7 @@ namespace Service
                                 toolSearchToolStripMenuItem.Enabled = true;
                                 toolSmsToolStripMenuItem.Enabled = true;
                                 toolReports.Enabled = true;
+                                toolAnbar.Enabled = true;
                                 toolBackupRestore.Enabled = true;
                                 toolManageToolStripMenuItem1.Visible = true;
                                 toolManagePriceToolStripMenuItem.Visible = true;
@@ -1159,6 +1188,7 @@ namespace Service
                                 toolSearchToolStripMenuItem.Enabled = false;
                                 toolSmsToolStripMenuItem.Enabled = false;
                                 toolReports.Enabled = false;
+                                toolAnbar.Enabled = false;
                                 toolBackupRestore.Enabled = false;
                                 toolManageToolStripMenuItem1.Visible = false;
                                 toolManagePriceToolStripMenuItem.Visible = false;
