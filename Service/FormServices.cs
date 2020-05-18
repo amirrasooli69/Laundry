@@ -994,7 +994,7 @@ namespace Service
                             if (!string.IsNullOrEmpty(selectPrinter.Printer1))
                             {
                                 report.PrinterSettings.PrinterName = selectPrinter.Printer1;
-                                report.Show();
+                                report.Print();
                             }
                             if (!string.IsNullOrEmpty(selectPrinter.Printer2))
                             {
@@ -1005,7 +1005,7 @@ namespace Service
                                 (report.GetComponentByName("Text14") as StiText).Text = txtBeiane.Text;
                                 (report.GetComponentByName("dataValueAdded") as StiText).Text = txtValueAdded.Text;
                                 report.PrinterSettings.PrinterName = selectPrinter.Printer2;
-                                report.Show();
+                                report.Print();
                             }
                             if (!string.IsNullOrEmpty(selectPrinter.Printer3))
                             {
@@ -1017,7 +1017,7 @@ namespace Service
                                 (report.GetComponentByName("Text14") as StiText).Text = txtBeiane.Text;
                                 (report.GetComponentByName("dataValueAdded") as StiText).Text = txtValueAdded.Text;
                                 report.PrinterSettings.PrinterName = selectPrinter.Printer3;
-                                report.Show();
+                                report.Print();
                             }
 
 
