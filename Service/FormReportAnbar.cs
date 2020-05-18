@@ -20,6 +20,7 @@ namespace Service
         //string SelectProdoct = "";
         public void Refresh_dgSearch()
         {
+            
             if (count == 0)
             {
                 dgSearch.Columns["Name"].HeaderText = "نام";
@@ -104,7 +105,7 @@ namespace Service
             }
             return existing.ToString();
         } // mohasebe mahsool mande dar anbar hamrah ba darj dar datagridview
-        public void Select_Prodoct_Name() // entekhab mahsool 
+        public bool Select_Prodoct_Name() // entekhab mahsool 
         {
             //if (count > 1)
             //{
@@ -121,7 +122,10 @@ namespace Service
                 var prodoct = getProdocts.Where(c => c.DateExpierd >= dateFirst && c.DateExpierd <= dateEnd).ToList();
                 dgSearch.DataSource = prodoct;
                 //}
+                return true;
             }
+            else
+                return false;
             
 
 
@@ -158,9 +162,11 @@ namespace Service
                 MessageBox.Show("تاریخ های بازه زمانی را درست کنید", "تاریخ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            Select_Prodoct_Name();
-            Refresh_dgSearch();
-            lblTotalExisting.Text = Calculate_DataGrideView();
+            if (Select_Prodoct_Name())
+            {
+                Refresh_dgSearch();
+                lblTotalExisting.Text = Calculate_DataGrideView();
+            }
         }
 
         private void comProdoct_SelectedIndexChanged(object sender, EventArgs e)
