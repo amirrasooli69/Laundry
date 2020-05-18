@@ -937,12 +937,21 @@ namespace Service
                 using (var context = new StimulsoftEntities())
                 {
                     var Name = context.Setting.Where(current => current.CommercialName != null).FirstOrDefault();
-                    if (Name.CommercialName == "")
+                    if (Name != null)
+                    {
+                        nameshop = Name.CommercialName;
+                        if (nameshop == "")
+                        {
+                            MessageBox.Show("نام تجاری را از بخش تنطیمات ثبت کنید", "نام تجاری", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                    }
+                    else if (Name==null)
                     {
                         MessageBox.Show("نام تجاری را از بخش تنطیمات ثبت کنید", "نام تجاری", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
-                    nameshop = Name.CommercialName;
+                    
 
                     List<servrvice> list = new List<servrvice>();
                     for (int i = 0; i < dgShow.Rows.Count; i++)
