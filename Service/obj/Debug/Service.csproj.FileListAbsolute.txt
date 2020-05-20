@@ -642,3 +642,6 @@ C:\Users\Amir\Desktop\Laundry 99-2-3\Service\obj\Debug\Service.Properties.Resour
 C:\Users\Amir\Desktop\Laundry 99-2-3\Service\obj\Debug\Papiloo.ucAddUnit.resources
 C:\Users\Amir\Desktop\Laundry 99-2-3\Service\obj\Debug\Papiloo.ucButton.resources
 C:\Users\Amir\Desktop\Laundry 99-2-3\Service\obj\Debug\Service.csproj.GenerateResource.Cache
+C:\Users\Amir\Desktop\Develop\C#\Laundry 99-2-29\Service\bin\Debug\Service.exe.config
+C:\Users\Amir\Desktop\Develop\C#\Laundry 99-2-29\Service\obj\Debug\Service.exe
+C:\Users\Amir\Desktop\Develop\C#\Laundry 99-2-29\Service\obj\Debug\Service.pdb

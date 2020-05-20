@@ -991,7 +991,7 @@ namespace Service
                     //List<Version> LAp = instance2.AllPerson;
                     //dgvVersion.DataSource = LAp;
                     //-------
-                    string data = Data_Importer.Request("http://papiloo.ir/Papiloo/Register/Select_Version.php", toolStripVersion.Text);
+                    string data = Data_Importer.Request("https://papiloo.ir/Papiloo/Register/Select_Version.php", toolStripVersion.Text);
                     //MessageBox.Show(data);
 
                     toolStripVersion.Text = "Version: " + version;
@@ -1032,7 +1032,7 @@ namespace Service
                             StreamReader reader;
                             WebRequest request;
                             WebResponse response;
-                            strReq = "http://www.papiloo.ir/Papiloo/Register/Select_Serial.php?Serial=" + HDDSerialL.SerialNumber();
+                            strReq = "https://www.papiloo.ir/Papiloo/Register/Select_Serial.php?Serial=" + HDDSerialL.SerialNumber();
                             request = WebRequest.Create(strReq);
                             response = request.GetResponse();
                             dataStream = response.GetResponseStream();
