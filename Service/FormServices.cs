@@ -933,13 +933,19 @@ namespace Service
                     lblError.Text = "هیچ خدمتی ثبت نشده";
                     return;
                 }
-                string nameshop="";
+                string nameshop="",tel="";
                 using (var context = new StimulsoftEntities())
                 {
                     var Name = context.Setting.Where(current => current.CommercialName != null).FirstOrDefault();
                     if (Name != null)
                     {
                         nameshop = Name.CommercialName;
+                        //-----
+                        if (Name.Tel != "")
+                            tel = Name.Tel;
+                        if(Name.Mobile != "")
+                            tel=tel + "," + Name.Mobile;
+                        //-----
                         if (nameshop == "")
                         {
                             MessageBox.Show("نام تجاری را از بخش تنطیمات ثبت کنید", "نام تجاری", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -995,6 +1001,8 @@ namespace Service
                     (report.GetComponentByName("DataService_SumPrice") as StiText).Text = txtSumServices.Text;
                     (report.GetComponentByName("txtTime") as StiText).Text = DateTime.Now.ToShortTimeString();
                     (report.GetComponentByName("dataValueAdded") as StiText).Text = txtValueAdded.Text;
+                    (report.GetComponentByName("TelNumber") as StiText).Text = tel;
+
                     txtSumServices.Enabled = false;
                     //------ select printer
                     if (context.Device.Count() > 0)
@@ -1003,7 +1011,7 @@ namespace Service
                             if (!string.IsNullOrEmpty(selectPrinter.Printer1))
                             {
                                 report.PrinterSettings.PrinterName = selectPrinter.Printer1;
-                                report.Print();
+                            report.Show();
                             }
                             if (!string.IsNullOrEmpty(selectPrinter.Printer2))
                             {
@@ -1014,7 +1022,7 @@ namespace Service
                                 (report.GetComponentByName("Text14") as StiText).Text = txtBeiane.Text;
                                 (report.GetComponentByName("dataValueAdded") as StiText).Text = txtValueAdded.Text;
                                 report.PrinterSettings.PrinterName = selectPrinter.Printer2;
-                                report.Print();
+                                report.Print(false);
                             }
                             if (!string.IsNullOrEmpty(selectPrinter.Printer3))
                             {
@@ -1026,7 +1034,7 @@ namespace Service
                                 (report.GetComponentByName("Text14") as StiText).Text = txtBeiane.Text;
                                 (report.GetComponentByName("dataValueAdded") as StiText).Text = txtValueAdded.Text;
                                 report.PrinterSettings.PrinterName = selectPrinter.Printer3;
-                                report.Print();
+                                report.Print(false);
                             }
 
 
