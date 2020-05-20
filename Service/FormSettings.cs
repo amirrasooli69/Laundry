@@ -567,7 +567,7 @@ namespace Service
                 txtManageName.BackColor = Color.White;
             }
             //--------
-            if (txtMobile.Text == "" || txtMobile.TextLength!= 11)
+            if (txtMobile.Text == "" || txtMobile.TextLength< 11)
             {
                 txtMobile.BackColor = Color.LightPink;
                 txtMobile.Focus();
@@ -1021,8 +1021,6 @@ namespace Service
 
         private void txtMobile_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Enter_Number(sender, e);
-
         }
 
         private void txt11_KeyPress(object sender, KeyPressEventArgs e)
