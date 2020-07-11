@@ -251,7 +251,7 @@ namespace Service
                         {
                             try
                             {
-                                //---------
+                                //---------add www for https
                                 Ping ping = new Ping();
                                 PingReply pingStatus = ping.Send("www.papiloo.ir");
 
@@ -270,7 +270,7 @@ namespace Service
                                         address = txtAdress.Text,
                                         Reagent = txtReagent.Text;
 
-
+                                    
                                     Data_Importer Data = new Data_Importer();
                                     string data = await Data.GET("https://www.papiloo.ir/Papiloo/App/Register/Insert.php", application, managename, serial, cammersialname, state, trans, phone, tel, email, address, Reagent);
                                     //MessageBox.Show("نسخه آزمایشی در دسترس شماست", " ثبت نام", MessageBoxButtons.OK, MessageBoxIcon.Information);

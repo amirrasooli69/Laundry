@@ -283,7 +283,7 @@ namespace Service
                     {
                         report.PrinterSettings.PrinterName = selectPrinter.Printer1;
                         report.Print(false);
-                        report.Show();
+                        report.Print();
                         //------------------
                         //report.Load(Application.StartupPath + "\\RptService.mrt");
 

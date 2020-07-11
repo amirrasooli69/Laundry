@@ -367,8 +367,8 @@
         </Data>
         <DataBand1 Ref="28" type="DataBand" isKey="true">
           <Brush>Transparent</Brush>
-          <ClientRectangle>0,2.8,3.6,1.4</ClientRectangle>
-          <Components isList="true" count="14">
+          <ClientRectangle>0,2.8,3.6,1.9</ClientRectangle>
+          <Components isList="true" count="16">
             <HeaderService_SumPrice Ref="29" type="Text" isKey="true">
               <Brush>Transparent</Brush>
               <ClientRectangle>1.9,0.8,0.4,0.2</ClientRectangle>
@@ -491,38 +491,7 @@
               <Text>{Takhfif}</Text>
               <TextBrush>Black</TextBrush>
             </Text10>
-            <Text3 Ref="37" type="Text" isKey="true">
-              <Brush>Transparent</Brush>
-              <ClientRectangle>0,1.4,1.5,0.2</ClientRectangle>
-              <Conditions isList="true" count="0" />
-              <Font>Tahoma,7,Bold</Font>
-              <HorAlignment>Center</HorAlignment>
-              <Margins>0,0,0,0</Margins>
-              <Name>Text3</Name>
-              <Page isRef="3" />
-              <Parent isRef="28" />
-              <Text>www.papiloo.ir(023-33344148)</Text>
-              <TextBrush>Black</TextBrush>
-              <Type>Expression</Type>
-              <VertAlignment>Center</VertAlignment>
-            </Text3>
-            <Text15 Ref="38" type="Text" isKey="true">
-              <Brush>Transparent</Brush>
-              <ClientRectangle>1.5,1.4,0.9,0.2</ClientRectangle>
-              <Conditions isList="true" count="0" />
-              <Font>Tahoma,7,Bold</Font>
-              <Guid>927bb183e2764dbc962c7cea88725221</Guid>
-              <HorAlignment>Right</HorAlignment>
-              <Margins>0,0,0,0</Margins>
-              <Name>Text15</Name>
-              <Page isRef="3" />
-              <Parent isRef="28" />
-              <Text>گروه نرم افزار پاپیلو</Text>
-              <TextBrush>Black</TextBrush>
-              <Type>Expression</Type>
-              <VertAlignment>Center</VertAlignment>
-            </Text15>
-            <Text17 Ref="39" type="Text" isKey="true">
+            <Text17 Ref="37" type="Text" isKey="true">
               <Brush>Transparent</Brush>
               <ClientRectangle>1.6,0.5,0.7,0.2</ClientRectangle>
               <Conditions isList="true" count="0" />
@@ -539,7 +508,7 @@
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text17>
-            <dataValueAdded Ref="40" type="Text" isKey="true">
+            <dataValueAdded Ref="38" type="Text" isKey="true">
               <Brush>Transparent</Brush>
               <ClientRectangle>0.1,0.5,1.5,0.2</ClientRectangle>
               <Conditions isList="true" count="0" />
@@ -554,14 +523,72 @@
               <TextBrush>Black</TextBrush>
               <Type>Expression</Type>
             </dataValueAdded>
-            <StartPointPrimitive2 Ref="41" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
+            <Text3 Ref="39" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,1.3,1.5,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Tahoma,6.75,Regular,Point,False,0</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text3</Name>
+              <Page isRef="3" />
+              <Parent isRef="28" />
+              <Text>www.papiloo.ir(023-33344148)</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text3>
+            <Text15 Ref="40" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.5,1.3,0.9,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Tahoma,6.75,Regular,Point,False,0</Font>
+              <Guid>927bb183e2764dbc962c7cea88725221</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text15</Name>
+              <Page isRef="3" />
+              <Parent isRef="28" />
+              <Text>گروه نرم افزاری پاپیلو</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text15>
+            <Text18 Ref="41" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.7,1.6,0.7,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Tahoma,8.25,Bold,Point,False,0</Font>
+              <Guid>ed0cce0338eb4c3da1dd087cda1d70e0</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text18</Name>
+              <Page isRef="3" />
+              <Parent isRef="28" />
+              <Text>شماره تماس</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text18>
+            <TelNumber Ref="42" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,1.6,1.7,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Tahoma,9,Regular,Point,False,0</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>TelNumber</Name>
+              <Page isRef="3" />
+              <Parent isRef="28" />
+              <TextBrush>Black</TextBrush>
+            </TelNumber>
+            <StartPointPrimitive2 Ref="43" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
               <ClientRectangle>0,0,0,0</ClientRectangle>
               <Name>StartPointPrimitive2</Name>
               <Page isRef="3" />
               <Parent isRef="28" />
               <ReferenceToGuid>2b378db26f0d4f9993e8b667d84a6d44</ReferenceToGuid>
             </StartPointPrimitive2>
-            <EndPointPrimitive2 Ref="42" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
+            <EndPointPrimitive2 Ref="44" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
               <ClientRectangle>2.4,1.3,0,0</ClientRectangle>
               <Name>EndPointPrimitive2</Name>
               <Page isRef="3" />
@@ -577,7 +604,7 @@
           <Parent isRef="3" />
           <Sort isList="true" count="0" />
         </DataBand1>
-        <RoundedRectanglePrimitive1 Ref="43" type="Stimulsoft.Report.Components.StiRoundedRectanglePrimitive" isKey="true">
+        <RoundedRectanglePrimitive1 Ref="45" type="Stimulsoft.Report.Components.StiRoundedRectanglePrimitive" isKey="true">
           <ClientRectangle>0,2,2.4,0.3</ClientRectangle>
           <Color>Black</Color>
           <Guid>079a3228a05b41aaab2c3ecd6eac2a9d</Guid>
@@ -586,7 +613,7 @@
           <Parent isRef="3" />
           <Round>0.2</Round>
         </RoundedRectanglePrimitive1>
-        <RectanglePrimitive1 Ref="44" type="RectanglePrimitive" isKey="true">
+        <RectanglePrimitive1 Ref="46" type="RectanglePrimitive" isKey="true">
           <ClientRectangle>0,0.4,2.4,1.1</ClientRectangle>
           <Color>Black</Color>
           <Guid>121d1e16531c49048bfb28a62782c548</Guid>
@@ -595,7 +622,7 @@
           <Parent isRef="3" />
           <Style>Double</Style>
         </RectanglePrimitive1>
-        <RectanglePrimitive2 Ref="45" type="RectanglePrimitive" isKey="true">
+        <RectanglePrimitive2 Ref="47" type="RectanglePrimitive" isKey="true">
           <ClientRectangle>0,2.8,2.4,1.3</ClientRectangle>
           <Color>Black</Color>
           <Guid>2b378db26f0d4f9993e8b667d84a6d44</Guid>
@@ -613,13 +640,13 @@
       <PageWidth>4</PageWidth>
       <PaperSize>A4</PaperSize>
       <Report isRef="0" />
-      <Watermark Ref="46" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+      <Watermark Ref="48" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
         <Font>Arial,100</Font>
         <TextBrush>[50:0:0:0]</TextBrush>
       </Watermark>
     </Page1>
   </Pages>
-  <PrinterSettings Ref="47" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <PrinterSettings Ref="49" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
   <ReferencedAssemblies isList="true" count="8">
     <value>System.Dll</value>
     <value>System.Drawing.Dll</value>
@@ -631,10 +658,10 @@
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>12/26/2019 12:08:33 PM</ReportChanged>
+  <ReportChanged>5/20/2020 8:07:51 PM</ReportChanged>
   <ReportCreated>2/10/2019 2:27:16 PM</ReportCreated>
-  <ReportFile>C:\Users\Amir\Desktop\Develop\C#\Resturant2\Resturant\bin\Debug\RptService.mrt</ReportFile>
-  <ReportGuid>3386217820ce493eae726232a2ed1f63</ReportGuid>
+  <ReportFile>C:\Users\Amir\Desktop\Develop\C#\Laundry 99-2-29\Service\bin\Debug\RptService.mrt</ReportFile>
+  <ReportGuid>580db622adc34f85aae541b7253ee780</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Inches</ReportUnit>
   <ReportVersion>2018.1.6.0</ReportVersion>
