@@ -124,11 +124,11 @@
             // tabSmsSetting
             // 
             this.tabSmsSetting.Controls.Add(this.panel1);
-            this.tabSmsSetting.Location = new System.Drawing.Point(4, 28);
+            this.tabSmsSetting.Location = new System.Drawing.Point(4, 33);
             this.tabSmsSetting.Margin = new System.Windows.Forms.Padding(4);
             this.tabSmsSetting.Name = "tabSmsSetting";
             this.tabSmsSetting.Padding = new System.Windows.Forms.Padding(4);
-            this.tabSmsSetting.Size = new System.Drawing.Size(776, 407);
+            this.tabSmsSetting.Size = new System.Drawing.Size(776, 402);
             this.tabSmsSetting.TabIndex = 0;
             this.tabSmsSetting.Text = "پیامک";
             this.tabSmsSetting.UseVisualStyleBackColor = true;
@@ -260,7 +260,7 @@
             this.label21.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.Location = new System.Drawing.Point(234, 108);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(102, 16);
+            this.label21.Size = new System.Drawing.Size(128, 21);
             this.label21.TabIndex = 41;
             this.label21.Text = "هشدار اعتبار پنل";
             // 
@@ -270,7 +270,7 @@
             this.txtWarningCreadit.Location = new System.Drawing.Point(72, 108);
             this.txtWarningCreadit.Name = "txtWarningCreadit";
             this.txtWarningCreadit.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtWarningCreadit.Size = new System.Drawing.Size(156, 23);
+            this.txtWarningCreadit.Size = new System.Drawing.Size(156, 27);
             this.txtWarningCreadit.TabIndex = 40;
             this.txtWarningCreadit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtWarningCreadit_KeyPress);
             this.txtWarningCreadit.Leave += new System.EventHandler(this.txtWarningCreadit_Leave);
@@ -282,7 +282,7 @@
             this.txtMoney.Location = new System.Drawing.Point(387, 108);
             this.txtMoney.Name = "txtMoney";
             this.txtMoney.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtMoney.Size = new System.Drawing.Size(224, 23);
+            this.txtMoney.Size = new System.Drawing.Size(224, 27);
             this.txtMoney.TabIndex = 39;
             // 
             // chxBirthDaySms
@@ -291,7 +291,7 @@
             this.chxBirthDaySms.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chxBirthDaySms.Location = new System.Drawing.Point(590, 146);
             this.chxBirthDaySms.Name = "chxBirthDaySms";
-            this.chxBirthDaySms.Size = new System.Drawing.Size(157, 20);
+            this.chxBirthDaySms.Size = new System.Drawing.Size(197, 25);
             this.chxBirthDaySms.TabIndex = 10;
             this.chxBirthDaySms.Text = "ارسال پیامک تبریک تولد";
             this.chxBirthDaySms.UseVisualStyleBackColor = true;
@@ -303,7 +303,7 @@
             this.chxDeliverySms.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chxDeliverySms.Location = new System.Drawing.Point(575, 332);
             this.chxDeliverySms.Name = "chxDeliverySms";
-            this.chxDeliverySms.Size = new System.Drawing.Size(172, 20);
+            this.chxDeliverySms.Size = new System.Drawing.Size(218, 25);
             this.chxDeliverySms.TabIndex = 7;
             this.chxDeliverySms.Text = "ارسال پیامک تحویل خدمت";
             this.chxDeliverySms.UseVisualStyleBackColor = true;
@@ -315,7 +315,7 @@
             this.chxReadySms.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chxReadySms.Location = new System.Drawing.Point(584, 283);
             this.chxReadySms.Name = "chxReadySms";
-            this.chxReadySms.Size = new System.Drawing.Size(163, 20);
+            this.chxReadySms.Size = new System.Drawing.Size(207, 25);
             this.chxReadySms.TabIndex = 9;
             this.chxReadySms.Text = "ارسال پیامک آماده تحویل";
             this.chxReadySms.UseVisualStyleBackColor = true;
@@ -327,7 +327,7 @@
             this.chxAcceptSms.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chxAcceptSms.Location = new System.Drawing.Point(610, 234);
             this.chxAcceptSms.Name = "chxAcceptSms";
-            this.chxAcceptSms.Size = new System.Drawing.Size(137, 20);
+            this.chxAcceptSms.Size = new System.Drawing.Size(173, 25);
             this.chxAcceptSms.TabIndex = 6;
             this.chxAcceptSms.Text = "ارسال پیامک پذیرش";
             this.chxAcceptSms.UseVisualStyleBackColor = true;
@@ -339,7 +339,7 @@
             this.chxWelcomeSms.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chxWelcomeSms.Location = new System.Drawing.Point(571, 185);
             this.chxWelcomeSms.Name = "chxWelcomeSms";
-            this.chxWelcomeSms.Size = new System.Drawing.Size(176, 20);
+            this.chxWelcomeSms.Size = new System.Drawing.Size(223, 25);
             this.chxWelcomeSms.TabIndex = 8;
             this.chxWelcomeSms.Text = "ارسال پیامک خوشامدگویی";
             this.chxWelcomeSms.UseVisualStyleBackColor = true;
@@ -351,7 +351,7 @@
             this.chxGroupSms.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chxGroupSms.Location = new System.Drawing.Point(403, 146);
             this.chxGroupSms.Name = "chxGroupSms";
-            this.chxGroupSms.Size = new System.Drawing.Size(139, 20);
+            this.chxGroupSms.Size = new System.Drawing.Size(176, 25);
             this.chxGroupSms.TabIndex = 5;
             this.chxGroupSms.Text = "ارسال پیامک گروهی";
             this.chxGroupSms.UseVisualStyleBackColor = true;
@@ -396,7 +396,7 @@
             this.label12.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(647, 62);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(103, 16);
+            this.label12.Size = new System.Drawing.Size(130, 21);
             this.label12.TabIndex = 27;
             this.label12.Text = "شماره پیامک پنل";
             // 
@@ -406,7 +406,7 @@
             this.label13.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(673, 19);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(77, 16);
+            this.label13.Size = new System.Drawing.Size(99, 21);
             this.label13.TabIndex = 26;
             this.label13.Text = "امضا دیجیتال";
             // 
@@ -416,7 +416,7 @@
             this.txtNumberSms.Location = new System.Drawing.Point(246, 59);
             this.txtNumberSms.Name = "txtNumberSms";
             this.txtNumberSms.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtNumberSms.Size = new System.Drawing.Size(347, 23);
+            this.txtNumberSms.Size = new System.Drawing.Size(347, 27);
             this.txtNumberSms.TabIndex = 2;
             // 
             // txtSignature
@@ -425,7 +425,7 @@
             this.txtSignature.Location = new System.Drawing.Point(246, 16);
             this.txtSignature.Name = "txtSignature";
             this.txtSignature.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtSignature.Size = new System.Drawing.Size(347, 23);
+            this.txtSignature.Size = new System.Drawing.Size(347, 27);
             this.txtSignature.TabIndex = 1;
             // 
             // tabWelcomeWhiteSms
@@ -440,17 +440,17 @@
             this.tabWelcomeWhiteSms.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.tabWelcomeWhiteSms.RightToLeftLayout = true;
             this.tabWelcomeWhiteSms.SelectedIndex = 0;
-            this.tabWelcomeWhiteSms.Size = new System.Drawing.Size(784, 439);
+            this.tabWelcomeWhiteSms.Size = new System.Drawing.Size(782, 431);
             this.tabWelcomeWhiteSms.TabIndex = 0;
             // 
             // tabApplicationSetting
             // 
             this.tabApplicationSetting.Controls.Add(this.panel3);
             this.tabApplicationSetting.Controls.Add(this.panel2);
-            this.tabApplicationSetting.Location = new System.Drawing.Point(4, 28);
+            this.tabApplicationSetting.Location = new System.Drawing.Point(4, 33);
             this.tabApplicationSetting.Name = "tabApplicationSetting";
             this.tabApplicationSetting.Padding = new System.Windows.Forms.Padding(3);
-            this.tabApplicationSetting.Size = new System.Drawing.Size(776, 407);
+            this.tabApplicationSetting.Size = new System.Drawing.Size(774, 394);
             this.tabApplicationSetting.TabIndex = 1;
             this.tabApplicationSetting.Text = "نرم افزار";
             this.tabApplicationSetting.UseVisualStyleBackColor = true;
@@ -485,12 +485,13 @@
             // btnRegisterInternet
             // 
             this.btnRegisterInternet.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegisterInternet.Location = new System.Drawing.Point(13, 147);
+            this.btnRegisterInternet.Location = new System.Drawing.Point(13, 199);
             this.btnRegisterInternet.Name = "btnRegisterInternet";
             this.btnRegisterInternet.Size = new System.Drawing.Size(314, 35);
             this.btnRegisterInternet.TabIndex = 26;
             this.btnRegisterInternet.Text = "پرداخت از طریق اینترنت";
             this.btnRegisterInternet.UseVisualStyleBackColor = true;
+            this.btnRegisterInternet.Visible = false;
             this.btnRegisterInternet.Click += new System.EventHandler(this.BtnRegisterInternet_Click);
             // 
             // btnSendRegisterCode
@@ -511,7 +512,7 @@
             this.label7.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(224, 108);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(114, 19);
+            this.label7.Size = new System.Drawing.Size(140, 24);
             this.label7.TabIndex = 23;
             this.label7.Text = "شناسه پرداخت";
             // 
@@ -521,7 +522,7 @@
             this.label8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(222, 18);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(109, 19);
+            this.label8.Size = new System.Drawing.Size(134, 24);
             this.label8.TabIndex = 22;
             this.label8.Text = "سریال نرم افزار";
             // 
@@ -531,13 +532,13 @@
             this.label9.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(164, 302);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(0, 19);
+            this.label9.Size = new System.Drawing.Size(0, 24);
             this.label9.TabIndex = 21;
             // 
             // btnCreate
             // 
             this.btnCreate.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreate.Location = new System.Drawing.Point(13, 196);
+            this.btnCreate.Location = new System.Drawing.Point(13, 155);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(314, 35);
             this.btnCreate.TabIndex = 19;
@@ -598,7 +599,7 @@
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(353, 236);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(46, 19);
+            this.label19.Size = new System.Drawing.Size(55, 24);
             this.label19.TabIndex = 18;
             this.label19.Text = "معرف";
             // 
@@ -606,7 +607,7 @@
             // 
             this.txtReagent.Location = new System.Drawing.Point(21, 233);
             this.txtReagent.Name = "txtReagent";
-            this.txtReagent.Size = new System.Drawing.Size(185, 27);
+            this.txtReagent.Size = new System.Drawing.Size(185, 32);
             this.txtReagent.TabIndex = 17;
             // 
             // label14
@@ -615,7 +616,7 @@
             this.label14.ForeColor = System.Drawing.Color.Red;
             this.label14.Location = new System.Drawing.Point(286, 97);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(18, 19);
+            this.label14.Size = new System.Drawing.Size(21, 24);
             this.label14.TabIndex = 16;
             this.label14.Text = "*";
             // 
@@ -625,7 +626,7 @@
             this.label11.ForeColor = System.Drawing.Color.Red;
             this.label11.Location = new System.Drawing.Point(220, 56);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(18, 19);
+            this.label11.Size = new System.Drawing.Size(21, 24);
             this.label11.TabIndex = 15;
             this.label11.Text = "*";
             // 
@@ -635,7 +636,7 @@
             this.label10.ForeColor = System.Drawing.Color.Red;
             this.label10.Location = new System.Drawing.Point(313, 9);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(18, 19);
+            this.label10.Size = new System.Drawing.Size(21, 24);
             this.label10.TabIndex = 14;
             this.label10.Text = "*";
             // 
@@ -653,7 +654,7 @@
             // 
             this.txtName.Location = new System.Drawing.Point(21, 9);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(185, 27);
+            this.txtName.Size = new System.Drawing.Size(185, 32);
             this.txtName.TabIndex = 0;
             // 
             // label6
@@ -661,7 +662,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(354, 279);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(45, 19);
+            this.label6.Size = new System.Drawing.Size(55, 24);
             this.label6.TabIndex = 11;
             this.label6.Text = "آدرس";
             // 
@@ -670,7 +671,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(326, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 19);
+            this.label1.Size = new System.Drawing.Size(90, 24);
             this.label1.TabIndex = 1;
             this.label1.Text = "نام تجاری";
             // 
@@ -686,7 +687,7 @@
             // 
             this.txtManageName.Location = new System.Drawing.Point(21, 50);
             this.txtManageName.Name = "txtManageName";
-            this.txtManageName.Size = new System.Drawing.Size(185, 27);
+            this.txtManageName.Size = new System.Drawing.Size(185, 32);
             this.txtManageName.TabIndex = 2;
             // 
             // label5
@@ -694,7 +695,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(352, 191);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 19);
+            this.label5.Size = new System.Drawing.Size(54, 24);
             this.label5.TabIndex = 9;
             this.label5.Text = "ایمیل";
             // 
@@ -703,7 +704,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(235, 53);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(162, 19);
+            this.label2.Size = new System.Drawing.Size(203, 24);
             this.label2.TabIndex = 3;
             this.label2.Text = "نام و نام خانوادگی مدیر";
             // 
@@ -711,14 +712,14 @@
             // 
             this.txtEmail.Location = new System.Drawing.Point(20, 188);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(185, 27);
+            this.txtEmail.Size = new System.Drawing.Size(185, 32);
             this.txtEmail.TabIndex = 8;
             // 
             // txtMobile
             // 
             this.txtMobile.Location = new System.Drawing.Point(21, 94);
             this.txtMobile.Name = "txtMobile";
-            this.txtMobile.Size = new System.Drawing.Size(185, 27);
+            this.txtMobile.Size = new System.Drawing.Size(185, 32);
             this.txtMobile.TabIndex = 4;
             this.txtMobile.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMobile_KeyPress);
             // 
@@ -727,7 +728,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(275, 142);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(122, 19);
+            this.label4.Size = new System.Drawing.Size(151, 24);
             this.label4.TabIndex = 7;
             this.label4.Text = "شماره تلفن ثابت";
             // 
@@ -736,7 +737,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(299, 97);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 19);
+            this.label3.Size = new System.Drawing.Size(121, 24);
             this.label3.TabIndex = 5;
             this.label3.Text = "شماره موبایل";
             // 
@@ -744,7 +745,7 @@
             // 
             this.txtTel.Location = new System.Drawing.Point(20, 139);
             this.txtTel.Name = "txtTel";
-            this.txtTel.Size = new System.Drawing.Size(185, 27);
+            this.txtTel.Size = new System.Drawing.Size(185, 32);
             this.txtTel.TabIndex = 6;
             // 
             // tabPrinter
@@ -774,10 +775,10 @@
             this.tabPrinter.Controls.Add(this.comPrinter3);
             this.tabPrinter.Controls.Add(this.comPrinter2);
             this.tabPrinter.Controls.Add(this.comPrinter1);
-            this.tabPrinter.Location = new System.Drawing.Point(4, 28);
+            this.tabPrinter.Location = new System.Drawing.Point(4, 33);
             this.tabPrinter.Name = "tabPrinter";
             this.tabPrinter.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPrinter.Size = new System.Drawing.Size(776, 407);
+            this.tabPrinter.Size = new System.Drawing.Size(776, 402);
             this.tabPrinter.TabIndex = 2;
             this.tabPrinter.Text = "پرینتر و  خدمات";
             this.tabPrinter.UseVisualStyleBackColor = true;
@@ -788,7 +789,7 @@
             this.chxPrinter3.AutoSize = true;
             this.chxPrinter3.Location = new System.Drawing.Point(183, 15);
             this.chxPrinter3.Name = "chxPrinter3";
-            this.chxPrinter3.Size = new System.Drawing.Size(76, 23);
+            this.chxPrinter3.Size = new System.Drawing.Size(91, 28);
             this.chxPrinter3.TabIndex = 87;
             this.chxPrinter3.Text = "پرینتر 3";
             this.chxPrinter3.UseVisualStyleBackColor = true;
@@ -799,7 +800,7 @@
             this.chxPrinter2.AutoSize = true;
             this.chxPrinter2.Location = new System.Drawing.Point(437, 15);
             this.chxPrinter2.Name = "chxPrinter2";
-            this.chxPrinter2.Size = new System.Drawing.Size(76, 23);
+            this.chxPrinter2.Size = new System.Drawing.Size(91, 28);
             this.chxPrinter2.TabIndex = 86;
             this.chxPrinter2.Text = "پرینتر 2";
             this.chxPrinter2.UseVisualStyleBackColor = true;
@@ -810,7 +811,7 @@
             this.chxPrinter1.AutoSize = true;
             this.chxPrinter1.Location = new System.Drawing.Point(694, 15);
             this.chxPrinter1.Name = "chxPrinter1";
-            this.chxPrinter1.Size = new System.Drawing.Size(76, 23);
+            this.chxPrinter1.Size = new System.Drawing.Size(91, 28);
             this.chxPrinter1.TabIndex = 85;
             this.chxPrinter1.Text = "پرینتر 1";
             this.chxPrinter1.UseVisualStyleBackColor = true;
@@ -822,7 +823,7 @@
             this.label24.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.Location = new System.Drawing.Point(566, 181);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(20, 16);
+            this.label24.Size = new System.Drawing.Size(27, 21);
             this.label24.TabIndex = 84;
             this.label24.Text = "%";
             // 
@@ -832,7 +833,7 @@
             this.label23.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.Location = new System.Drawing.Point(696, 181);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(71, 16);
+            this.label23.Size = new System.Drawing.Size(93, 21);
             this.label23.TabIndex = 83;
             this.label23.Text = "ارزش افروده";
             // 
@@ -842,7 +843,7 @@
             this.txtValueAdded.Location = new System.Drawing.Point(593, 178);
             this.txtValueAdded.Name = "txtValueAdded";
             this.txtValueAdded.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtValueAdded.Size = new System.Drawing.Size(97, 23);
+            this.txtValueAdded.Size = new System.Drawing.Size(97, 27);
             this.txtValueAdded.TabIndex = 82;
             this.txtValueAdded.TextChanged += new System.EventHandler(this.txtValueAdded_TextChanged);
             this.txtValueAdded.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValueAdded_KeyPress);
@@ -852,7 +853,7 @@
             this.chxProdoctvalueAdded.AutoSize = true;
             this.chxProdoctvalueAdded.Location = new System.Drawing.Point(355, 141);
             this.chxProdoctvalueAdded.Name = "chxProdoctvalueAdded";
-            this.chxProdoctvalueAdded.Size = new System.Drawing.Size(108, 23);
+            this.chxProdoctvalueAdded.Size = new System.Drawing.Size(128, 28);
             this.chxProdoctvalueAdded.TabIndex = 81;
             this.chxProdoctvalueAdded.Text = "ارزش افزوده";
             this.chxProdoctvalueAdded.UseVisualStyleBackColor = true;
@@ -865,7 +866,7 @@
             this.label18.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.Location = new System.Drawing.Point(728, 88);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(39, 16);
+            this.label18.Size = new System.Drawing.Size(51, 21);
             this.label18.TabIndex = 75;
             this.label18.Text = "دسته";
             // 
@@ -887,7 +888,7 @@
             this.label20.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.Location = new System.Drawing.Point(466, 87);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(48, 16);
+            this.label20.Size = new System.Drawing.Size(63, 21);
             this.label20.TabIndex = 74;
             this.label20.Text = "محصول";
             // 
@@ -899,7 +900,7 @@
             this.comServiceName.Location = new System.Drawing.Point(57, 83);
             this.comServiceName.Name = "comServiceName";
             this.comServiceName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.comServiceName.Size = new System.Drawing.Size(154, 24);
+            this.comServiceName.Size = new System.Drawing.Size(154, 27);
             this.comServiceName.TabIndex = 70;
             // 
             // comKindKala
@@ -910,7 +911,7 @@
             this.comKindKala.Location = new System.Drawing.Point(313, 84);
             this.comKindKala.Name = "comKindKala";
             this.comKindKala.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.comKindKala.Size = new System.Drawing.Size(150, 24);
+            this.comKindKala.Size = new System.Drawing.Size(150, 27);
             this.comKindKala.TabIndex = 66;
             // 
             // comServiceKind
@@ -921,7 +922,7 @@
             this.comServiceKind.Location = new System.Drawing.Point(566, 83);
             this.comServiceKind.Name = "comServiceKind";
             this.comServiceKind.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.comServiceKind.Size = new System.Drawing.Size(154, 24);
+            this.comServiceKind.Size = new System.Drawing.Size(154, 27);
             this.comServiceKind.TabIndex = 62;
             this.comServiceKind.SelectedIndexChanged += new System.EventHandler(this.comServiceKind_SelectedIndexChanged);
             // 
@@ -931,7 +932,7 @@
             this.label22.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.Location = new System.Drawing.Point(214, 86);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(52, 16);
+            this.label22.Size = new System.Drawing.Size(68, 21);
             this.label22.TabIndex = 61;
             this.label22.Text = "سرویس";
             // 
@@ -1001,7 +1002,7 @@
             this.txtAddNameService.Location = new System.Drawing.Point(57, 112);
             this.txtAddNameService.Name = "txtAddNameService";
             this.txtAddNameService.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtAddNameService.Size = new System.Drawing.Size(154, 23);
+            this.txtAddNameService.Size = new System.Drawing.Size(154, 27);
             this.txtAddNameService.TabIndex = 73;
             this.txtAddNameService.Visible = false;
             this.txtAddNameService.DoubleClick += new System.EventHandler(this.txtAddNameService_DoubleClick_1);
@@ -1013,7 +1014,7 @@
             this.txtAddKindService.Location = new System.Drawing.Point(566, 112);
             this.txtAddKindService.Name = "txtAddKindService";
             this.txtAddKindService.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtAddKindService.Size = new System.Drawing.Size(154, 23);
+            this.txtAddKindService.Size = new System.Drawing.Size(154, 27);
             this.txtAddKindService.TabIndex = 64;
             this.txtAddKindService.Visible = false;
             this.txtAddKindService.DoubleClick += new System.EventHandler(this.txtAddKindService_DoubleClick_1);
@@ -1025,7 +1026,7 @@
             this.txtAddKindkala.Location = new System.Drawing.Point(312, 112);
             this.txtAddKindkala.Name = "txtAddKindkala";
             this.txtAddKindkala.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtAddKindkala.Size = new System.Drawing.Size(150, 23);
+            this.txtAddKindkala.Size = new System.Drawing.Size(150, 27);
             this.txtAddKindkala.TabIndex = 69;
             this.txtAddKindkala.Visible = false;
             this.txtAddKindkala.DoubleClick += new System.EventHandler(this.txtAddKindkala_DoubleClick);
@@ -1036,7 +1037,7 @@
             this.comPrinter3.FormattingEnabled = true;
             this.comPrinter3.Location = new System.Drawing.Point(10, 13);
             this.comPrinter3.Name = "comPrinter3";
-            this.comPrinter3.Size = new System.Drawing.Size(167, 27);
+            this.comPrinter3.Size = new System.Drawing.Size(167, 32);
             this.comPrinter3.TabIndex = 32;
             this.comPrinter3.SelectedIndexChanged += new System.EventHandler(this.comPrinter3_SelectedIndexChanged);
             // 
@@ -1045,7 +1046,7 @@
             this.comPrinter2.FormattingEnabled = true;
             this.comPrinter2.Location = new System.Drawing.Point(270, 13);
             this.comPrinter2.Name = "comPrinter2";
-            this.comPrinter2.Size = new System.Drawing.Size(166, 27);
+            this.comPrinter2.Size = new System.Drawing.Size(166, 32);
             this.comPrinter2.TabIndex = 30;
             this.comPrinter2.SelectedIndexChanged += new System.EventHandler(this.comPrinter2_SelectedIndexChanged);
             // 
@@ -1054,15 +1055,15 @@
             this.comPrinter1.FormattingEnabled = true;
             this.comPrinter1.Location = new System.Drawing.Point(523, 13);
             this.comPrinter1.Name = "comPrinter1";
-            this.comPrinter1.Size = new System.Drawing.Size(171, 27);
+            this.comPrinter1.Size = new System.Drawing.Size(171, 32);
             this.comPrinter1.TabIndex = 28;
             this.comPrinter1.SelectedIndexChanged += new System.EventHandler(this.comPrinter1_SelectedIndexChanged);
             // 
             // FormSettings
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 439);
+            this.ClientSize = new System.Drawing.Size(782, 431);
             this.Controls.Add(this.tabWelcomeWhiteSms);
             this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

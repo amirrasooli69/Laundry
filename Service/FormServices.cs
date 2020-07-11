@@ -1296,7 +1296,7 @@ namespace Service
                         try
                         {
                             Ping ping = new Ping();
-                            PingReply pingStatus = ping.Send("google.com");
+                            PingReply pingStatus = ping.Send("www.papiloo.ir");
                             if (pingStatus.Status == IPStatus.Success)
                             {
                                 var check = context.WhiteSms.FirstOrDefault();

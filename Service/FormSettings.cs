@@ -231,7 +231,7 @@ namespace Service
                 StreamReader reader2;
                 WebRequest request2;
                 WebResponse response2;
-                strReq2 = "http://www.papiloo.ir/Papiloo/Register/Select_Pay.php?Serial=" + shenase;
+                strReq2 = "https://www.papiloo.ir/Papiloo/App/Register/Select_Pay.php?Serial=" + shenase;
                 request2 = WebRequest.Create(strReq2);
                 response2 = request2.GetResponse();
                 dataStream2 = response2.GetResponseStream();
@@ -252,7 +252,7 @@ namespace Service
                     StreamReader reader;
                     WebRequest request;
                     WebResponse response;
-                    strReq = "http://www.papiloo.ir/Papiloo/Register/Update_Pay.php?Serial=" + IDGenerator.GetCPUId();
+                    strReq = "https://www.papiloo.ir/Papiloo/App/Register/Update_Pay.php?Serial=" + IDGenerator.GetCPUId();
                     request = WebRequest.Create(strReq);
                     response = request.GetResponse();
                     dataStream = response.GetResponseStream();
@@ -1114,10 +1114,10 @@ namespace Service
             try
             {
                 Ping ping = new Ping();
-                PingReply pingStatus = ping.Send("papiloo.ir");
+                PingReply pingStatus = ping.Send("www.papiloo.ir");
                 if (pingStatus.Status == IPStatus.Success)
                 {
-                    System.Diagnostics.Process.Start("http://www.papiloo.ir/Laundry/index.php");
+                    System.Diagnostics.Process.Start("https://www.papiloo.ir/Papiloo/Laundry/index.php");
                 }
                 else
                 {

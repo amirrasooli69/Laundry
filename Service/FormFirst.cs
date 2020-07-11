@@ -76,7 +76,7 @@ namespace Service
             try
             {
                 Ping ping = new Ping();
-                PingReply pingStatus = ping.Send("papiloo.ir");
+                PingReply pingStatus = ping.Send("www.papiloo.ir");
 
                 if (pingStatus.Status == IPStatus.Success)
                 {
@@ -86,7 +86,7 @@ namespace Service
                     phone = txtMobile.Text,
                     Token = adad.ToString();
                     Data_Importer Data = new Data_Importer();
-                    string data = await Data.GET("http://www.papiloo.ir/Papiloo/Register/Sms.php", managename,phone, Token);
+                    string data = await Data.GET("https://www.papiloo.ir/Papiloo/App/Register/Sms.php", managename,phone, Token);
                     MessageBox.Show("پیامک کد تایید ارسال شد", "پیامک تایید", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     groupBox1.Enabled = false;
                     btnAccept.Enabled = true;
@@ -154,7 +154,7 @@ namespace Service
                             try
                             {
                                 Ping ping = new Ping();
-                                PingReply pingStatus = ping.Send("papiloo.ir");
+                                PingReply pingStatus = ping.Send("www.papiloo.ir");
 
                                 if (pingStatus.Status == IPStatus.Success)
                                 {
@@ -172,7 +172,7 @@ namespace Service
                                         Reagent = txtReagent.Text;
 
                                     Data_Importer Data = new Data_Importer();
-                                    string data = await Data.GET("http://www.papiloo.ir/Papiloo/Register/Insert.php", application, managename, serial, cammersialname, state, trans, phone, tel, email, address, Reagent);
+                                    string data = await Data.GET("https://www.papiloo.ir/Papiloo/App/Register/Insert.php", application, managename, serial, cammersialname, state, trans, phone, tel, email, address, Reagent);
 
                                     //MessageBox.Show("نسخه آزمایشی در دسترس شماست", " ثبت نام", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -215,7 +215,7 @@ namespace Service
                                     StreamReader reader;
                                     WebRequest request;
                                     WebResponse response;
-                                    strReq = "http://www.papiloo.ir/Papiloo/Register/Select_Serial.php?Serial=" + HDDSerialL.SerialNumber();
+                                    strReq = "http://www.papiloo.ir/Papiloo/App/Register/Select_Serial.php?Serial=" + HDDSerialL.SerialNumber();
                                     request = WebRequest.Create(strReq);
                                     response = request.GetResponse();
                                     dataStream = response.GetResponseStream();
@@ -253,7 +253,7 @@ namespace Service
                             {
                                 //---------
                                 Ping ping = new Ping();
-                                PingReply pingStatus = ping.Send("papiloo.ir");
+                                PingReply pingStatus = ping.Send("www.papiloo.ir");
 
                                 if (pingStatus.Status == IPStatus.Success)
                                 {
@@ -272,7 +272,7 @@ namespace Service
 
 
                                     Data_Importer Data = new Data_Importer();
-                                    string data = await Data.GET("http://papiloo.ir/Laundry/Papiloo/Insert.php", application, managename, serial, cammersialname, state, trans, phone, tel, email, address, Reagent);
+                                    string data = await Data.GET("https://www.papiloo.ir/Papiloo/App/Register/Insert.php", application, managename, serial, cammersialname, state, trans, phone, tel, email, address, Reagent);
                                     //MessageBox.Show("نسخه آزمایشی در دسترس شماست", " ثبت نام", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     //--------
                                     Setting setting = new Setting();

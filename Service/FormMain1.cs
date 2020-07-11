@@ -946,7 +946,7 @@ namespace Service
             try
             {
                 Ping ping = new Ping();
-                PingReply pingStatus = ping.Send("papiloo.ir");
+                PingReply pingStatus = ping.Send("www.papiloo.ir");
 
                 if (pingStatus.Status == IPStatus.Success)
                 {
@@ -978,7 +978,7 @@ namespace Service
             try
             {
                 Ping ping = new Ping();
-                PingReply pingStatus = ping.Send("papiloo.ir");
+                PingReply pingStatus = ping.Send("www.papiloo.ir");
 
                 if (pingStatus.Status == IPStatus.Success)
                 {
@@ -986,12 +986,12 @@ namespace Service
                     //dgvVersion.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                     //Data_Importer Data = new Data_Importer();
 
-                    //string version = await Data.GET("http://papiloo.ir/Laundry/Papiloo/Select_Version.php", toolStripVersion.Text);
+                    //string version = await Data.GET("https://papiloo.ir/Laundry/Papiloo/Select_Version.php", toolStripVersion.Text);
                     //RootVersion instance2 = JsonConvert.DeserializeObject<RootVersion>(version);
                     //List<Version> LAp = instance2.AllPerson;
                     //dgvVersion.DataSource = LAp;
                     //-------
-                    string data = Data_Importer.Request("http://papiloo.ir/Papiloo/Register/Select_Version.php", toolStripVersion.Text);
+                    string data = Data_Importer.Request("https://papiloo.ir/Papiloo/App/Register/Select_Version.php", toolStripVersion.Text);
                     //MessageBox.Show(data);
 
                     toolStripVersion.Text = "Version: " + version;
@@ -1022,7 +1022,7 @@ namespace Service
                     {
 
                         Ping ping = new Ping();
-                        PingReply pingStatus = ping.Send("papiloo.ir");
+                        PingReply pingStatus = ping.Send("www.papiloo.ir");
 
                         if (pingStatus.Status == IPStatus.Success)
                         {
@@ -1032,7 +1032,7 @@ namespace Service
                             StreamReader reader;
                             WebRequest request;
                             WebResponse response;
-                            strReq = "http://www.papiloo.ir/Papiloo/Register/Select_Serial.php?Serial=" + HDDSerialL.SerialNumber();
+                            strReq = "https://www.papiloo.ir/Papiloo/App/Register/Select_Serial.php?Serial=" + HDDSerialL.SerialNumber();
                             request = WebRequest.Create(strReq);
                             response = request.GetResponse();
                             dataStream = response.GetResponseStream();
@@ -1212,7 +1212,7 @@ namespace Service
                         tooSettingApplication.Visible = true;
                         toolManageToolStripMenuItem.Enabled = false;
                         //MessageBox.Show( ex.Message);
-                        MessageBox.Show("1 \n" + "برای راه انذازی اولیه به اینترنت نیاز دارید", "ارتباط", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("1 " + "برای راه انذازی اولیه به اینترنت نیاز دارید", "ارتباط", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                 }
@@ -1422,7 +1422,7 @@ namespace Service
                 try
                 {
                     Ping ping = new Ping();
-                    PingReply pingStatus = ping.Send("papiloo.ir");
+                    PingReply pingStatus = ping.Send("www.papiloo.ir");
                     StimulsoftEntities context = new StimulsoftEntities();
                     if (pingStatus.Status == IPStatus.Success)
                     {
